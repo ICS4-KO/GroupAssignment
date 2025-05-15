@@ -7,6 +7,6 @@
  *
  * @author 343330528
  */
-public class User {
+public class Password {
     
 }
