@@ -172,7 +172,7 @@ public class EditFriends extends javax.swing.JFrame {
 
     private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
         //Return to main menu screen
-        new Main().setVisible(true); //Show main frame
+        new UserInfo().setVisible(true); //Show main frame
         this.setVisible(false); //Hide current frame (edit friends)
     }//GEN-LAST:event_returnButtonActionPerformed
 
