@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,7 +11,10 @@
  * @author 343330528
  */
 public class EditFriends extends javax.swing.JFrame {
-
+    //Declare global variables
+    public static ArrayList<String> friendsList= new ArrayList<String>(); //List of user's friends (Strings)
+    
+    
     /**
      * Creates new form Friends
      */
@@ -25,21 +31,157 @@ public class EditFriends extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        friendsLabel = new javax.swing.JLabel();
+        addFriendPrompt = new javax.swing.JLabel();
+        removeFriendPrompt = new javax.swing.JLabel();
+        editFriendInput = new javax.swing.JTextField();
+        friendsScroll = new javax.swing.JScrollPane();
+        friendsDisplay = new javax.swing.JList<>();
+        addFriendButton = new javax.swing.JButton();
+        removeFriendButton = new javax.swing.JButton();
+        returnButton = new javax.swing.JButton();
+        friendName = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        friendsLabel.setText("Friends");
+
+        addFriendPrompt.setText("Type in a name and click the button to add them as a friend.");
+
+        removeFriendPrompt.setText("Select a friend in the list and click the button to remove them.");
+
+        friendsDisplay.setToolTipText("");
+        friendsDisplay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                friendsDisplayMouseClicked(evt);
+            }
+        });
+        friendsScroll.setViewportView(friendsDisplay);
+
+        addFriendButton.setText("Add");
+        addFriendButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addFriendButtonActionPerformed(evt);
+            }
+        });
+
+        removeFriendButton.setText("Remove");
+        removeFriendButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeFriendButtonActionPerformed(evt);
+            }
+        });
+
+        returnButton.setText("Return to Main Screen");
+        returnButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnButtonActionPerformed(evt);
+            }
+        });
+
+        friendName.setText("Name:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addFriendPrompt)
+                            .addComponent(removeFriendPrompt)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(friendsScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(100, 100, 100)
+                                        .addComponent(returnButton))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(friendName)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(editFriendInput))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(addFriendButton)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(removeFriendButton))))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(198, 198, 198)
+                        .addComponent(friendsLabel)))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(friendsLabel)
+                .addGap(18, 18, 18)
+                .addComponent(addFriendPrompt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(removeFriendPrompt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(editFriendInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(friendName))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addFriendButton)
+                            .addComponent(removeFriendButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(returnButton))
+                    .addComponent(friendsScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addFriendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFriendButtonActionPerformed
+        //Get friend username that was entered by the user in the add friend text field
+        String friend = editFriendInput.getText();
+        //Add new friend to arraylist of friends
+        friendsList.add(friend);
+        
+        //Cast generic ListModel returned by getModel() to DefaultListModel in order to use methods edit the list (add/remove)
+        DefaultListModel model = (DefaultListModel) friendsDisplay.getModel();
+        //Add friend entered by the user to the friends list
+        model.addElement(friend);
+        
+        //Clear input text field for friend that will be added/removed
+        editFriendInput.setText("");
+    }//GEN-LAST:event_addFriendButtonActionPerformed
+
+    private void removeFriendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFriendButtonActionPerformed
+        //Retrieve the index of the currently selected item in the displayed list of friends
+        int index = friendsDisplay.getSelectedIndex();
+        //Cast generic ListModel returned by getModel() to DefaultListModel in order to use methods edit the list (add/remove)
+        DefaultListModel model = (DefaultListModel) friendsDisplay.getModel();
+        //Remove currently selected friend in list based on the retrieved index
+        model.removeElementAt(index);
+        
+        //Clear input text field for friend that will be added/removed
+        editFriendInput.setText("");
+    }//GEN-LAST:event_removeFriendButtonActionPerformed
+
+    private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
+        //Return to main menu screen
+        new Main().setVisible(true); //Show main frame
+        this.setVisible(false); //Hide current frame (edit friends)
+    }//GEN-LAST:event_returnButtonActionPerformed
+
+    private void friendsDisplayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_friendsDisplayMouseClicked
+        //Get the value in the list that is currently selected by the user
+        String selectedFriend = friendsDisplay.getSelectedValue();
+        //Display selected value (friend username) in text field that displays a friend name to be added/removed
+        editFriendInput.setText(selectedFriend);
+    }//GEN-LAST:event_friendsDisplayMouseClicked
 
     /**
      * @param args the command line arguments
@@ -78,5 +220,17 @@ public class EditFriends extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addFriendButton;
+    private javax.swing.JLabel addFriendPrompt;
+    private javax.swing.JTextField editFriendInput;
+    private javax.swing.JLabel friendName;
+    private javax.swing.JList<String> friendsDisplay;
+    private javax.swing.JLabel friendsLabel;
+    private javax.swing.JScrollPane friendsScroll;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton removeFriendButton;
+    private javax.swing.JLabel removeFriendPrompt;
+    private javax.swing.JButton returnButton;
     // End of variables declaration//GEN-END:variables
 }
