@@ -25,7 +25,7 @@ public class User {
      * @param email        //This is the value the email attribute is assigned 
      * @param phoneNumber  //This is the value the phone number attribute is assigned
      */
-    User (String username, Password password, Date birthday, String email, String phoneNumber) {
+    User (String username, Password password, String email, Date birthday, String phoneNumber) {
         this.username = username; //Set username to value entered by the user
         this.password = password; //Set password to value entered by the user
         this.birthday = birthday; //Set birthday to value entered by the user
