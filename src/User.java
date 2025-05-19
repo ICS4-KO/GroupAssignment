@@ -104,13 +104,13 @@ public class User {
     
     
     /**
-     * This method adds a new GameSettings object (game/search engine/social media) to a User object's array list of settings
+     * This method adds a new BasicSettings object (game/search engine/social media) to a User object's array list of settings
      * each time the user updates one of the three settings
      * 
-     * @param newGameSettings  GameSettings object that will be added to the array of all previous/current user settings
+     * @param newSettings  GameSettings object that will be added to the array of all previous/current user settings
      */
-    public void addNewSettings(GameSettings newGameSettings) {
-        settings.add(newGameSettings);
+    public void addNewSettings(BasicSettings newSettings) {
+        settings.add(newSettings);
     }
     
     /**

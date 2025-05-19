@@ -20,10 +20,19 @@ public class Date {
      * @param month //This is the value the month attribute is assigned
      * @param year  //This is the value the year attribute is assigned
      */
-    Date(int day, int month, int year) {
-        this.day = day; //Set value of the day attribute
+    Date(int month, int day, int year) {
         this.month = month; //Set value of the month attribute
+        this.day = day; //Set value of the day attribute
         this.year = year; //Set value of the year attribute
+    }
+    
+    /**
+     * This getter method returns the month of the user's birthday
+     * 
+     * @return  Returns month attribute of a Date object 
+     */
+    public int getMonth() {
+        return month;
     }
     
     /**

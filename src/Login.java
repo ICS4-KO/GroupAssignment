@@ -18,6 +18,9 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        
+        //Set label to display the total number of accounts that have been created
+        numUsersLabel.setText("Total Number of User Accounts: " + User.getNumUsers());
     }
 
     /**
@@ -37,6 +40,7 @@ public class Login extends javax.swing.JFrame {
         passwordInput = new javax.swing.JTextField();
         loginButton = new javax.swing.JButton();
         createAccountButton = new javax.swing.JButton();
+        numUsersLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,19 +66,21 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        numUsersLabel.setText("Total Number of User Accounts: ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(createAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(172, 172, 172)
-                            .addComponent(jLabel1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(70, 70, 70)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(172, 172, 172)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(numUsersLabel)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(loginButton)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -86,8 +92,9 @@ public class Login extends javax.swing.JFrame {
                                         .addComponent(jLabel2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(usernameInput))
-                                    .addComponent(loginError))))))
-                .addContainerGap(142, Short.MAX_VALUE))
+                                    .addComponent(loginError))
+                                .addComponent(createAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,9 +113,11 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(loginError)
                 .addGap(5, 5, 5)
                 .addComponent(loginButton)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addComponent(createAccountButton)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(numUsersLabel)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
@@ -199,6 +208,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel loginError;
+    private javax.swing.JLabel numUsersLabel;
     private javax.swing.JTextField passwordInput;
     private javax.swing.JTextField usernameInput;
     // End of variables declaration//GEN-END:variables

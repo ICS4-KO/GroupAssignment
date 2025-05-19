@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -11,6 +13,35 @@ public class HomeScreen extends javax.swing.JFrame {
     //Global variables
     public static User currentUser; //Current user account that is being displayed and interacted with
     
+    
+    //Define methods
+    
+    /**
+     * This method iterates through all of the previously set setting objects (game/search engine/social media) of the currently 
+     * logged in user account and adds each settings object to each of the three corresponding history combo boxes in their 
+     * respective frames
+     * 
+     * @param settingsArray  Instance variable of the current User object storing all of their previous setting configurations
+     */
+    public static void setHistoryComboBoxes(ArrayList<BasicSettings> settingsArray) {
+        //Iterate through each BasicSettings object in the array list of BasicSettings
+        for (BasicSettings settings : settingsArray) {
+            //Check if the BasicSettings object's instance type is GameSettings so that it can downcast
+            if (settings instanceof GameSettings)
+                //Downcast BasicSettings object to GameSettings object, add to game settings history combo box in game settings history frame
+                new GameSettingsHistory().getGameHistoryComboBox().addItem((GameSettings) settings);
+            //Check if the BasicSettings object's instance type is SearchEngineSettings so that it can downcast
+            if (settings instanceof SearchEngineSettings)
+                //Downcast BasicSettings object to SearchEngineSettings object, add to search engine settings history combo box in search engine settings history frame
+                new SearchEngineSettingsHistory().getSearchEngineHistoryComboBox().addItem((SearchEngineSettings) settings);
+            //Check if the BasicSettings object's instance type is SocalMediaSettings so that it can downcast
+            if (settings instanceof SocialMediaSettings)
+                //Downcast BasicSettings object to SocialMediaSettings object, add to social media settings history combo box in social media settings history frame
+                new SocialMediaSettingsHistory().getSocialMediaHistoryComboBox().addItem((SocialMediaSettings) settings);
+        } //End for loop iterating through array list of settings objects
+    }
+    
+    
     /**
      * Creates new form HomeScreen
      */
@@ -19,6 +50,31 @@ public class HomeScreen extends javax.swing.JFrame {
         
         //Set top label to display logged-in account's username
         usernameLabel.setText(currentUser.getUsername() + "'s Account");
+        //Set email label to display logged-in account's email
+        emailLabel.setText("Email: " + currentUser.getEmail());
+        //Check if user entered their birthday when they created an account (value is not default 0)
+        if (currentUser.getBirthday().getMonth() != 0)
+            //Set birthday label to display logged-in account's birthday
+            birthdayLabel.setText("Birthday: " + currentUser.getBirthday());
+        //If user did not enter their birthday
+        else
+            //Set birthday label to tell user they did not provide a birthday
+            birthdayLabel.setText("Birthday: Not provided");
+         //Check if user entered their phone number when they created an account (value is not default 000)
+        if (!(currentUser.getPhoneNumber().equals("000")))
+            //Set phone number label to display logged-in account's phone number
+            phoneNumberLabel.setText("Phone Number: " + currentUser.getPhoneNumber());
+        //If user did not enter their phone number
+        else
+            //Set phone number label to tell user they did not provide a phone number
+            phoneNumberLabel.setText("Phone Number: Not provided");
+        
+        //Clear all items in settings history combo boxes before adding updated set of settings objects as items
+        new GameSettingsHistory().getGameHistoryComboBox().removeAllItems(); //Clear game settings history
+        new SearchEngineSettingsHistory().getSearchEngineHistoryComboBox(); //Clear search engine settings history
+        new SocialMediaSettingsHistory().getSocialMediaHistoryComboBox(); //Clear social media settings history
+        //Set items in combo boxes in the three settings history frames (game/search engine/social media)
+        setHistoryComboBoxes(currentUser.returnSettings());
     }
 
     /**
@@ -35,6 +91,9 @@ public class HomeScreen extends javax.swing.JFrame {
         passwordButton = new javax.swing.JButton();
         settingsButton = new javax.swing.JButton();
         logoutButton = new javax.swing.JButton();
+        emailLabel = new javax.swing.JLabel();
+        birthdayLabel = new javax.swing.JLabel();
+        phoneNumberLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,6 +127,12 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
+        emailLabel.setText("Email: ");
+
+        birthdayLabel.setText("Birthday; ");
+
+        phoneNumberLabel.setText("Phone Number: ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -78,29 +143,43 @@ public class HomeScreen extends javax.swing.JFrame {
                         .addGap(152, 152, 152)
                         .addComponent(usernameLabel))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
+                        .addGap(100, 100, 100)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(birthdayLabel)
+                            .addComponent(emailLabel)
+                            .addComponent(phoneNumberLabel))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 133, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(logoutButton)
+                        .addGap(37, 37, 37))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(friendsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passwordButton))))
-                .addContainerGap(132, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(logoutButton)
-                .addGap(37, 37, 37))
+                            .addComponent(passwordButton))
+                        .addGap(131, 131, 131))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(29, 29, 29)
                 .addComponent(usernameLabel)
-                .addGap(37, 37, 37)
+                .addGap(16, 16, 16)
+                .addComponent(emailLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(birthdayLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phoneNumberLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addComponent(friendsButton)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(passwordButton)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(settingsButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(logoutButton)
                 .addGap(24, 24, 24))
         );
@@ -168,9 +247,12 @@ public class HomeScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel birthdayLabel;
+    private javax.swing.JLabel emailLabel;
     private javax.swing.JButton friendsButton;
     private javax.swing.JButton logoutButton;
     private javax.swing.JButton passwordButton;
+    private javax.swing.JLabel phoneNumberLabel;
     private javax.swing.JButton settingsButton;
     private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
