@@ -12,7 +12,7 @@ import javax.swing.DefaultListModel;
  */
 public class EditFriends extends javax.swing.JFrame {
     //Declare global variables
-    public static ArrayList<String> friendsList= new ArrayList<String>(); //List of user's friends (Strings)
+    public static ArrayList<String> friendsList= HomeScreen.currentUser.getFriendsList(); //List of user's friends (Strings)
     
     
     /**
@@ -171,8 +171,8 @@ public class EditFriends extends javax.swing.JFrame {
     }//GEN-LAST:event_removeFriendButtonActionPerformed
 
     private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
-        //Return to main menu screen
-        new UserInfo().setVisible(true); //Show main frame
+        //Return to home screen after user finishes editing friends
+        new HomeScreen().setVisible(true); //Show home screen frame
         this.setVisible(false); //Hide current frame (edit friends)
     }//GEN-LAST:event_returnButtonActionPerformed
 

@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -5,7 +9,7 @@
 
 /**
  *
- * @author jones
+ * @author 343330528
  */
 public class Login extends javax.swing.JFrame {
 
@@ -25,21 +29,133 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        loginError = new javax.swing.JLabel();
+        usernameInput = new javax.swing.JTextField();
+        passwordInput = new javax.swing.JTextField();
+        loginButton = new javax.swing.JButton();
+        createAccountButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Login");
+
+        jLabel2.setText("Username:");
+
+        jLabel3.setText("Password:");
+
+        loginError.setText("error");
+
+        loginButton.setText("Enter");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
+            }
+        });
+
+        createAccountButton.setText("Create Account");
+        createAccountButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createAccountButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(createAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(172, 172, 172)
+                            .addComponent(jLabel1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(70, 70, 70)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(loginButton)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(usernameInput))
+                                    .addComponent(loginError))))))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel1)
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(usernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(loginError)
+                .addGap(5, 5, 5)
+                .addComponent(loginButton)
+                .addGap(31, 31, 31)
+                .addComponent(createAccountButton)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        String enteredUsername = usernameInput.getText(); //Get username entered by the user in the username text field
+        String enteredPassword = passwordInput.getText(); //Get password entered by the user in the password text field
+        int lineCount = 0; //Initalize counter for keeping track of which line the Scanner is currently reading
+        
+        //Go through username/passwords in flat-file of accounts to find a match to the entered login information
+        try {
+            //Create Scanner object to read from the file of accounts, named "accounts.txt"
+            Scanner reader = new Scanner(new File("accounts.txt"));
+            //Go through each line of the file with the Scanner
+            while (reader.hasNext()) {
+                String[] data = reader.nextLine().split(","); //Split each line into an array, using comma as the delimiter
+                String username = data[0]; //First element in each line is the username of a created account
+                String password = data[1]; //Second element in each line is the corresponding password
+                
+                //Check if the username/password from the current line in the file is equal to the user/pass entered by the user
+                if (enteredUsername.equals(username) && enteredPassword.equals(password)) {
+                    //Assign current user to the account in the global array of User objects with the matching username/password
+                    HomeScreen.currentUser = CreateUser.accounts.get(lineCount);
+                    //Go to home screen after user successfully logs in
+                    new HomeScreen().setVisible(true); //Show home screen frame
+                    this.setVisible(false); //Hide current frame (login)
+                } //End if statement checking for an account match in the flat file of user accounts 
+                
+                lineCount++; //Increment counter for current line in flat file of accounts
+            } //End while loop going through accounts flat file
+            
+            reader.close(); //Close Scanner
+        //Catch IO exceptions when writing to flat file
+        } catch (IOException e) {
+            System.err.println(e); //Error message for IO exceptions
+        } //End try-catch statement for writing to file
+        
+        //Display error message if no account match was found
+        loginError.setText("Incorrect username or password.");
+    }//GEN-LAST:event_loginButtonActionPerformed
+
+    private void createAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountButtonActionPerformed
+        //Go to create account screen if user clicks on "Create Account" button
+        new CreateUser().setVisible(true); //Show create user screen frame
+        this.setVisible(false); //Hide current frame (login screen)
+    }//GEN-LAST:event_createAccountButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +193,13 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton createAccountButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton loginButton;
+    private javax.swing.JLabel loginError;
+    private javax.swing.JTextField passwordInput;
+    private javax.swing.JTextField usernameInput;
     // End of variables declaration//GEN-END:variables
 }

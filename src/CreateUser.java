@@ -1,3 +1,6 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /*
@@ -7,9 +10,13 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author jones
+ * @author 343330528
  */
 public class CreateUser extends javax.swing.JFrame {
+    //Global variables
+    public static ArrayList<User> accounts = new ArrayList<User>(); //Array list for all the user accounts that are created
+    //public static String[] accounts2;
+    
     //Define methods
     
     /**
@@ -361,30 +368,51 @@ public class CreateUser extends javax.swing.JFrame {
             //Instantiate new password object (has-a relationship with User object)
             Password password = new Password(stringPassword);
             
+            
+            //Initialize new user object that will be instantiated
+            User user = null;
+            
             //If both birthday and phone number are left empty, call constructor without birthday and phone number parameters
             if (monthString.isEmpty() && dayString.isEmpty() && yearString.isEmpty() && phoneNumber.isEmpty()) {
-                User user = new User(username, password, email); //Create new instance of User class without birthday or phone number
+                user = new User(username, password, email); //Create new instance of User class without birthday or phone number
             //If both birthday and phone number are filled in, call constructor with both birthday and phone number parameters
             } else if (!monthString.isEmpty() && !dayString.isEmpty() && !yearString.isEmpty() && !phoneNumber.isEmpty()) {
                 int month = Integer.parseInt(monthString); //Convert user's birth month into an integer for the Date constructor
                 int day = Integer.parseInt(dayString); //Convert user's birth day into an integer for the Date constructor
                 int year = Integer.parseInt(yearString); //Convert user's birth year into an integer for the Date constructor
                 Date birthday = new Date(month, day, year); //Create new instance of Date class for the user's birthday
-                User user = new User(username, password, email, birthday, phoneNumber); //Create new instance of User class with birthday and phone number
+                user = new User(username, password, email, birthday, phoneNumber); //Create new instance of User class with birthday and phone number
             //If a phone number has been entered but no birthday, call constructor without birthday parameter
             } else if (monthString.isEmpty() && dayString.isEmpty() && yearString.isEmpty()) {
-                User user = new User(username, password, phoneNumber); //Create new isntance of user class with phone number
+                user = new User(username, password, phoneNumber); //Create new isntance of user class with phone number
             //If a birthday has been entered but no phone number, call constructor without phone number parameter
             } else if (phoneNumber.isEmpty()) {
                 int month = Integer.parseInt(monthString); //Convert user's birth month into an integer for the Date constructor
                 int day = Integer.parseInt(dayString); //Convert user's birth day into an integer for the Date constructor
                 int year = Integer.parseInt(yearString); //Convert user's birth year into an integer for the Date constructor
                 Date birthday = new Date(month, day, year); //Create new instance of Date class for the user's birthday
-                User user = new User(username, password, email, birthday); //Create new instance of User class with birthday
+                user = new User(username, password, email, birthday); //Create new instance of User class with birthday
             } //End if statement checking which User constructor to call based on inputs
             
-            //Return to home settings screen after user finishes creating a user
-            new UserInfo().setVisible(true); //Show home settings frame
+            //Add new user to array list of user accounts
+            accounts.add(user);
+            
+            
+            //Add new account information to flat-file of accounts
+            try {
+                //Create FileWriter object to append to the file of accounts, named "accounts.txt"
+                FileWriter writer = new FileWriter("accounts.txt", true);
+                //Write username and password of the new account onto the file
+                writer.write(username + "," + password);
+                //Close FileWriter
+                writer.close();
+            //Catch IO exceptions when writing to flat file
+            } catch (IOException e) {
+                System.err.println(e); //Error message for IO exceptions
+            } //End try-catch statement for writing to file
+            
+            //Return to login screen after user finishes creating a user
+            new Login().setVisible(true); //Show login screen frame
             this.setVisible(false); //Hide current frame (create user)
         
         //If there is any invalid input, check exactly which input(s) are invalid and display the appropriate error messages
