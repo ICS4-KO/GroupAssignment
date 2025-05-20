@@ -8,5 +8,13 @@
  * @author 343330528
  */
 public class Password {
-    
+    private double passWordStrength;
+    private String password;
+
+    public Password(String password){
+        this.password = password;
+    }
+    public double checkPasswordStrength(){
+        
+    }
 }
