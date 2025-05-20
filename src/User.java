@@ -201,7 +201,7 @@ public class User {
      * 
      * @return  Returns array list of all the user's settings (game/search engine/social media) previously set 
      */
-    public ArrayList<BasicSettings> returnSettings() {
+    public ArrayList<BasicSettings> getSettings() {
         return settings;
     }
     

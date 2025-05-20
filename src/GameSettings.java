@@ -9,7 +9,6 @@
  */
 public class GameSettings extends BasicSettings {
     //Instance variables
-    private String explanation; //Explanation of the user's settings
     private String difficultyLevel; //Game's difficulty level
     private boolean subtitlesEnabled; //Turn subtitles on or off
     private String screenResolution; //Screen resolution
@@ -33,14 +32,14 @@ public class GameSettings extends BasicSettings {
      * @param controlSceheme     //This is the value the control scheme attribute will be assigned
      * @param graphicsQuality    //This is the value the graphics quality attribute will be assigned
      */
-    public GameSettings(String theme, boolean allowNotifications, boolean locationSharing, boolean microphoneAccess, String difficultyLevel, boolean subtitledEnabled, String screenResolution, String controlSceheme, String graphicsQuality) {
+    public GameSettings(String theme, boolean allowNotifications, boolean locationSharing, boolean microphoneAccess, String difficultyLevel, boolean subtitlesEnabled, String screenResolution, String controlSceheme, String graphicsQuality) {
         this.theme = theme; //Set theme to value chosen by the user
         this.allowNotifications = allowNotifications; //Set allow notifications to value chosen by the user
         this.locationSharing = locationSharing; //Set location sharing to value chosen by the user
         this.microphoneAccess = microphoneAccess; //Set microphone access to value chosen by the user
         
         this.difficultyLevel = difficultyLevel; //Set difficulty level to value chosen by the user
-        this.subtitlesEnabled = subtitledEnabled; //Set subtitles enabled to value chosen by the user
+        this.subtitlesEnabled = subtitlesEnabled; //Set subtitles enabled to value chosen by the user
         this.screenResolution = screenResolution; //Set screen resolution to value chosen by the user
         this.controlScheme = controlScheme; //Set control scheme to value chosen by the user
         this.graphicsQuality = graphicsQuality; //Set graphics quality to value chosen by the user

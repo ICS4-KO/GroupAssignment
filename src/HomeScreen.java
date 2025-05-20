@@ -74,7 +74,7 @@ public class HomeScreen extends javax.swing.JFrame {
         new SearchEngineSettingsHistory().getSearchEngineHistoryComboBox(); //Clear search engine settings history
         new SocialMediaSettingsHistory().getSocialMediaHistoryComboBox(); //Clear social media settings history
         //Set items in combo boxes in the three settings history frames (game/search engine/social media)
-        setHistoryComboBoxes(currentUser.returnSettings());
+        setHistoryComboBoxes(currentUser.getSettings());
     }
 
     /**
