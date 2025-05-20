@@ -57,7 +57,7 @@ public class SocialMediaSettings extends BasicSettings{
         super.setExplanation(explanation);
     }
     
-    //public String toString(){
-        //return 
-    //}
+    public String toString(){
+        return "Notification:"+super.getAllowNotification()+" Location:"+super.getLocationSharing()+" Microphone:"+super.getMicrophoneAccess()+" Birthday:"+ birthdayPrivacy +" Email:"+emailPrivacy+" Phone Number:"+phoneNumberPrivacy+"Mentions:"+mentionsPrivacy+" Messages:"+messagesPrivacy+" Stories:"+storiesPrivacy;
+    }
 }
