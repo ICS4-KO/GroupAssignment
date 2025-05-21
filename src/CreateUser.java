@@ -211,6 +211,12 @@ public class CreateUser extends javax.swing.JFrame {
 
         jLabel8.setText("Phone Number (xxx-xxx-xxxx):");
 
+        passwordInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordInputActionPerformed(evt);
+            }
+        });
+
         jLabel9.setText("Day:");
 
         jLabel10.setText("Month:");
@@ -280,13 +286,13 @@ public class CreateUser extends javax.swing.JFrame {
                             .addComponent(mandatoryError))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(usernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(passwordInput)
-                                    .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(emailError))))
+                                .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(emailError, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(passwordInput)
+                                .addComponent(usernameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(169, 169, 169)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -431,6 +437,16 @@ public class CreateUser extends javax.swing.JFrame {
                 phoneNumberError.setText("Invalid phone number."); //Display error message
         } //End if statement checking if all information entered by the user is valid
     }//GEN-LAST:event_submitButtonActionPerformed
+
+    private void passwordInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputActionPerformed
+        // TODO add your handling code here:
+        Password newPass = new Password(passwordInput.getText());
+        if (!newPass.checkPasswordStrength()) {
+            mandatoryError.setText("Password must include letters, numbers, and special characters (!@#$%) and be at least 6 characters.");
+        } else {
+            mandatoryError.setText("New password format looks good.");
+        }
+    }//GEN-LAST:event_passwordInputActionPerformed
 
     /**
      * @param args the command line arguments

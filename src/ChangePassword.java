@@ -141,7 +141,7 @@ public class ChangePassword extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void currentpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentpasswordActionPerformed
-        if (!currentpassword.getText().equals(password)) {
+        if (!currentpassword.getText().equals(newPass)) {
             errormessage.setText("Invalid password");
         } else {
             errormessage.setText("");
@@ -161,11 +161,11 @@ public class ChangePassword extends javax.swing.JFrame {
         if (newpassword.getText().equals(confirmnewpassword.getText())) {
             Password newPass = new Password(newpassword.getText());
             if (newPass.checkPasswordStrength()) {
-                password = newPass.getPassword();
+                newPass = newPass.getPassword();
                 errormessage.setText("Password successfully updated!");
                 // Save to file (optional):
                 try (java.io.PrintWriter out = new java.io.PrintWriter("Previouspassword.txt")) {
-                    System.out.println(password);
+                    System.out.println(newPass);
                 } catch (Exception e) {
                     errormessage.setText("Password saved but file write failed.");
                 }
