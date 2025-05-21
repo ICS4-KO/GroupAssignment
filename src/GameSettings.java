@@ -33,10 +33,8 @@ public class GameSettings extends BasicSettings {
      * @param graphicsQuality    //This is the value the graphics quality attribute will be assigned
      */
     public GameSettings(String theme, boolean allowNotifications, boolean locationSharing, boolean microphoneAccess, String difficultyLevel, boolean subtitlesEnabled, String screenResolution, String controlSceheme, String graphicsQuality) {
-        this.theme = theme; //Set theme to value chosen by the user
-        this.allowNotifications = allowNotifications; //Set allow notifications to value chosen by the user
-        this.locationSharing = locationSharing; //Set location sharing to value chosen by the user
-        this.microphoneAccess = microphoneAccess; //Set microphone access to value chosen by the user
+        //Call parent constructor to set theme, notifications, location sharing, and microphone access to values chosen by the user
+        super(theme, allowNotifications, locationSharing, microphoneAccess);
         
         this.difficultyLevel = difficultyLevel; //Set difficulty level to value chosen by the user
         this.subtitlesEnabled = subtitlesEnabled; //Set subtitles enabled to value chosen by the user
