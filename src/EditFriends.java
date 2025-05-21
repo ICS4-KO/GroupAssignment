@@ -11,8 +11,8 @@ import javax.swing.DefaultListModel;
  * @author 343330528
  */
 public class EditFriends extends javax.swing.JFrame {
-    //Declare global variables
-    public static ArrayList<String> friendsList= HomeScreen.currentUser.getFriendsList(); //List of user's friends (Strings)
+    //Declare variables
+    private static ArrayList<String> updatedFriendsList = HomeScreen.currentUser.getFriendsList(); //List of user's friends (Strings)
     
     
     /**
@@ -147,7 +147,7 @@ public class EditFriends extends javax.swing.JFrame {
         //Get friend username that was entered by the user in the add friend text field
         String friend = editFriendInput.getText();
         //Add new friend to arraylist of friends
-        friendsList.add(friend);
+        updatedFriendsList.add(friend);
         
         //Cast generic ListModel returned by getModel() to DefaultListModel in order to use methods edit the list (add/remove)
         DefaultListModel model = (DefaultListModel) friendsDisplay.getModel();
@@ -161,6 +161,9 @@ public class EditFriends extends javax.swing.JFrame {
     private void removeFriendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFriendButtonActionPerformed
         //Retrieve the index of the currently selected item in the displayed list of friends
         int index = friendsDisplay.getSelectedIndex();
+        //Remove friend from arraylist of friends
+        updatedFriendsList.remove(index);
+        
         //Cast generic ListModel returned by getModel() to DefaultListModel in order to use methods edit the list (add/remove)
         DefaultListModel model = (DefaultListModel) friendsDisplay.getModel();
         //Remove currently selected friend in list based on the retrieved index
@@ -171,6 +174,9 @@ public class EditFriends extends javax.swing.JFrame {
     }//GEN-LAST:event_removeFriendButtonActionPerformed
 
     private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
+        //Assign user's friend list instance variable to the friends array list that has been updated in this frame
+        HomeScreen.currentUser.setFriendsList(updatedFriendsList);
+        
         //Return to home screen after user finishes editing friends
         new HomeScreen().setVisible(true); //Show home screen frame
         this.setVisible(false); //Hide current frame (edit friends)
@@ -228,7 +234,6 @@ public class EditFriends extends javax.swing.JFrame {
     private javax.swing.JLabel friendsLabel;
     private javax.swing.JScrollPane friendsScroll;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton removeFriendButton;
     private javax.swing.JLabel removeFriendPrompt;
     private javax.swing.JButton returnButton;

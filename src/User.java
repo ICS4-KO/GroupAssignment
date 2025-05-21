@@ -16,6 +16,7 @@ public class User {
     private Date birthday; //User's birthday
     private String phoneNumber; //User's phone number
     private ArrayList<String> friendsList; //User's list of friends
+    private ArrayList<Password> previousPasswords; //User's list of previous passwords
     private ArrayList<BasicSettings> settings; //Arraylist of all the user's previous/current privacy settings
     private GameSettings currentGameSettings; //User's current game settings
     private SearchEngineSettings currentSearchEngineSettings; //User's current search engine settings
@@ -102,6 +103,14 @@ public class User {
         numUsers++; //Increase number of users that have been instantiated by one
     }
     
+    /**
+     * This setter method sets the friends list attribute of a User object
+     * 
+     * @param friendsList  ArrayList of Strings that will be assigned to the user's friend list
+     */
+    public void setFriendsList(ArrayList<String> friendsList) {
+        this.friendsList = friendsList;
+    }
     
     /**
      * This method adds a new BasicSettings object (game/search engine/social media) to a User object's array list of settings

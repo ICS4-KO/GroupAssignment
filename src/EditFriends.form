@@ -126,6 +126,9 @@
       <SubComponents>
         <Component class="javax.swing.JList" name="friendsDisplay">
           <Properties>
+            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+              <StringArray count="0"/>
+            </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
