@@ -5,7 +5,8 @@
 
 /**
  *
- * @author 343330528
+ * @author jojox
+ * @version 1.0
  */
 public class Password {
     private double passWordStrength;
@@ -14,7 +15,29 @@ public class Password {
     public Password(String password){
         this.password = password;
     }
-    public double checkPasswordStrength(){
-        
+    public boolean checkPasswordStrength(){
+        if (password.length() < 6) return false;
+
+        boolean hasLetter = false;
+        boolean hasDigit = false;
+        boolean hasSpecial = false;
+
+        for (char c : password.toCharArray()) {
+            if (Character.isLetter(c)){
+                hasLetter = true;
+            }
+            else if (Character.isDigit(c)){
+                hasDigit = true;
+            }
+            else if ("!@#$%".indexOf(c) >= 0){
+                hasSpecial = true;
+            }
+        }
+
+        return hasLetter && hasDigit && hasSpecial;
     }
+
+    public String getPassword() {
+        return password;
+    } 
 }

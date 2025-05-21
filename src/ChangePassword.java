@@ -5,7 +5,8 @@
 
 /**
  *
- * @author 343330528
+ * @author jojox
+ * @version 1.0
  */
 public class ChangePassword extends javax.swing.JFrame {
 
@@ -140,18 +141,40 @@ public class ChangePassword extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void currentpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentpasswordActionPerformed
-        // TODO add your handling code here:
-        
+        if (!currentpassword.getText().equals(password)) {
+            errormessage.setText("Invalid password");
+        } else {
+            errormessage.setText("");
+        }
     }//GEN-LAST:event_currentpasswordActionPerformed
 
     private void newpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newpasswordActionPerformed
-        // TODO add your handling code here:
-        
+        Password newPass = new Password(newpassword.getText());
+        if (!newPass.checkPasswordStrength()) {
+            errormessage.setText("Password must include letters, numbers, and special characters (!@#$%) and be at least 6 characters.");
+        } else {
+            errormessage.setText("New password format looks good.");
+        }
     }//GEN-LAST:event_newpasswordActionPerformed
 
     private void confirmnewpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmnewpasswordActionPerformed
-        // TODO add your handling code here:
-        
+        if (newpassword.getText().equals(confirmnewpassword.getText())) {
+            Password newPass = new Password(newpassword.getText());
+            if (newPass.checkPasswordStrength()) {
+                password = newPass.getPassword();
+                errormessage.setText("Password successfully updated!");
+                // Save to file (optional):
+                try (java.io.PrintWriter out = new java.io.PrintWriter("Previouspassword.txt")) {
+                    System.out.println(password);
+                } catch (Exception e) {
+                    errormessage.setText("Password saved but file write failed.");
+                }
+            } else {
+                errormessage.setText("New password does not meet requirements.");
+            }
+        } else {
+            errormessage.setText("Passwords do not match.");
+        }
     }//GEN-LAST:event_confirmnewpasswordActionPerformed
 
     /**
