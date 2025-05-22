@@ -10,7 +10,6 @@
  */
 public class ChangePassword extends javax.swing.JFrame {
     
-    private static String password = " "; // Example default password
     /**
      * Creates new form Password
      */
