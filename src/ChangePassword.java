@@ -10,7 +10,8 @@
  */
 public class ChangePassword extends javax.swing.JFrame {
     
-        private static String password = HomeScreen.currentUser.getPassword();
+    private static String password = HomeScreen.currentUser.getPassword();
+    
     /**
      * Creates new form Password
      */
@@ -150,7 +151,7 @@ public class ChangePassword extends javax.swing.JFrame {
     }//GEN-LAST:event_currentpasswordActionPerformed
 
     private void newpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newpasswordActionPerformed
-        String newPass = newpassword.getText() 
+        String newPass = newpassword.getText() ;
         if (!newPass.checkPasswordStrength()) {
             errormessage.setText("Password must include letters, numbers, and special characters (!@#$%) and be at least 6 characters.");
         } else {
@@ -168,7 +169,7 @@ public class ChangePassword extends javax.swing.JFrame {
             return;
         }
 
-        String newPass = newPassText
+        String newPass = newPassText;
         if (!newPassText.equals(confirmPassText)) {
             errormessage.setText("New passwords do not match.");
             return;
@@ -179,18 +180,18 @@ public class ChangePassword extends javax.swing.JFrame {
             return;
         }
 
-        password = HomeScreen.currentUser.setPassword(newPass)); // update password
-
-        try (java.io.PrintWriter out = new java.io.PrintWriter("Previouspassword.txt")) {
-            out.println(newPass);
-            errormessage.setText("Password successfully changed and saved.");
-        } catch (Exception e) {
-            errormessage.setText("Password changed but could not save to file.");
+        HomeScreen.currentUser.addNewPassword(newPass);
+        
+        ArrayList<String> previousPasswords = HomeScreen.currentUser.getPreviousPasswords();
+        
+        for (int i = 0; i < previousPasswords.length(), i++){
+            if (previousPasswords ==newPassText){
+        errormessage.setText("Password shoudl be different than before.");}
         }
     }//GEN-LAST:event_confirmnewpasswordActionPerformed
 
     
-        public boolean checkPasswordStrength(){
+        public boolean checkPasswordStrength(String password){
         if (password.length() < 6) return false;
 
         boolean hasLetter = false;
