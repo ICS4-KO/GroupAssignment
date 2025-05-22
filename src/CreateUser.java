@@ -166,6 +166,7 @@ public class CreateUser extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel12 = new javax.swing.JLabel();
         createUserLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -190,6 +191,9 @@ public class CreateUser extends javax.swing.JFrame {
         emailError = new javax.swing.JLabel();
         birthdayError = new javax.swing.JLabel();
         phoneNumberError = new javax.swing.JLabel();
+        passwordError = new javax.swing.JLabel();
+
+        jLabel12.setText("jLabel12");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -237,6 +241,8 @@ public class CreateUser extends javax.swing.JFrame {
         birthdayError.setText("birthdayerror");
 
         phoneNumberError.setText("phonenumbererror");
+
+        passwordError.setText("passwordEroror");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -290,9 +296,12 @@ public class CreateUser extends javax.swing.JFrame {
                                 .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(emailError, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(passwordInput)
-                                .addComponent(usernameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(passwordInput)
+                                    .addComponent(usernameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(passwordError))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(169, 169, 169)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,7 +309,7 @@ public class CreateUser extends javax.swing.JFrame {
                                 .addGap(40, 40, 40)
                                 .addComponent(createUserLabel))
                             .addComponent(jLabel2))))
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,7 +327,8 @@ public class CreateUser extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordError))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -362,7 +372,7 @@ public class CreateUser extends javax.swing.JFrame {
 
         //Get all user information entered by the user in the corresponding text fields, remove all whitespace
         String username = usernameInput.getText().trim(); //Get username entered by user
-        String stringPassword = passwordInput.getText().trim(); //Get password entered by user (used to instantiate Password object later)
+        String password = passwordInput.getText().trim(); //Get password entered by user
         String email = emailInput.getText().trim(); //Get email entered by user
         String monthString = monthInput.getText().trim(); //Get user's month of birth (converted to int after error check)
         String dayString = dayInput.getText().trim(); //Get user's day of birth (converted to int after error check)
@@ -370,9 +380,7 @@ public class CreateUser extends javax.swing.JFrame {
         String phoneNumber = phoneNumberInput.getText().trim(); //Get phone number entered by user
         
         //Create new User object if all information entered by the user are valid inputs and will not cause any errors
-        if (checkMandatory(username, stringPassword, email) && checkEmail(email) && checkDOB(monthString, dayString, yearString) && checkPhoneNumber(phoneNumber)) {
-            //Instantiate new password object (has-a relationship with User object)
-            Password password = new Password(stringPassword);
+        if (checkMandatory(username, password, email) && checkEmail(email) && checkDOB(monthString, dayString, yearString) && checkPhoneNumber(phoneNumber)) {
             
             
             //Initialize new user object that will be instantiated
@@ -439,11 +447,11 @@ public class CreateUser extends javax.swing.JFrame {
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void passwordInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputActionPerformed
-        String newPass = newpassword.getText();
-        if (!checkPasswordStrength(newPass)) {
-            errormessage.setText("Password must include letters, numbers, and special characters (!@#$%) and be at least 6 characters.");
+        String newPass = passwordInput.getText();
+        if (!ChangePassword.checkPasswordStrength(newPass)) {
+            passwordError.setText("Password must include letters, numbers, and special characters (!@#$%) and be at least 6 characters.");
         } else {
-            errormessage.setText("New password format looks good.");
+            passwordError.setText("New password format looks good.");
         }
     }//GEN-LAST:event_passwordInputActionPerformed
 
@@ -491,6 +499,7 @@ public class CreateUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -501,6 +510,7 @@ public class CreateUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel mandatoryError;
     private javax.swing.JTextField monthInput;
+    private javax.swing.JLabel passwordError;
     private javax.swing.JTextField passwordInput;
     private javax.swing.JLabel phoneNumberError;
     private javax.swing.JTextField phoneNumberInput;

@@ -17,10 +17,10 @@ public class SearchEngineSettings extends BasicSettings {
     private static int searchEngineSettingsCounter = 1;
     private int counter;
 
-    public SearchEngineSettings(String theme, boolean allowNotifications, boolean locationSharing, boolean microphoneAccess,
+    public SearchEngineSettings(boolean allowNotifications, boolean locationSharing, boolean microphoneAccess,
                                 boolean trackHistory, boolean adPersonalization, boolean safeBrowsing,
                                 boolean searchSuggestions, int resultsPerPage) {
-        super(theme, allowNotifications, locationSharing, microphoneAccess);
+        super(allowNotifications, locationSharing, microphoneAccess);
         this.trackHistory = trackHistory;
         this.adPersonalization = adPersonalization;
         this.safeBrowsing = safeBrowsing;

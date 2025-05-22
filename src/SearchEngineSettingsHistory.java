@@ -25,21 +25,330 @@ public class SearchEngineSettingsHistory extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel9 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        subtitlesComboBox = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        resolutionComboBox = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        controlComboBox = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        graphicsComboBox = new javax.swing.JComboBox<>();
+        notificationsComboBox = new javax.swing.JComboBox<>();
+        difficultyComboBox = new javax.swing.JComboBox<>();
+        locationComboBox = new javax.swing.JComboBox<>();
+        submitButton = new javax.swing.JButton();
+        microphoneComboBox = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel9.setText("Results Per Page:");
+
+        jLabel1.setText("Track History:");
+
+        subtitlesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "On", "Off" }));
+        subtitlesComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subtitlesComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Notifications:");
+
+        resolutionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1920x1080", "1280x720", "2560x1440" }));
+        resolutionComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resolutionComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Location:");
+
+        controlComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Keyboard", "Gamepad", "Custom" }));
+        controlComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                controlComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Microphone:");
+
+        graphicsComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Low", "Medium", "High" }));
+        graphicsComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphicsComboBoxActionPerformed(evt);
+            }
+        });
+
+        notificationsComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Allow", "Block" }));
+        notificationsComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                notificationsComboBoxActionPerformed(evt);
+            }
+        });
+
+        difficultyComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Easy", "Normal", "Hard" }));
+        difficultyComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                difficultyComboBoxActionPerformed(evt);
+            }
+        });
+
+        locationComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Share", "Hide" }));
+        locationComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                locationComboBoxActionPerformed(evt);
+            }
+        });
+
+        submitButton.setText("Submit");
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitButtonActionPerformed(evt);
+            }
+        });
+
+        microphoneComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Allow", "Block" }));
+        microphoneComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                microphoneComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Ad Personalization:");
+
+        jLabel7.setText("Safe Browsing:");
+
+        jLabel8.setText("Search Suggestions:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(204, 204, 204)
+                        .addComponent(submitButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(difficultyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(graphicsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel9))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(subtitlesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(microphoneComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(locationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                                        .addComponent(notificationsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(resolutionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(57, 57, 57)))
+                        .addComponent(controlComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(notificationsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(locationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(microphoneComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(difficultyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(subtitlesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(3, 3, 3)
+                .addComponent(jLabel8)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel9)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(controlComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(resolutionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(graphicsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(submitButton)
+                .addGap(30, 30, 30))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+        //Check the current selected item (String) in the notifications combo box when the user submits the settings
+        if (notificationsComboBox.getSelectedItem().equals("Allow"))
+        //If the selected option is "Allow", set variable to true
+        allowNotifications = true;
+        //If selected option is not "Allow", only other option is "Block"
+        else
+        //If the selected option is "Block", set variable to false
+        allowNotifications = false;
+
+        //Check the current selected item (String) in the location combo box when the user submits the settings
+        if (locationComboBox.getSelectedItem().equals("Share"))
+        //If the selected option is "Share", set variable to true
+        locationSharing = true;
+        //If selected option is not "Share", only other option is "Hide"
+        else
+        //If the selected option is "Hide", set variable to false
+        locationSharing = false;
+
+        //Check the current selected item (String) in the microphone combo box when the user submits the settings
+        if (microphoneComboBox.getSelectedItem().equals("Allow"))
+        //If the selected option is "Allow", set variable to true
+        microphoneAccess = true;
+        //If selected option is not "Allow", only other option is "Block"
+        else
+        //If the selected option is "Block", set variable to false
+        microphoneAccess = false;
+
+        //Check the current selected item (String) in the difficulty combo box when the user submits the settings
+        if (difficultyComboBox.getSelectedItem().equals("Easy"))
+        //If the selected option is "Easy", store in variable
+        difficultyLevel = "Light";
+        //If selected option is "Normal", store in variable
+        else if (difficultyComboBox.getSelectedItem().equals("Normal"))
+        //If the selected option is "Normal", store in variable
+        difficultyLevel = "Normal";
+        //If the selected option is not "Easy" or "Normal", only other option is "Hard"
+        else
+        //If the selected option is "Hard", store in variable
+        difficultyLevel = "Hard";
+
+        //Check the current selected item (String) in the subtitles combo box when the user submits the settings
+        if (subtitlesComboBox.getSelectedItem().equals("On"))
+        //If the selected option is "On", set variable to true
+        subtitlesEnabled = true;
+        //If selected option is not "On", only other option is "Off"
+        else
+        //If the selected option is "Off", set variable to false
+        subtitlesEnabled = false;
+
+        //Check the current selected item (String) in the resolution combo box when the user submits the settings
+        if (resolutionComboBox.getSelectedItem().equals("1920x1080"))
+        //If the selected option is "1920x1080", store in variable
+        screenResolution = "1920x1080";
+        //If selected option is "1280x720", store in variable
+        else if (resolutionComboBox.getSelectedItem().equals("1280x720"))
+        //If the selected option is "1280x720", store in variable
+        screenResolution = "1280x720";
+        //If the selected option is not "1920x1080" or "1280x720", only other option is "2560x1440"
+        else
+        //If the selected option is "2560x1440", store in variable
+        screenResolution = "2560x1440";
+
+        //Check the current selected item (String) in the control combo box when the user submits the settings
+        if (controlComboBox.getSelectedItem().equals("Gamepad"))
+        //If the selected option is "Gamepad", store in variable
+        controlScheme = "Gamepad";
+        //If selected option is "Keyboard", store in variable
+        else if (controlComboBox.getSelectedItem().equals("Keyboard"))
+        //If the selected option is "Keyboard", store in variable
+        controlScheme = "Keyboard";
+        //If the selected option is not "Gamepad" or "Keyboard", only other option is "Custom"
+        else
+        //If the selected option is "Custom", store in variable
+        controlScheme = "Custom";
+
+        //Check the current selected item (String) in the graphics combo box when the user submits the settings
+        if (graphicsComboBox.getSelectedItem().equals("Low"))
+        //If the selected option is "Low", store in variable
+        graphicsQuality = "Low";
+        //If selected option is "Medium", store in variable
+        else if (graphicsComboBox.getSelectedItem().equals("Medium"))
+        //If the selected option is "Medium", store in variable
+        graphicsQuality = "Medium";
+        //If the selected option is not "Low" or "Medium", only other option is "Hard"
+        else
+        //If the selected option is "Hard", store in variable
+        graphicsQuality = "Hard";
+
+        //Create new instance of GameSettings class based on settings selected by the user, upcast to BasicSettings
+        BasicSettings gameSettings = new GameSettings(allowNotifications, locationSharing, microphoneAccess, difficultyLevel, subtitlesEnabled, screenResolution, controlScheme, graphicsQuality);
+        //Add new game settings to user object's array list of all previously set settings
+        HomeScreen.currentUser.addNewSettings(gameSettings);
+
+        //Set user's current game settings to the newly set game settings after downcasting
+        HomeScreen.currentUser.setGameSettings((GameSettings) gameSettings);
+
+        //Return to home screen after user finishes editing game settings
+        new HomeScreen().setVisible(true); //Show home screen frame
+        this.setVisible(false); //Hide current frame (edit game settings)
+    }//GEN-LAST:event_submitButtonActionPerformed
+
+    private void difficultyComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_difficultyComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_difficultyComboBoxActionPerformed
+
+    private void notificationsComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationsComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_notificationsComboBoxActionPerformed
+
+    private void locationComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_locationComboBoxActionPerformed
+
+    private void microphoneComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_microphoneComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_microphoneComboBoxActionPerformed
+
+    private void subtitlesComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtitlesComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subtitlesComboBoxActionPerformed
+
+    private void resolutionComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resolutionComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_resolutionComboBoxActionPerformed
+
+    private void controlComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controlComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_controlComboBoxActionPerformed
+
+    private void graphicsComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphicsComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_graphicsComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +386,22 @@ public class SearchEngineSettingsHistory extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> controlComboBox;
+    private javax.swing.JComboBox<String> difficultyComboBox;
+    private javax.swing.JComboBox<String> graphicsComboBox;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JComboBox<String> locationComboBox;
+    private javax.swing.JComboBox<String> microphoneComboBox;
+    private javax.swing.JComboBox<String> notificationsComboBox;
+    private javax.swing.JComboBox<String> resolutionComboBox;
+    private javax.swing.JButton submitButton;
+    private javax.swing.JComboBox<String> subtitlesComboBox;
     // End of variables declaration//GEN-END:variables
 }
