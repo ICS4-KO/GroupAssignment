@@ -9,7 +9,8 @@
  * @version 1.0
  */
 public class ChangePassword extends javax.swing.JFrame {
-
+    
+    private static String password = " "; // Example default password
     /**
      * Creates new form Password
      */
@@ -141,7 +142,7 @@ public class ChangePassword extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void currentpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentpasswordActionPerformed
-        if (!currentpassword.getText().equals(newPass)) {
+        if (!currentpassword.getText().equals(password)) {
             errormessage.setText("Invalid password");
         } else {
             errormessage.setText("");
@@ -158,25 +159,37 @@ public class ChangePassword extends javax.swing.JFrame {
     }//GEN-LAST:event_newpasswordActionPerformed
 
     private void confirmnewpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmnewpasswordActionPerformed
-        if (newpassword.getText().equals(confirmnewpassword.getText())) {
-            Password newPass = new Password(newpassword.getText());
-            if (newPass.checkPasswordStrength()) {
-                newPass = newPass.getPassword();
-                errormessage.setText("Password successfully updated!");
-                // Save to file (optional):
-                try (java.io.PrintWriter out = new java.io.PrintWriter("Previouspassword.txt")) {
-                    System.out.println(newPass);
-                } catch (Exception e) {
-                    errormessage.setText("Password saved but file write failed.");
-                }
-            } else {
-                errormessage.setText("New password does not meet requirements.");
-            }
-        } else {
-            errormessage.setText("Passwords do not match.");
+        String current = currentpassword.getText();
+        String newPassText = newpassword.getText();
+        String confirmPassText = confirmnewpassword.getText();
+
+        if (!current.equals(password)) {
+            errormessage.setText("Invalid current password.");
+            return;
+        }
+
+        Password newPass = new Password(newPassText);
+        if (!newPassText.equals(confirmPassText)) {
+            errormessage.setText("New passwords do not match.");
+            return;
+        }
+
+        if (!newPass.checkPasswordStrength()) {
+            errormessage.setText("Password must include letters, numbers, and special characters (!@#$%) and be at least 6 characters.");
+            return;
+        }
+
+        password = newPass.getPassword(); // update password
+
+        try (java.io.PrintWriter out = new java.io.PrintWriter("Previouspassword.txt")) {
+            out.println(newPass);
+            errormessage.setText("Password successfully changed and saved.");
+        } catch (Exception e) {
+            errormessage.setText("Password changed but could not save to file.");
         }
     }//GEN-LAST:event_confirmnewpasswordActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */
