@@ -439,11 +439,11 @@ public class CreateUser extends javax.swing.JFrame {
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void passwordInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputActionPerformed
-        String password = newpassword.getText() 
-        if (!password.checkPasswordStrength()) {
-            mandatoryError.setText("Password must include letters, numbers, and special characters (!@#$%) and be at least 6 characters.");
+        String newPass = newpassword.getText();
+        if (!checkPasswordStrength(newPass)) {
+            errormessage.setText("Password must include letters, numbers, and special characters (!@#$%) and be at least 6 characters.");
         } else {
-            mandatoryError.setText("New password format looks good.");
+            errormessage.setText("New password format looks good.");
         }
     }//GEN-LAST:event_passwordInputActionPerformed
 

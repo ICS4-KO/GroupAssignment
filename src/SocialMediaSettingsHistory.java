@@ -121,7 +121,17 @@ public class SocialMediaSettingsHistory extends javax.swing.JFrame {
 
     private void soicalMediaOutputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soicalMediaOutputActionPerformed
         // TODO add your handling code here:
-        
+        SocialMediaSettings SocialMediaSettings = (SocialMediaSettings) soicalMediaOutput.getSelectedItem();
+       
+        Notification.setText("Notifications: " + SocialMediaSettings.getAllowNotification());
+        location.setText("Location: " + SocialMediaSettings.getLocationSharing());
+        microphone.setText("Microphone: " + SocialMediaSettings.getMicrophoneAccess());
+        birthday.setText("Birthday: " + SocialMediaSettings.getBirthdayPrivacy());
+        email.setText("Birthday: " + SocialMediaSettings.getEmailPrivacy());
+        phoneNumber.setText("Phone Number: " + SocialMediaSettings.getPhoneNumberPrivacy());
+        mentions.setText("Mentions: " + SocialMediaSettings.getMentionsPrivacy());
+        messages.setText("Messages: " + SocialMediaSettings.getMessagesPrivacy());  
+        stories.setText("Stories: " + SocialMediaSettings.getStoriesPrivacy());
     }//GEN-LAST:event_soicalMediaOutputActionPerformed
 
     /**
