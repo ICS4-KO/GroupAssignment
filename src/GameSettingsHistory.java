@@ -154,7 +154,7 @@ public class GameSettingsHistory extends javax.swing.JFrame {
         //Retrieve the current selected item (GameSettings object) from the combo box when the user clicks on an item
         GameSettings selectedGameSettingsVersion = (GameSettings) gameHistoryComboBox.getSelectedItem();
         
-        //Display the selected GameSettings object's notfications attribute in the corresponding text field
+        //Display the selected GameSettings object's notifications attribute in the corresponding text field
         notificationsLabel.setText("Notifications: " + selectedGameSettingsVersion.getAllowNotifications());
         //Display the selected GameSettings object's location sharing attribute in the corresponding text field
         locationLabel.setText("Location: " + selectedGameSettingsVersion.getLocationSharing());
