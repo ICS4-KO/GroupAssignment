@@ -286,7 +286,7 @@ public class UserGameSettings extends javax.swing.JFrame {
         
         //Create new instance of GameSettings class based on settings selected by the user, upcast to BasicSettings
         BasicSettings gameSettings = new GameSettings(allowNotifications, locationSharing, microphoneAccess, difficultyLevel, subtitlesEnabled, screenResolution, controlScheme, graphicsQuality);
-        //Add new game settings to user object's array list of all previously set game settings
+        //Add new game settings to user object's array list of all previously set settings
         HomeScreen.currentUser.addNewSettings(gameSettings);
         
         //Set user's current game settings to the newly set game settings after downcasting
