@@ -17,8 +17,8 @@ public class SocialMediaSettings extends BasicSettings{
     private int socialMediaSettingsCounter;
     private static int counter=1;
     
-    public SocialMediaSettings(String theme, boolean allowNotification, boolean locationSharing, boolean microphoneAccess, boolean birthdayPrivacy, boolean emailPrivacy, boolean phoneNumberPrivacy, boolean mentionsPrivacy, boolean messagesPrivacy, boolean storiesPrivacy){
-        super(theme, allowNotification, locationSharing, microphoneAccess);
+    public SocialMediaSettings(boolean allowNotification, boolean locationSharing, boolean microphoneAccess, boolean birthdayPrivacy, boolean emailPrivacy, boolean phoneNumberPrivacy, boolean mentionsPrivacy, boolean messagesPrivacy, boolean storiesPrivacy){
+        super(allowNotification, locationSharing, microphoneAccess);
         this.mentionsPrivacy=mentionsPrivacy;
         this.messagesPrivacy=messagesPrivacy;
         this.storiesPrivacy=storiesPrivacy;
