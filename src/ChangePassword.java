@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import javax.swing.*;
+import java.util.ArrayList;
+
 /**
  *
  * @author jojox
@@ -151,8 +154,8 @@ public class ChangePassword extends javax.swing.JFrame {
     }//GEN-LAST:event_currentpasswordActionPerformed
 
     private void newpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newpasswordActionPerformed
-        String newPass = newpassword.getText() ;
-        if (!newPass.checkPasswordStrength()) {
+        String newPass = newpassword.getText();
+        if (!checkPasswordStrength(newPass)) {
             errormessage.setText("Password must include letters, numbers, and special characters (!@#$%) and be at least 6 characters.");
         } else {
             errormessage.setText("New password format looks good.");
@@ -169,49 +172,49 @@ public class ChangePassword extends javax.swing.JFrame {
             return;
         }
 
-        String newPass = newPassText;
         if (!newPassText.equals(confirmPassText)) {
             errormessage.setText("New passwords do not match.");
             return;
         }
 
-        if (!newPass.checkPasswordStrenght(newPass)) {
+        if (!checkPasswordStrength(newPassText)) {
             errormessage.setText("Password must include letters, numbers, and special characters (!@#$%) and be at least 6 characters.");
             return;
         }
 
-        HomeScreen.currentUser.addNewPassword(newPass);
-        
         ArrayList<String> previousPasswords = HomeScreen.currentUser.getPreviousPasswords();
-        
-        for (int i = 0; i < previousPasswords.length(), i++){
-            if (previousPasswords ==newPassText){
-        errormessage.setText("Password shoudl be different than before.");}
+        for (String oldPass : previousPasswords) {
+            if (oldPass.equals(newPassText)) {
+                errormessage.setText("Password should be different from previous passwords.");
+                return;
+            }
         }
+
+        HomeScreen.currentUser.addNewPassword(newPassText);
+        errormessage.setText("Password changed successfully!");
     }//GEN-LAST:event_confirmnewpasswordActionPerformed
 
     
-        public boolean checkPasswordStrength(String password){
-        if (password.length() < 6) return false;
+        public static boolean checkPasswordStrength(String password) {
+            if (password.length() < 6) return false;
 
-        boolean hasLetter = false;
-        boolean hasDigit = false;
-        boolean hasSpecial = false;
+            boolean hasLetter = false;
+            boolean hasDigit = false;
+            boolean hasSpecial = false;
 
-        for (char c : password.toCharArray()) {
-            if (Character.isLetter(c)){
-                hasLetter = true;
+            for (char c : password.toCharArray()) {
+                if (Character.isLetter(c)) {
+                    hasLetter = true;
+                } else if (Character.isDigit(c)) {
+                    hasDigit = true;
+                } else if ("!@#$%".indexOf(c) >= 0) {
+                    hasSpecial = true;
+                }
             }
-            else if (Character.isDigit(c)){
-                hasDigit = true;
-            }
-            else if ("!@#$%".indexOf(c) >= 0){
-                hasSpecial = true;
-            }
+
+            return hasLetter && hasDigit && hasSpecial;
         }
-
-        return hasLetter && hasDigit && hasSpecial;
-    }
+        
     
     /**
      * @param args the command line arguments
