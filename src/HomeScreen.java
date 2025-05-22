@@ -129,7 +129,7 @@ public class HomeScreen extends javax.swing.JFrame {
 
         emailLabel.setText("Email: ");
 
-        birthdayLabel.setText("Birthday; ");
+        birthdayLabel.setText("Birthday:");
 
         phoneNumberLabel.setText("Phone Number: ");
 

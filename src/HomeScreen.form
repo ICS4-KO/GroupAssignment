@@ -128,7 +128,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="birthdayLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Birthday; "/>
+        <Property name="text" type="java.lang.String" value="Birthday:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="phoneNumberLabel">

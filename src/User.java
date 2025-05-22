@@ -102,6 +102,15 @@ public class User {
         this.phoneNumber = DEFAULT_PHONE_NUMBER; //Set phone number to default value
         numUsers++; //Increase number of users that have been instantiated by one
     }
+        
+    /**
+     * This method adds a new password to the array list of the user's previous passwords
+     * 
+     * @param password   New password that will be added to the array list of passwords
+     */
+    public void addNewPassword (String password) {
+        previousPasswords.add(password);
+    }
     
     /**
      * This setter method sets the current password attribute of the User object
@@ -214,8 +223,13 @@ public class User {
         return friendsList;
     }
     
-    public void addNewPassword (String password) {
-        previousPasswords.add(password);
+    /**
+     * This getter method returns the array list of the user's previous passwords
+     * 
+     * @return   Returns array list of all previous passwords
+     */
+    public ArrayList<String> getPreviousPasswords() {
+        return previousPasswords;
     }
     
     /**

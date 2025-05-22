@@ -207,7 +207,7 @@ public class UserGameSettings extends javax.swing.JFrame {
         if (locationComboBox.getSelectedItem().equals("Share"))
             //If the selected option is "Share", set variable to true
             locationSharing = true;
-        //If selected theme is not "Share", only other option is "Hide"
+        //If selected option is not "Share", only other option is "Hide"
         else
             //If the selected option is "Hide", set variable to false
             locationSharing = false; 
@@ -216,7 +216,7 @@ public class UserGameSettings extends javax.swing.JFrame {
         if (microphoneComboBox.getSelectedItem().equals("Allow"))
             //If the selected option is "Allow", set variable to true
             microphoneAccess = true;
-        //If selected theme is not "Allow", only other option is "Block"
+        //If selected option is not "Allow", only other option is "Block"
         else
             //If the selected option is "Block", set variable to false
             microphoneAccess = false; 
@@ -226,7 +226,7 @@ public class UserGameSettings extends javax.swing.JFrame {
         if (difficultyComboBox.getSelectedItem().equals("Easy")) 
             //If the selected option is "Easy", store in variable
             difficultyLevel = "Light";
-        //If selected theme is "Normal", store in variable
+        //If selected option is "Normal", store in variable
         else if (difficultyComboBox.getSelectedItem().equals("Normal")) 
             //If the selected option is "Normal", store in variable
             difficultyLevel = "Normal"; 
@@ -239,7 +239,7 @@ public class UserGameSettings extends javax.swing.JFrame {
         if (subtitlesComboBox.getSelectedItem().equals("On"))
             //If the selected option is "On", set variable to true
             subtitlesEnabled = true;
-        //If selected theme is not "On", only other option is "Off"
+        //If selected option is not "On", only other option is "Off"
         else
             //If the selected option is "Off", set variable to false
             subtitlesEnabled = false; 
@@ -248,7 +248,7 @@ public class UserGameSettings extends javax.swing.JFrame {
         if (resolutionComboBox.getSelectedItem().equals("1920x1080")) 
             //If the selected option is "1920x1080", store in variable
             screenResolution = "1920x1080";
-        //If selected theme is "1280x720", store in variable
+        //If selected option is "1280x720", store in variable
         else if (resolutionComboBox.getSelectedItem().equals("1280x720")) 
             //If the selected option is "1280x720", store in variable
             screenResolution = "1280x720"; 
@@ -261,7 +261,7 @@ public class UserGameSettings extends javax.swing.JFrame {
         if (controlComboBox.getSelectedItem().equals("Gamepad")) 
             //If the selected option is "Gamepad", store in variable
             controlScheme = "Gamepad";
-        //If selected theme is "Keyboard", store in variable
+        //If selected option is "Keyboard", store in variable
         else if (controlComboBox.getSelectedItem().equals("Keyboard")) 
             //If the selected option is "Keyboard", store in variable
             controlScheme = "Keyboard"; 
@@ -274,7 +274,7 @@ public class UserGameSettings extends javax.swing.JFrame {
         if (graphicsComboBox.getSelectedItem().equals("Low")) 
             //If the selected option is "Low", store in variable
             graphicsQuality = "Low";
-        //If selected theme is "Medium", store in variable
+        //If selected option is "Medium", store in variable
         else if (graphicsComboBox.getSelectedItem().equals("Medium")) 
             //If the selected option is "Medium", store in variable
             graphicsQuality = "Medium"; 
