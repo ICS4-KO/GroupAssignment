@@ -255,7 +255,7 @@ public class User {
      * 
      * @return  Returns current search engine settings attribute of a User object 
      */
-    public SearchEngineSettings getSearchEngineSettings() {
+    public SearchEngineSettings getCurrentSearchEngineSettings() {
         return currentSearchEngineSettings;
     }
     
@@ -264,7 +264,7 @@ public class User {
      * 
      * @return  Returns current social media settings attribute of a User object 
      */
-    public SocialMediaSettings getSocialMediaSettings() {
+    public SocialMediaSettings getCurrentSocialMediaSettings() {
         return currentSocialMediaSettings;
     }
     

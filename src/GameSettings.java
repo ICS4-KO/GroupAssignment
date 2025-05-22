@@ -93,13 +93,13 @@ public class GameSettings extends BasicSettings {
     
 
     @Override
-    public String setExplanation() {
-        super.setExplanation
+    public String setExplanation(String difficultyLevel, String subtitlesEnabled, String screenResolution, String controlScheme, String graphicsQuality) {
+        super.setExplanation();
         String difficultyLevelExplanation; 
-        String subtitlesEnabled;
-        String screenResolution;
-        String controlScheme;
-        String graphicsQuality;
+        String subtitlesEnabledExplanation;
+        String screenResolutionExplanation;
+        String controlSchemeExplanation;
+        String graphicsQualityExplanation;
         
         if (difficulyLevel.equals("Easy"))
             difficultyLevelExplanation = "";
@@ -108,7 +108,7 @@ public class GameSettings extends BasicSettings {
         else
             difficultyLevelExplanation = "";
         
-        return super.displayExplanation() + " " + difficultyLevelExplanation + " " + subtitlesEnabled + " " + screenResolution + " " + controlScheme + " " + graphicsQuality;
+        return super.displayExplanation() + " " + difficultyLevelExplanation + " " + subtitlesEnabledExplanation + " " + screenResolutionExplanation + " " + controlSchemeExplanation + " " + graphicsQualityExplanation;
     }
     
     @Override
