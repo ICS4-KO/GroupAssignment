@@ -10,6 +10,7 @@
  */
 public class ChangePassword extends javax.swing.JFrame {
     
+        private static String password = HomeScreen.currentUser.getPassword();
     /**
      * Creates new form Password
      */
@@ -149,7 +150,7 @@ public class ChangePassword extends javax.swing.JFrame {
     }//GEN-LAST:event_currentpasswordActionPerformed
 
     private void newpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newpasswordActionPerformed
-        Password newPass = new Password(newpassword.getText());
+        String newPass = newpassword.getText() 
         if (!newPass.checkPasswordStrength()) {
             errormessage.setText("Password must include letters, numbers, and special characters (!@#$%) and be at least 6 characters.");
         } else {
@@ -167,18 +168,18 @@ public class ChangePassword extends javax.swing.JFrame {
             return;
         }
 
-        Password newPass = new Password(newPassText);
+        String newPass = newPassText
         if (!newPassText.equals(confirmPassText)) {
             errormessage.setText("New passwords do not match.");
             return;
         }
 
-        if (!newPass.checkPasswordStrength()) {
+        if (!newPass.checkPasswordStrenght(newPass)) {
             errormessage.setText("Password must include letters, numbers, and special characters (!@#$%) and be at least 6 characters.");
             return;
         }
 
-        password = newPass.getPassword(); // update password
+        password = HomeScreen.currentUser.setPassword(newPass)); // update password
 
         try (java.io.PrintWriter out = new java.io.PrintWriter("Previouspassword.txt")) {
             out.println(newPass);
@@ -188,6 +189,28 @@ public class ChangePassword extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_confirmnewpasswordActionPerformed
 
+    
+        public boolean checkPasswordStrength(){
+        if (password.length() < 6) return false;
+
+        boolean hasLetter = false;
+        boolean hasDigit = false;
+        boolean hasSpecial = false;
+
+        for (char c : password.toCharArray()) {
+            if (Character.isLetter(c)){
+                hasLetter = true;
+            }
+            else if (Character.isDigit(c)){
+                hasDigit = true;
+            }
+            else if ("!@#$%".indexOf(c) >= 0){
+                hasSpecial = true;
+            }
+        }
+
+        return hasLetter && hasDigit && hasSpecial;
+    }
     
     /**
      * @param args the command line arguments
