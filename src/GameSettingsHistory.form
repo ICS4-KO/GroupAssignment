@@ -35,7 +35,6 @@
                           <Component id="microphoneLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="locationLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="notificationsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="themeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="difficultyLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="subtitlesLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="resolutionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -65,9 +64,7 @@
               <Component id="usernameLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="36" max="32767" attributes="0"/>
               <Component id="gameHistoryComboBox" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="themeLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Component id="notificationsLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="locationLabel" min="-2" max="-2" attributes="0"/>
@@ -99,11 +96,6 @@
     <Component class="javax.swing.JLabel" name="subtitlesLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Subtitles:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="themeLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Theme:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="resolutionLabel">

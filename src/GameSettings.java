@@ -22,19 +22,18 @@ public class GameSettings extends BasicSettings {
     /**
      * This constructor creates an instance of the GameSettings class that has all attributes (different settings) set by the user
      * 
-     * @param theme              //This is the value the theme attribute will be assigned (parent attribute)
      * @param allowNotifications //This is the value the allow notifications attribute will be assigned (parent attribute)
      * @param locationSharing    //This is the value the location sharing attribute will be assigned (parent attribute)
      * @param microphoneAccess   //This is the value the microphone access attribute will be assigned (parent attribute)
      * @param difficultyLevel    //This is the value the difficult level attribute will be assigned
-     * @param subtitledEnabled   //This is the value the subtitles enabled attribute will be assigned
+     * @param subtitlesEnabled   //This is the value the subtitles enabled attribute will be assigned
      * @param screenResolution   //This is the value the screen resolution attribute will be assigned
      * @param controlSceheme     //This is the value the control scheme attribute will be assigned
      * @param graphicsQuality    //This is the value the graphics quality attribute will be assigned
      */
-    public GameSettings(String theme, boolean allowNotifications, boolean locationSharing, boolean microphoneAccess, String difficultyLevel, boolean subtitlesEnabled, String screenResolution, String controlSceheme, String graphicsQuality) {
-        //Call parent constructor to set theme, notifications, location sharing, and microphone access to values chosen by the user
-        super(theme, allowNotifications, locationSharing, microphoneAccess);
+    public GameSettings(boolean allowNotifications, boolean locationSharing, boolean microphoneAccess, String difficultyLevel, boolean subtitlesEnabled, String screenResolution, String controlSceheme, String graphicsQuality) {
+        //Call parent constructor to set notifications, location sharing, and microphone access to values chosen by the user
+        super(allowNotifications, locationSharing, microphoneAccess);
         
         this.difficultyLevel = difficultyLevel; //Set difficulty level to value chosen by the user
         this.subtitlesEnabled = subtitlesEnabled; //Set subtitles enabled to value chosen by the user
@@ -42,7 +41,6 @@ public class GameSettings extends BasicSettings {
         this.controlScheme = controlScheme; //Set control scheme to value chosen by the user
         this.graphicsQuality = graphicsQuality; //Set graphics quality to value chosen by the user
         
-        this.explanation = setExplanation(); //Create explanation of all settings by calling the explanations setter method
         this.gameSettingsCounter = counter; //Set game settings counter to static counter variable
         counter++; //Increment static counter variable for next time the game setttings are set and an object is created
     }
@@ -96,6 +94,7 @@ public class GameSettings extends BasicSettings {
 
     @Override
     public String setExplanation() {
+        super.setExplanation
         String difficultyLevelExplanation; 
         String subtitlesEnabled;
         String screenResolution;

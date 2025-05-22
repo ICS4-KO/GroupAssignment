@@ -9,7 +9,6 @@
  */
 public class UserGameSettings extends javax.swing.JFrame {
     //Declare Variables
-    private static String theme; //Light or dark theme
     private static boolean allowNotifications; //Allow notifications from application
     private static boolean locationSharing; //Allow access to user's location
     private static boolean microphoneAccess; //Allow access to microphone
@@ -40,11 +39,9 @@ public class UserGameSettings extends javax.swing.JFrame {
 
         usernameLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        themeComboBox = new javax.swing.JComboBox<>();
         notificationsComboBox = new javax.swing.JComboBox<>();
         locationComboBox = new javax.swing.JComboBox<>();
         microphoneComboBox = new javax.swing.JComboBox<>();
@@ -65,15 +62,11 @@ public class UserGameSettings extends javax.swing.JFrame {
 
         jLabel1.setText("Difficulty Level:");
 
-        jLabel2.setText("Theme:");
-
         jLabel3.setText("Notifications:");
 
         jLabel4.setText("Location:");
 
         jLabel5.setText("Microphone:");
-
-        themeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Light", "Dark" }));
 
         notificationsComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Allow", "Block" }));
 
@@ -128,12 +121,8 @@ public class UserGameSettings extends javax.swing.JFrame {
                                 .addComponent(locationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(notificationsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(77, 77, 77)
-                                .addComponent(themeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                                .addComponent(notificationsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(74, 74, 74)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,11 +153,7 @@ public class UserGameSettings extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(usernameLabel)
-                .addGap(7, 7, 7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(themeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(notificationsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -209,20 +194,11 @@ public class UserGameSettings extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        //Check the current selected item (String) in the theme combo box when the user submits the settings
-        if (themeComboBox.getSelectedItem().equals("Light")) 
-            //If the selected option is "Light", store in variable
-            theme = "Light";
-        //If selected theme is not "Light", only other option is "Dark"
-        else 
-            //If the selected option is "Dark", store in variable
-            theme = "Dark"; 
-        
         //Check the current selected item (String) in the notifications combo box when the user submits the settings
         if (notificationsComboBox.getSelectedItem().equals("Allow"))
             //If the selected option is "Allow", set variable to true
             allowNotifications = true;
-        //If selected theme is not "Allow", only other option is "Block"
+        //If selected option is not "Allow", only other option is "Block"
         else
             //If the selected option is "Block", set variable to false
             allowNotifications = false; 
@@ -309,7 +285,7 @@ public class UserGameSettings extends javax.swing.JFrame {
         
         
         //Create new instance of GameSettings class based on settings selected by the user, upcast to BasicSettings
-        BasicSettings gameSettings = new GameSettings(theme, allowNotifications, locationSharing, microphoneAccess, difficultyLevel, subtitlesEnabled, screenResolution, controlScheme, graphicsQuality);
+        BasicSettings gameSettings = new GameSettings(allowNotifications, locationSharing, microphoneAccess, difficultyLevel, subtitlesEnabled, screenResolution, controlScheme, graphicsQuality);
         //Add new game settings to user object's array list of all previously set game settings
         HomeScreen.currentUser.addNewSettings(gameSettings);
         
@@ -362,7 +338,6 @@ public class UserGameSettings extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> difficultyComboBox;
     private javax.swing.JComboBox<String> graphicsComboBox;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -376,7 +351,6 @@ public class UserGameSettings extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> resolutionComboBox;
     private javax.swing.JButton submitButton;
     private javax.swing.JComboBox<String> subtitlesComboBox;
-    private javax.swing.JComboBox<String> themeComboBox;
     private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
 }

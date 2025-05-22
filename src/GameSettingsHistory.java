@@ -46,7 +46,6 @@ public class GameSettingsHistory extends javax.swing.JFrame {
 
         difficultyLabel = new javax.swing.JLabel();
         subtitlesLabel = new javax.swing.JLabel();
-        themeLabel = new javax.swing.JLabel();
         resolutionLabel = new javax.swing.JLabel();
         notificationsLabel = new javax.swing.JLabel();
         controlLabel = new javax.swing.JLabel();
@@ -62,8 +61,6 @@ public class GameSettingsHistory extends javax.swing.JFrame {
         difficultyLabel.setText("Difficulty Level:");
 
         subtitlesLabel.setText("Subtitles:");
-
-        themeLabel.setText("Theme:");
 
         resolutionLabel.setText("Screen Resolution:");
 
@@ -107,7 +104,6 @@ public class GameSettingsHistory extends javax.swing.JFrame {
                             .addComponent(microphoneLabel)
                             .addComponent(locationLabel)
                             .addComponent(notificationsLabel)
-                            .addComponent(themeLabel)
                             .addComponent(difficultyLabel)
                             .addComponent(subtitlesLabel)
                             .addComponent(resolutionLabel)
@@ -130,9 +126,7 @@ public class GameSettingsHistory extends javax.swing.JFrame {
                 .addComponent(usernameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(gameHistoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(themeLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(41, 41, 41)
                 .addComponent(notificationsLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(locationLabel)
@@ -160,8 +154,6 @@ public class GameSettingsHistory extends javax.swing.JFrame {
         //Retrieve the current selected item (GameSettings object) from the combo box when the user clicks on an item
         GameSettings selectedGameSettingsVersion = (GameSettings) gameHistoryComboBox.getSelectedItem();
         
-        //Display the selected GameSettings object's theme attribute in the corresponding text field
-        themeLabel.setText("Theme: " + selectedGameSettingsVersion.getTheme());
         //Display the selected GameSettings object's notfications attribute in the corresponding text field
         notificationsLabel.setText("Notifications: " + selectedGameSettingsVersion.getAllowNotifications());
         //Display the selected GameSettings object's location sharing attribute in the corresponding text field
@@ -169,15 +161,15 @@ public class GameSettingsHistory extends javax.swing.JFrame {
         //Display the selected GameSettings object's microphone access attribute in the corresponding text field
         microphoneLabel.setText("Microphone: " + selectedGameSettingsVersion.getMicrophoneAccess());
         
-        //Display the selected GameSettings object's difficulty attribute in the corresponding text field
+        //Display the selected GameSettings object's difficulty level attribute in the corresponding text field
         difficultyLabel.setText("Difficulty Level: " + selectedGameSettingsVersion.getDifficultyLevel());
-        //Display the selected GameSettings object's theme attribute in the corresponding text field
+        //Display the selected GameSettings object's subtitles enabled attribute in the corresponding text field
         subtitlesLabel.setText("Subtitles: " + selectedGameSettingsVersion.getSubtitlesEnabled());
-        //Display the selected GameSettings object's theme attribute in the corresponding text field
+        //Display the selected GameSettings object's screen resolution attribute in the corresponding text field
         resolutionLabel.setText("Screen Resolution: " + selectedGameSettingsVersion.getScreenResolution());
-        //Display the selected GameSettings object's theme attribute in the corresponding text field
+        //Display the selected GameSettings object's control scheme attribute in the corresponding text field
         controlLabel.setText("Control Scheme: " + selectedGameSettingsVersion.getControlScheme());
-        //Display the selected GameSettings object's theme attribute in the corresponding text field
+        //Display the selected GameSettings object's graphics quality attribute in the corresponding text field
         graphicsLabel.setText("Graphics Quality: " + selectedGameSettingsVersion.getGraphicsQuality());
     }//GEN-LAST:event_gameHistoryComboBoxActionPerformed
 
@@ -233,7 +225,6 @@ public class GameSettingsHistory extends javax.swing.JFrame {
     private javax.swing.JLabel resolutionLabel;
     private javax.swing.JButton returnButton;
     private javax.swing.JLabel subtitlesLabel;
-    private javax.swing.JLabel themeLabel;
     private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -11,12 +11,12 @@ import java.util.ArrayList;
 public class User {
     //Instance Variables
     private String username; //Username
-    private Password password; //Password
+    private String password; //Password
     private String email; //User's email
     private Date birthday; //User's birthday
     private String phoneNumber; //User's phone number
     private ArrayList<String> friendsList; //User's list of friends
-    private ArrayList<Password> previousPasswords; //User's list of previous passwords
+    private ArrayList<String> previousPasswords; //User's list of previous passwords
     private ArrayList<BasicSettings> settings; //Arraylist of all the user's previous/current privacy settings
     private GameSettings currentGameSettings; //User's current game settings
     private SearchEngineSettings currentSearchEngineSettings; //User's current search engine settings
@@ -41,7 +41,7 @@ public class User {
      * @param email        //This is the value the email attribute is assigned 
      * @param phoneNumber  //This is the value the phone number attribute is assigned
      */
-    User (String username, Password password, String email, Date birthday, String phoneNumber) {
+    User (String username, String password, String email, Date birthday, String phoneNumber) {
         this.username = username; //Set username to value entered by the user
         this.password = password; //Set password to value entered by the user
         this.birthday = birthday; //Set birthday to value entered by the user
@@ -59,7 +59,7 @@ public class User {
      * @param email        //This is the value the email attribute is assigned
      * @param phoneNumber  //This is the value the phone number attribute is assigned
      */
-    User (String username, Password password, String email, String phoneNumber) {
+    User (String username, String password, String email, String phoneNumber) {
         this.username = username; //Set username to value entered by the user
         this.password = password; //Set password to value entered by the user
         this.email = email; //Set email to value entered by the user
@@ -77,7 +77,7 @@ public class User {
      * @param birthday     //This is the value the birthday attribute is assigned
      * @param phoneNumber  //This is the value the phone number attribute is assigned
      */
-    User (String username, Password password, String email, Date birthday) {
+    User (String username, String password, String email, Date birthday) {
         this.username = username; //Set username to value entered by the user
         this.password = password; //Set password to value entered by the user
         this.email = email; //Set email to value entered by the user
@@ -94,13 +94,22 @@ public class User {
      * @param password     //This is the value the password attribute is assigned
      * @param email        //This is the value the email attribute is assigned
      */
-    User (String username, Password password, String email) {
+    User (String username, String password, String email) {
         this.username = username; //Set username to value entered by the user
         this.password = password; //Set password to value entered by the user
         this.email = email; //Set email to value entered by the user
         this.birthday = new Date(DEFAULT_MONTH, DEFAUlT_DAY, DEFAULT_YEAR); //Set birthday to default value
         this.phoneNumber = DEFAULT_PHONE_NUMBER; //Set phone number to default value
         numUsers++; //Increase number of users that have been instantiated by one
+    }
+    
+    /**
+     * This setter method sets the current password attribute of the User object
+     * 
+     * @param password  New password that will be assigned as the user's current password
+     */
+    public void setPassword (String password) {
+        this.password = password;
     }
     
     /**
@@ -164,7 +173,7 @@ public class User {
      * 
      * @return  Returns password attribute of a User object 
      */
-    public Password getPassword() {
+    public String getPassword() {
         return password;
     }
     
@@ -203,6 +212,10 @@ public class User {
      */
     public ArrayList<String> getFriendsList() {
         return friendsList;
+    }
+    
+    public void addNewPassword (String password) {
+        previousPasswords.add(password);
     }
     
     /**
