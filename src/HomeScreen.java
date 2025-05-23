@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -12,35 +10,6 @@ import java.util.ArrayList;
 public class HomeScreen extends javax.swing.JFrame {
     //Global variables
     public static User currentUser; //Current user account that is being displayed and interacted with
-    
-    
-    
-    //Define methods
-    
-    /**
-     * This method iterates through all of the previously set setting objects (game/search engine/social media) of the currently 
-     * logged in user account and adds each settings object to each of the three corresponding history combo boxes in their 
-     * respective frames
-     * 
-     * @param settingsArray  Instance variable of the current User object storing all of their previous setting configurations
-     */
-    public static void setHistoryComboBoxes(ArrayList<BasicSettings> settingsArray) {
-        //Iterate through each BasicSettings object in the array list of BasicSettings
-        for (BasicSettings settings : settingsArray) {
-            //Check if the BasicSettings object's instance type is GameSettings so that it can downcast
-            if (settings instanceof GameSettings)
-                //Downcast BasicSettings object to GameSettings object, add to game settings history combo box in game settings history frame
-                new GameSettingsHistory().getGameHistoryComboBox().addItem((GameSettings) settings);
-            //Check if the BasicSettings object's instance type is SearchEngineSettings so that it can downcast
-            if (settings instanceof SearchEngineSettings)
-                //Downcast BasicSettings object to SearchEngineSettings object, add to search engine settings history combo box in search engine settings history frame
-                new SearchEngineSettingsHistory().getSearchEngineHistoryComboBox().addItem((SearchEngineSettings) settings);
-            //Check if the BasicSettings object's instance type is SocalMediaSettings so that it can downcast
-            if (settings instanceof SocialMediaSettings)
-                //Downcast BasicSettings object to SocialMediaSettings object, add to social media settings history combo box in social media settings history frame
-                new SocialMediaSettingsHistory().getSocialMediaHistoryComboBox().addItem((SocialMediaSettings) settings);
-        } //End for loop iterating through array list of settings objects
-    }
     
     
     /**
@@ -69,13 +38,6 @@ public class HomeScreen extends javax.swing.JFrame {
         else
             //Set phone number label to tell user they did not provide a phone number
             phoneNumberLabel.setText("Phone Number: Not provided");
-        
-        //Clear all items in settings history combo boxes before adding updated set of settings objects as items
-        new GameSettingsHistory().getGameHistoryComboBox().removeAllItems(); //Clear game settings history
-        new SearchEngineSettingsHistory().getSearchEngineHistoryComboBox(); //Clear search engine settings history
-        new SocialMediaSettingsHistory().getSocialMediaHistoryComboBox(); //Clear social media settings history
-        //Set items in combo boxes in the three settings history frames (game/search engine/social media)
-        setHistoryComboBoxes(currentUser.getSettings());
     }
 
     /**

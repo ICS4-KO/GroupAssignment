@@ -15,7 +15,7 @@ public class SocialMediaSettings extends BasicSettings{
     private boolean emailPrivacy;
     private boolean phoneNumberPrivacy;
     private int socialMediaSettingsCounter;
-    private static int counter=1;
+    private static int counter=0;
     
     public SocialMediaSettings(boolean allowNotification, boolean locationSharing, boolean microphoneAccess, boolean birthdayPrivacy, boolean emailPrivacy, boolean phoneNumberPrivacy, boolean mentionsPrivacy, boolean messagesPrivacy, boolean storiesPrivacy){
         super(allowNotification, locationSharing, microphoneAccess);
@@ -118,7 +118,7 @@ public class SocialMediaSettings extends BasicSettings{
         //Check if user's messages privacy setting is true
         if (messagesPrivacy == true)
             //Set appropriate explanation for mentions privacy setting (true)
-            messagesPrivacyExplanation = "Because messages public, anyone will be able to message you without restrictions.";
+            messagesPrivacyExplanation = "Because messages are public, anyone will be able to message you without restrictions.";
         //If user's mentions privacy setting is not true, it is false
         else
             //Set appropriate explanation for mentions privacy setting (false)

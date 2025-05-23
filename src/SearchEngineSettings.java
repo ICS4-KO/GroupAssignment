@@ -15,7 +15,7 @@ public class SearchEngineSettings extends BasicSettings {
     private boolean searchSuggestions;
     private int resultsPerPage;
     private int searchEngineSettingsCounter;
-    private static int counter = 1;
+    private static int counter = 0;
     private static final int DEFAULT_RESULTS_PER_PAGE = 10;
             
     public SearchEngineSettings(boolean allowNotifications, boolean locationSharing, boolean microphoneAccess,

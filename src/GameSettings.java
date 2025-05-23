@@ -17,13 +17,13 @@ public class GameSettings extends BasicSettings {
     private int gameSettingsCounter; //nth version of game settings the user has set for their account, displayed in history combo box
     
     //Static variables
-    private static int counter = 1; //Counter for the game settings number
+    private static int counter = 0; //Counter for the game settings number
     
     //Default constants
-    private static final String DEFAULT_DIFFICULTY_LEVEL = "Normal";
-    private static final String DEFAULT_SCREEN_RESOLUTION = "1280x720";
+    private static final String DEFAULT_DIFFICULTY_LEVEL = "Easy";
+    private static final String DEFAULT_SCREEN_RESOLUTION = "1920x1080";
     private static final String DEFAULT_CONTROL_SCHEME = "Keyboard";
-    private static final String DEFAULT_GRAPHICS_QUALITY = "Medium";
+    private static final String DEFAULT_GRAPHICS_QUALITY = "Low";
     
     /**
      * This constructor creates an instance of the GameSettings class that has all attributes (different settings) set by the user

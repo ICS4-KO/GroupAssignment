@@ -39,7 +39,7 @@
                           <Component id="socialMediaHistoryComboBox" min="-2" pref="268" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="storiesPrivacyLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="167" max="32767" attributes="0"/>
+                              <EmptySpace pref="127" max="32767" attributes="0"/>
                               <Component id="returnButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -100,7 +100,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="notificationsLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Notification:"/>
+        <Property name="text" type="java.lang.String" value="Notifications On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="socialMediaHistoryComboBox">
@@ -118,42 +118,42 @@
     </Component>
     <Component class="javax.swing.JLabel" name="locationLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Location:"/>
+        <Property name="text" type="java.lang.String" value="Location On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="microphoneLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Microphone:"/>
+        <Property name="text" type="java.lang.String" value="Microphone On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="birthdayPrivacyLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Birthday:"/>
+        <Property name="text" type="java.lang.String" value="Public Birthday:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="emailPrivacyLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Email:"/>
+        <Property name="text" type="java.lang.String" value="Public Email:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="phoneNumberPrivacyLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Phone Number:"/>
+        <Property name="text" type="java.lang.String" value="Public Phone Number:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="mentionsPrivacyLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mentions:"/>
+        <Property name="text" type="java.lang.String" value="Public Mentions:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="messagesPrivacyLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Messages:"/>
+        <Property name="text" type="java.lang.String" value="Public Messages:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="storiesPrivacyLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Stories:"/>
+        <Property name="text" type="java.lang.String" value="Public Stories:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="returnButton">

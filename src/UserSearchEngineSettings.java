@@ -332,8 +332,8 @@ public class UserSearchEngineSettings extends javax.swing.JFrame {
     HomeScreen.currentUser.setSearchEngineSettings((SearchEngineSettings) searchEngineSettings);
 
 
-    //Return to home screen after user finishes editing search engine settings
-    new HomeScreen().setVisible(true); //Show home screen frame
+    //Return to settings screen after user finishes editing search engine settings
+    new SettingsScreen().setVisible(true); //Show settings screen frame
     this.setVisible(false); //Hide current frame (edit search engine settings)
     }//GEN-LAST:event_submitButtonActionPerformed
 

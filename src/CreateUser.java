@@ -14,7 +14,8 @@ import java.util.regex.Pattern;
  */
 public class CreateUser extends javax.swing.JFrame {
     //Global variables
-    public static ArrayList<User> accounts = new ArrayList<User>(); //Array list for all the user accounts that are created
+    public static ArrayList<String> existingUsernames = new ArrayList<>();
+    public static ArrayList<User> accounts = new ArrayList<>(); //Array list for all the user accounts that are created
     public static boolean firstTime = true; //First time user creates account indicator
     
             
@@ -36,7 +37,46 @@ public class CreateUser extends javax.swing.JFrame {
         if(username.isEmpty() || password.isEmpty() || email.isEmpty())
             validInput = false; //Set variable indicating valid input to false
         
-        //Return variable indicating whether the entered date of birth is valid
+        
+        //Return variable indicating whether input is valid
+        return validInput;
+    }
+    
+    /**
+     * This method checks if the username entered by the user in the corresponding text field already exists
+     * 
+     * @param username  Username entered by the user in the username text field
+     * @return          This returns true if the entered username is unique
+     */
+    public boolean checkUsername(String username) {
+        //Set intial value variable indicating valid input to true before error checks are done
+        boolean validInput = true;
+        
+        //Check error: username already exists
+        for (String user : existingUsernames) //Iterate through each element in existing usernames array list
+            if (username.equals(user)) //Check if entered username is equal to username in array list
+                validInput = false; //Set variable indicating valid input to false
+        
+        //Return variable indicating whether input is valid
+        return validInput;
+    }
+    
+    /**
+     * This method checks if the password entered by the user in the corresponding text field meets the password
+     * requirements.
+     * 
+     * @param password  Password entered by the user in the password text field
+     * @return          This returns true if the entered password meets the requirements
+     */
+    public boolean checkPassword(String password) {
+        //Set intial value variable indicating valid input to true before error checks are done
+        boolean validInput = true;
+        
+        //Check error: password does not pass password strength test
+        if (!ChangePassword.checkPasswordStrength(password)) 
+            validInput = false; //Set variable indicating valid input to false
+        
+        //Return variable indicating whether input is valid
         return validInput;
     }
     
@@ -61,7 +101,7 @@ public class CreateUser extends javax.swing.JFrame {
         if(!matchFound) 
             validInput = false; //Set variable indicating valid input to false
         
-        //Return variable indicating whether the entered date of birth is valid
+        //Return variable indicating whether input is valid
         return validInput;    
     }
     
@@ -120,7 +160,7 @@ public class CreateUser extends javax.swing.JFrame {
             } //End try-catch statement
 
         } //End if-statement checking for either all fileld day, month, year filled by the user or all left empty
-        //Return variable indicating whether the entered date of birth is valid
+        //Return variable indicating whether input is valid
         return validInput;
     }
     
@@ -145,7 +185,7 @@ public class CreateUser extends javax.swing.JFrame {
         if(!matchFound) 
             validInput = false; //Set variable indicating valid input to false
         
-        //Return variable indicating whether the entered date of birth is valid
+        //Return variable indicating whether input is valid
         return validInput;
     }
         
@@ -213,41 +253,73 @@ public class CreateUser extends javax.swing.JFrame {
         birthdayError = new javax.swing.JLabel();
         phoneNumberError = new javax.swing.JLabel();
         passwordError = new javax.swing.JLabel();
+        passwordError2 = new javax.swing.JLabel();
+        usernameError = new javax.swing.JLabel();
 
         jLabel12.setText("jLabel12");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(2147483647, 600));
+        setPreferredSize(new java.awt.Dimension(525, 600));
 
+        createUserLabel.setFont(new java.awt.Font("Hiragino Sans", 1, 12)); // NOI18N
         createUserLabel.setText("Create User");
 
+        jLabel1.setFont(new java.awt.Font("Hiragino Sans", 0, 13)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 153));
         jLabel1.setText("Mandatory");
 
-        jLabel2.setText("Privacy Settings Simulator");
+        jLabel2.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
+        jLabel2.setText("Settings Simulator");
 
+        jLabel3.setFont(new java.awt.Font("Hiragino Sans", 0, 13)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 153));
         jLabel3.setText("Optional");
 
+        jLabel4.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         jLabel4.setText("Username:");
 
+        jLabel5.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         jLabel5.setText("Password:");
 
+        jLabel6.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         jLabel6.setText("Email (person@mail.com):");
 
+        jLabel7.setFont(new java.awt.Font("Hiragino Sans", 0, 13)); // NOI18N
         jLabel7.setText("Birthday -");
 
+        jLabel8.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         jLabel8.setText("Phone Number (xxx-xxx-xxxx):");
 
+        usernameInput.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+
+        passwordInput.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         passwordInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordInputActionPerformed(evt);
             }
         });
 
+        emailInput.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+
+        jLabel9.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         jLabel9.setText("Day:");
 
+        dayInput.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+
+        jLabel10.setFont(new java.awt.Font("Hiragino Sans", 0, 13)); // NOI18N
         jLabel10.setText("Month:");
 
+        monthInput.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+
+        jLabel11.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         jLabel11.setText("Year:");
 
+        yearInput.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+
+        phoneNumberInput.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+
+        submitButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         submitButton.setText("Submit");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,15 +327,19 @@ public class CreateUser extends javax.swing.JFrame {
             }
         });
 
-        mandatoryError.setText("mandatoryerror");
+        mandatoryError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
 
-        emailError.setText("emailError");
+        emailError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
 
-        birthdayError.setText("birthdayerror");
+        birthdayError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
 
-        phoneNumberError.setText("phonenumbererror");
+        phoneNumberError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
 
-        passwordError.setText("passwordEroror");
+        passwordError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+
+        passwordError2.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+
+        usernameError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -272,64 +348,81 @@ public class CreateUser extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
+                        .addGap(48, 48, 48)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(submitButton)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel7)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel10)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(monthInput, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                    .addComponent(jLabel8)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(phoneNumberInput))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGap(174, 174, 174)
+                                                    .addComponent(jLabel9)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(dayInput, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                    .addComponent(jLabel11)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(yearInput, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGap(8, 8, 8)))))
                             .addComponent(jLabel3)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(birthdayError)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel10)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(monthInput, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(phoneNumberError)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(phoneNumberInput))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel4)
-                            .addComponent(mandatoryError))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(passwordInput)
-                            .addComponent(usernameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                            .addComponent(emailInput))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(emailError, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(passwordError)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(40, 40, 40)
-                                .addComponent(createUserLabel))
-                            .addComponent(jLabel2))))
-                .addGap(44, 44, 44))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(emailError, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(40, 40, 40)
+                                        .addComponent(jLabel4)
+                                        .addGap(102, 102, 102)
+                                        .addComponent(usernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel1))
+                                .addGap(15, 15, 15)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(usernameError)
+                            .addComponent(passwordError2)
+                            .addComponent(passwordError)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(mandatoryError))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dayInput, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(yearInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(submitButton))
-                .addGap(79, 79, 79))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(236, 236, 236)
+                                .addComponent(createUserLabel))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(198, 198, 198)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(106, 106, 106)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(birthdayError)
+                                    .addComponent(phoneNumberError))))
+                        .addGap(0, 174, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -338,46 +431,56 @@ public class CreateUser extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(createUserLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(usernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passwordError))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emailError))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(mandatoryError)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel9)
-                    .addComponent(dayInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10)
-                    .addComponent(monthInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11)
-                    .addComponent(yearInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(usernameError)
+                        .addGap(18, 18, 18)
+                        .addComponent(passwordError)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(passwordError2)
+                        .addGap(74, 74, 74)
+                        .addComponent(mandatoryError)
+                        .addGap(205, 205, 205))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(usernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(emailError, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel9)
+                            .addComponent(dayInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10)
+                            .addComponent(monthInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11)
+                            .addComponent(yearInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(phoneNumberInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addComponent(submitButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(birthdayError)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(phoneNumberInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(285, 285, 285)
                 .addComponent(phoneNumberError)
-                .addGap(23, 23, 23)
-                .addComponent(submitButton)
-                .addGap(27, 27, 27))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -386,6 +489,8 @@ public class CreateUser extends javax.swing.JFrame {
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         //Clear all error labels in case the user has previously entered invalid information
         mandatoryError.setText(""); //Clear error for blank mandatory information
+        passwordError.setText(""); //Clear error for invalid password
+        passwordError2.setText(""); //Clear error for invalid password
         emailError.setText(""); //Clear error for invalid email format
         birthdayError.setText(""); //Clear error for invalid birthday
         phoneNumberError.setText(""); //Clear error for invalid phone number format
@@ -400,7 +505,7 @@ public class CreateUser extends javax.swing.JFrame {
         String phoneNumber = phoneNumberInput.getText().trim(); //Get phone number entered by user
         
         //Create new User object if all information entered by the user are valid inputs and will not cause any errors
-        if (checkMandatory(username, password, email) && checkEmail(email) && checkDOB(monthString, dayString, yearString) && checkPhoneNumber(phoneNumber)) {
+        if (checkMandatory(username, password, email) && checkUsername(username) && checkPassword(password) && checkEmail(email) && checkDOB(monthString, dayString, yearString) && checkPhoneNumber(phoneNumber)) {
             
             
             //Initialize new user object that will be instantiated
@@ -410,6 +515,7 @@ public class CreateUser extends javax.swing.JFrame {
             if (monthString.isEmpty() && dayString.isEmpty() && yearString.isEmpty() && phoneNumber.isEmpty()) {
                 user = new User(username, password, email); //Create new instance of User class without birthday or phone number
                 user.setInitialSettings(); //Set initial user settings with default values
+                existingUsernames.add(username); //Add new username to array list of existing usernames
             //If both birthday and phone number are filled in, call constructor with both birthday and phone number parameters
             } else if (!monthString.isEmpty() && !dayString.isEmpty() && !yearString.isEmpty() && !phoneNumber.isEmpty()) {
                 int month = Integer.parseInt(monthString); //Convert user's birth month into an integer for the Date constructor
@@ -417,11 +523,13 @@ public class CreateUser extends javax.swing.JFrame {
                 int year = Integer.parseInt(yearString); //Convert user's birth year into an integer for the Date constructor
                 Date birthday = new Date(month, day, year); //Create new instance of Date class for the user's birthday
                 user = new User(username, password, email, birthday, phoneNumber); //Create new instance of User class with birthday and phone number
+                existingUsernames.add(username); //Add new username to array list of existing usernames
                 user.setInitialSettings(); //Set initial user settings with default values
             //If a phone number has been entered but no birthday, call constructor without birthday parameter
             } else if (monthString.isEmpty() && dayString.isEmpty() && yearString.isEmpty()) {
                 user = new User(username, password, phoneNumber); //Create new instance of user class with phone number
                 user.setInitialSettings(); //Set initial user settings with default values
+                existingUsernames.add(username); //Add new username to array list of existing usernames
             //If a birthday has been entered but no phone number, call constructor without phone number parameter
             } else if (phoneNumber.isEmpty()) {
                 int month = Integer.parseInt(monthString); //Convert user's birth month into an integer for the Date constructor
@@ -430,6 +538,7 @@ public class CreateUser extends javax.swing.JFrame {
                 Date birthday = new Date(month, day, year); //Create new instance of Date class for the user's birthday
                 user = new User(username, password, email, birthday); //Create new instance of User class with birthday
                 user.setInitialSettings(); //Set initial user settings with default values
+                existingUsernames.add(username); //Add new username to array list of existing usernames
             } //End if statement checking which User constructor to call based on inputs
             
             //Add new user to array list of user accounts
@@ -458,6 +567,15 @@ public class CreateUser extends javax.swing.JFrame {
             //Check if not all of the mandatory information was entered
             if (!checkMandatory(username, password, email))
                 mandatoryError.setText("Not all mandatory fields have been filled."); //Display error message
+            //Check if the entered username already exists
+            if (!checkUsername(username))
+                usernameError.setText("Username already exists."); //Display error message
+            //Check if the entered password does not meet the password requirements
+            if (!checkPassword(password)) {
+                //Display error message for password requirements
+                passwordError.setText("Must include letters, numbers, and special characters");
+                passwordError2.setText("(!@#$%) and be at least 6 characters.");
+            }
             //Check if the entered email is not in the proper format
             if (!checkEmail(email))
                 emailError.setText("Invalid email format."); //Display error message
@@ -466,17 +584,12 @@ public class CreateUser extends javax.swing.JFrame {
                 birthdayError.setText("Invalid birthday. Note: Age limit is 13 - 100"); //Display error message
             //Check if the entered phone number is not in the proper format
             if(!checkPhoneNumber(phoneNumber))
-                phoneNumberError.setText("Invalid phone number."); //Display error message
+                phoneNumberError.setText("Invalid phone number format."); //Display error message
         } //End if statement checking if all information entered by the user is valid
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void passwordInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputActionPerformed
-        String newPass = passwordInput.getText();
-        if (!ChangePassword.checkPasswordStrength(newPass)) {
-            passwordError.setText("Password must include letters, numbers, and special characters (!@#$%) and be at least 6 characters.");
-        } else {
-            passwordError.setText("New password format looks good.");
-        }
+        
     }//GEN-LAST:event_passwordInputActionPerformed
 
     /**
@@ -535,10 +648,12 @@ public class CreateUser extends javax.swing.JFrame {
     private javax.swing.JLabel mandatoryError;
     private javax.swing.JTextField monthInput;
     private javax.swing.JLabel passwordError;
+    private javax.swing.JLabel passwordError2;
     private javax.swing.JTextField passwordInput;
     private javax.swing.JLabel phoneNumberError;
     private javax.swing.JTextField phoneNumberInput;
     private javax.swing.JButton submitButton;
+    private javax.swing.JLabel usernameError;
     private javax.swing.JTextField usernameInput;
     private javax.swing.JTextField yearInput;
     // End of variables declaration//GEN-END:variables

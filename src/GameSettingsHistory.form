@@ -95,7 +95,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="subtitlesLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Subtitles:"/>
+        <Property name="text" type="java.lang.String" value="Subtitles On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="resolutionLabel">
@@ -105,7 +105,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="notificationsLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Notifications:"/>
+        <Property name="text" type="java.lang.String" value="Notifications On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="controlLabel">
@@ -115,7 +115,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="locationLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Location:"/>
+        <Property name="text" type="java.lang.String" value="Location On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="graphicsLabel">
@@ -125,7 +125,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="microphoneLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Microphone:"/>
+        <Property name="text" type="java.lang.String" value="Microphone On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="usernameLabel">

@@ -103,32 +103,33 @@
     </Component>
     <Component class="javax.swing.JLabel" name="notificationsLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Notifications:"/>
+        <Property name="text" type="java.lang.String" value="Notifications On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="locationLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Location:"/>
+        <Property name="text" type="java.lang.String" value="Location On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="microphoneLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Microphone:"/>
+        <Property name="text" type="java.lang.String" value="Microphone On:"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="trackHistoryLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Track History:"/>
+        <Property name="text" type="java.lang.String" value="Track History On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="adPersonalizationLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ad Personalization:"/>
+        <Property name="text" type="java.lang.String" value="Ad Personalization On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="safeBrowsingLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Safe Browsing:"/>
+        <Property name="text" type="java.lang.String" value="Safe Browsing On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="resultsPerPageLabel">

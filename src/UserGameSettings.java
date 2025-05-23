@@ -293,8 +293,8 @@ public class UserGameSettings extends javax.swing.JFrame {
         HomeScreen.currentUser.setGameSettings((GameSettings) gameSettings);
         
         
-        //Return to home screen after user finishes editing game settings
-        new HomeScreen().setVisible(true); //Show home screen frame
+        //Return to settings screen after user finishes editing game settings
+        new SettingsScreen().setVisible(true); //Show settings screen frame
         this.setVisible(false); //Hide current frame (edit game settings)
     }//GEN-LAST:event_submitButtonActionPerformed
 

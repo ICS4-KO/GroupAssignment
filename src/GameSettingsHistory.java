@@ -1,5 +1,5 @@
 
-import javax.swing.JComboBox;
+import java.util.ArrayList;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,13 +14,23 @@ public class GameSettingsHistory extends javax.swing.JFrame {
     //Define methods
     
     /**
-     * This method returns the combo box of all previous game history settings set by the user so that items can be added to
-     * it in a different JFrame (UserGameSettings.java)
+     * This method iterates through all of the previously set settings objects (game/search engine/social media) of the currently 
+     * logged in user account and adds each game settings object to the game settings history combo box
      * 
-     * @return  Returns combo box of GameSettings objects storing history of user's game settings
+     * @param settingsArray  Instance variable of the current User object storing all of their previous setting configurations
      */
-    public JComboBox<GameSettings> getGameHistoryComboBox() {
-            return gameHistoryComboBox;
+    private void setGameHistoryComboBox(ArrayList<BasicSettings> settingsArray) {
+        //Clear all items in game settings history combo box before adding updated set of settings objects as items
+        gameHistoryComboBox.removeAllItems(); //Clear game settings history
+
+                
+        //Iterate through each BasicSettings object in the array list of BasicSettings
+        for (BasicSettings settings : settingsArray) {
+            //Check if the BasicSettings object's instance type is GameSettings so that it can downcast
+            if (settings instanceof GameSettings)
+                //Downcast BasicSettings object to GameSettings object, add to game settings history combo box
+                gameHistoryComboBox.addItem((GameSettings) settings);
+        } //End for loop iterating through array list of settings objects
     }
     
     
@@ -32,6 +42,9 @@ public class GameSettingsHistory extends javax.swing.JFrame {
 
         //Set top label to display logged-in account's username
         usernameLabel.setText(HomeScreen.currentUser.getUsername() + "'s Game Settings History");
+        
+        //Set items in game history settings combo box
+        setGameHistoryComboBox(HomeScreen.currentUser.getSettings());
         
     }
 
@@ -60,19 +73,19 @@ public class GameSettingsHistory extends javax.swing.JFrame {
 
         difficultyLabel.setText("Difficulty Level:");
 
-        subtitlesLabel.setText("Subtitles:");
+        subtitlesLabel.setText("Subtitles On:");
 
         resolutionLabel.setText("Screen Resolution:");
 
-        notificationsLabel.setText("Notifications:");
+        notificationsLabel.setText("Notifications On:");
 
         controlLabel.setText("Control Scheme:");
 
-        locationLabel.setText("Location:");
+        locationLabel.setText("Location On:");
 
         graphicsLabel.setText("Graphics Quality:");
 
-        microphoneLabel.setText("Microphone:");
+        microphoneLabel.setText("Microphone On:");
 
         usernameLabel.setText("User's Game Settings History");
 
@@ -154,28 +167,30 @@ public class GameSettingsHistory extends javax.swing.JFrame {
         //Retrieve the current selected item (GameSettings object) from the combo box when the user clicks on an item
         GameSettings selectedGameSettingsVersion = (GameSettings) gameHistoryComboBox.getSelectedItem();
         
-        //Display the selected GameSettings object's notifications attribute in the corresponding text field
-        notificationsLabel.setText("Notifications: " + selectedGameSettingsVersion.getAllowNotifications());
-        //Display the selected GameSettings object's location sharing attribute in the corresponding text field
-        locationLabel.setText("Location: " + selectedGameSettingsVersion.getLocationSharing());
-        //Display the selected GameSettings object's microphone access attribute in the corresponding text field
-        microphoneLabel.setText("Microphone: " + selectedGameSettingsVersion.getMicrophoneAccess());
-        
-        //Display the selected GameSettings object's difficulty level attribute in the corresponding text field
-        difficultyLabel.setText("Difficulty Level: " + selectedGameSettingsVersion.getDifficultyLevel());
-        //Display the selected GameSettings object's subtitles enabled attribute in the corresponding text field
-        subtitlesLabel.setText("Subtitles: " + selectedGameSettingsVersion.getSubtitlesEnabled());
-        //Display the selected GameSettings object's screen resolution attribute in the corresponding text field
-        resolutionLabel.setText("Screen Resolution: " + selectedGameSettingsVersion.getScreenResolution());
-        //Display the selected GameSettings object's control scheme attribute in the corresponding text field
-        controlLabel.setText("Control Scheme: " + selectedGameSettingsVersion.getControlScheme());
-        //Display the selected GameSettings object's graphics quality attribute in the corresponding text field
-        graphicsLabel.setText("Graphics Quality: " + selectedGameSettingsVersion.getGraphicsQuality());
+        if (selectedGameSettingsVersion != null) {
+            //Display the selected GameSettings object's notifications attribute in the corresponding text field
+            notificationsLabel.setText("Notifications: " + selectedGameSettingsVersion.getAllowNotifications());
+            //Display the selected GameSettings object's location sharing attribute in the corresponding text field
+            locationLabel.setText("Location: " + selectedGameSettingsVersion.getLocationSharing());
+            //Display the selected GameSettings object's microphone access attribute in the corresponding text field
+            microphoneLabel.setText("Microphone: " + selectedGameSettingsVersion.getMicrophoneAccess());
+
+            //Display the selected GameSettings object's difficulty level attribute in the corresponding text field
+            difficultyLabel.setText("Difficulty Level: " + selectedGameSettingsVersion.getDifficultyLevel());
+            //Display the selected GameSettings object's subtitles enabled attribute in the corresponding text field
+            subtitlesLabel.setText("Subtitles: " + selectedGameSettingsVersion.getSubtitlesEnabled());
+            //Display the selected GameSettings object's screen resolution attribute in the corresponding text field
+            resolutionLabel.setText("Screen Resolution: " + selectedGameSettingsVersion.getScreenResolution());
+            //Display the selected GameSettings object's control scheme attribute in the corresponding text field
+            controlLabel.setText("Control Scheme: " + selectedGameSettingsVersion.getControlScheme());
+            //Display the selected GameSettings object's graphics quality attribute in the corresponding text field
+            graphicsLabel.setText("Graphics Quality: " + selectedGameSettingsVersion.getGraphicsQuality());
+        }
     }//GEN-LAST:event_gameHistoryComboBoxActionPerformed
 
     private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
-        //Return to home screen after user finishes looking at previous game settings
-        new HomeScreen().setVisible(true); //Show home screen frame
+        //Return to settings screen after user finishes looking at previous game settings
+        new SettingsScreen().setVisible(true); //Show settings screen frame
         this.setVisible(false); //Hide current frame (game settings history)
     }//GEN-LAST:event_returnButtonActionPerformed
 

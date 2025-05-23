@@ -202,7 +202,7 @@ public class SettingsScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_searchEngineHistoryButtonActionPerformed
 
     private void socialMediaHistoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_socialMediaHistoryButtonActionPerformed
-        new UserSocialMediaSettings().setVisible(true); //Show social media settings frame
+        new SocialMediaSettingsHistory().setVisible(true); //Show social media settings history frame
         this.setVisible(false); //Hide current frame (settings screen)
     }//GEN-LAST:event_socialMediaHistoryButtonActionPerformed
 

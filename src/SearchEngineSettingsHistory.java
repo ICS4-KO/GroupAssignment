@@ -1,4 +1,4 @@
-import javax.swing.JComboBox;
+import java.util.ArrayList;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -13,14 +13,25 @@ public class SearchEngineSettingsHistory extends javax.swing.JFrame {
     //Define methods
     
     /**
-     * This method returns the combo box of all previous search engine history settings set by the user so that items can be added to
-     * it in a different JFrame (UserSearchEngineSettings.java)
+     * This method iterates through all of the previously set settings objects (game/search engine/social media) of the currently 
+     * logged in user account and adds each search engine settings object to the search engine settings history combo box
      * 
-     * @return  Returns combo box of SearchEngineSettings objects storing history of user's search engine settings
+     * @param settingsArray  Instance variable of the current User object storing all of their previous setting configurations
      */
-    public JComboBox<SearchEngineSettings> getSearchEngineHistoryComboBox() {
-            return searchEngineHistoryComboBox;
+    private void setSearchEngineHistoryComboBox(ArrayList<BasicSettings> settingsArray) {
+        //Clear all items in search engine settings history combo box before adding updated set of settings objects as items
+        searchEngineHistoryComboBox.removeAllItems(); //Clear game settings history
+
+                
+        //Iterate through each BasicSettings object in the array list of BasicSettings
+        for (BasicSettings settings : settingsArray) {
+            //Check if the BasicSettings object's instance type is SearchEngineSettings so that it can downcast
+            if (settings instanceof SearchEngineSettings)
+                //Downcast BasicSettings object to SearchEngineSettings object, add to search engine settings history combo box
+                searchEngineHistoryComboBox.addItem((SearchEngineSettings) settings);
+        } //End for loop iterating through array list of settings objects
     }
+    
 
     /**
      * Creates new form SearchEngineSettingsHistory
@@ -30,6 +41,9 @@ public class SearchEngineSettingsHistory extends javax.swing.JFrame {
         
         //Set top label to display logged-in account's username
         usernameLabel.setText(HomeScreen.currentUser.getUsername() + "'s Search Engine Settings History");
+        
+        //Set items in search engine history settings combo box
+        setSearchEngineHistoryComboBox(HomeScreen.currentUser.getSettings());
         
     }
 
@@ -63,17 +77,18 @@ public class SearchEngineSettingsHistory extends javax.swing.JFrame {
 
         usernameLabel.setText("User's Search Engine Settings History");
 
-        notificationsLabel.setText("Notifications:");
+        notificationsLabel.setText("Notifications On:");
 
-        locationLabel.setText("Location:");
+        locationLabel.setText("Location On:");
 
-        microphoneLabel.setText("Microphone:");
+        microphoneLabel.setText("Microphone On:");
+        microphoneLabel.setToolTipText("");
 
-        trackHistoryLabel.setText("Track History:");
+        trackHistoryLabel.setText("Track History On:");
 
-        adPersonalizationLabel.setText("Ad Personalization:");
+        adPersonalizationLabel.setText("Ad Personalization On:");
 
-        safeBrowsingLabel.setText("Safe Browsing:");
+        safeBrowsingLabel.setText("Safe Browsing On:");
 
         resultsPerPageLabel.setText("Results per Page:");
 
@@ -162,9 +177,9 @@ public class SearchEngineSettingsHistory extends javax.swing.JFrame {
     }//GEN-LAST:event_searchEngineHistoryComboBoxActionPerformed
 
     private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
-        //Return to home screen after user finishes looking at previous game settings
-        new HomeScreen().setVisible(true); //Show home screen frame
-        this.setVisible(false); //Hide current frame (game settings history)
+        //Return to settings screen after user finishes looking at previous search engine settings
+        new SettingsScreen().setVisible(true); //Show settings screen frame
+        this.setVisible(false); //Hide current frame (search engine settings history)
     }//GEN-LAST:event_returnButtonActionPerformed
 
     /**

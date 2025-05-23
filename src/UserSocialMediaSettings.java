@@ -291,8 +291,8 @@ public class UserSocialMediaSettings extends javax.swing.JFrame {
         HomeScreen.currentUser.setSocialMediaSettings((SocialMediaSettings) socialMediaSettings);
         
         
-        //Return to home screen after user finishes editing social media settings
-        new HomeScreen().setVisible(true); //Show home screen frame
+        //Return to settings screen after user finishes editing social media settings
+        new SettingsScreen().setVisible(true); //Show settings screen frame
         this.setVisible(false); //Hide current frame (edit social media settings)
     }//GEN-LAST:event_submitButtonActionPerformed
 

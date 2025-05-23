@@ -1,5 +1,4 @@
-
-import javax.swing.JComboBox;
+import java.util.ArrayList;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,15 +13,25 @@ public class SocialMediaSettingsHistory extends javax.swing.JFrame {
     //Define methods
     
     /**
-     * This method returns the combo box of all previous social media history settings set by the user so that items can be added to
-     * it in a different JFrame (UserSocialMediaSettings.java)
+     * This method iterates through all of the previously set settings objects (game/search engine/social media) of the currently 
+     * logged in user account and adds each social media settings object to the social media settings history combo box
      * 
-     * @return  Returns combo box of SocialMediaSettings objects storing history of user's social media settings
+     * @param settingsArray  Instance variable of the current User object storing all of their previous setting configurations
      */
-    public JComboBox<SocialMediaSettings> getSocialMediaHistoryComboBox() {
-            return socialMediaHistoryComboBox;
-    }
+    private void setSocialMediaHistoryComboBox(ArrayList<BasicSettings> settingsArray) {
+        //Clear all items in social media settings history combo box before adding updated set of settings objects as items
+        socialMediaHistoryComboBox.removeAllItems(); //Clear social media settings history
 
+                
+        //Iterate through each BasicSettings object in the array list of BasicSettings
+        for (BasicSettings settings : settingsArray) {
+            //Check if the BasicSettings object's instance type is SocialMediaSettings so that it can downcast
+            if (settings instanceof SocialMediaSettings)
+                //Downcast BasicSettings object to SocialMediaSettings object, add to social media settings history combo box
+                socialMediaHistoryComboBox.addItem((SocialMediaSettings) settings);
+        } //End for loop iterating through array list of settings objects
+    }
+    
     
     /**
      * Creates new form SocialMediaSettingsHistory
@@ -32,6 +41,9 @@ public class SocialMediaSettingsHistory extends javax.swing.JFrame {
         
         //Set top label to display logged-in account's username
         usernameLabel.setText(HomeScreen.currentUser.getUsername() + "'s Social Media Settings History");
+        
+        //Set items in social media history settings combo box
+        setSocialMediaHistoryComboBox(HomeScreen.currentUser.getSettings());
     }
 
     /**
@@ -60,7 +72,7 @@ public class SocialMediaSettingsHistory extends javax.swing.JFrame {
 
         usernameLabel.setText("User's Social Media Settings History");
 
-        notificationsLabel.setText("Notification:");
+        notificationsLabel.setText("Notifications On:");
 
         socialMediaHistoryComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,21 +80,21 @@ public class SocialMediaSettingsHistory extends javax.swing.JFrame {
             }
         });
 
-        locationLabel.setText("Location:");
+        locationLabel.setText("Location On:");
 
-        microphoneLabel.setText("Microphone:");
+        microphoneLabel.setText("Microphone On:");
 
-        birthdayPrivacyLabel.setText("Birthday:");
+        birthdayPrivacyLabel.setText("Public Birthday:");
 
-        emailPrivacyLabel.setText("Email:");
+        emailPrivacyLabel.setText("Public Email:");
 
-        phoneNumberPrivacyLabel.setText("Phone Number:");
+        phoneNumberPrivacyLabel.setText("Public Phone Number:");
 
-        mentionsPrivacyLabel.setText("Mentions:");
+        mentionsPrivacyLabel.setText("Public Mentions:");
 
-        messagesPrivacyLabel.setText("Messages:");
+        messagesPrivacyLabel.setText("Public Messages:");
 
-        storiesPrivacyLabel.setText("Stories:");
+        storiesPrivacyLabel.setText("Public Stories:");
 
         returnButton.setText("Return");
         returnButton.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +123,7 @@ public class SocialMediaSettingsHistory extends javax.swing.JFrame {
                             .addComponent(socialMediaHistoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(storiesPrivacyLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
                                 .addComponent(returnButton))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(87, 87, 87)
@@ -181,9 +193,9 @@ public class SocialMediaSettingsHistory extends javax.swing.JFrame {
     }//GEN-LAST:event_socialMediaHistoryComboBoxActionPerformed
 
     private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
-        //Return to home screen after user finishes looking at previous game settings
-        new HomeScreen().setVisible(true); //Show home screen frame
-        this.setVisible(false); //Hide current frame (game settings history)
+        //Return to settings screen after user finishes looking at previous social media settings
+        new SettingsScreen().setVisible(true); //Show settings screen frame
+        this.setVisible(false); //Hide current frame (social media settings history)
     }//GEN-LAST:event_returnButtonActionPerformed
 
     /**
