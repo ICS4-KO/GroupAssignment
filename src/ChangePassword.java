@@ -10,13 +10,18 @@ import java.util.List;
 
 
 /**
- *
- * @author jojox
+ *This class checks the strength of the password entered by the user and updates it when all requirements are met
+ * @author jojo
  * @version 1.0
+ * @since 2025-05-23
  */
 public class ChangePassword extends javax.swing.JFrame {
     
-    
+    /**
+     * This is a method that checks the strength of the password by checking if it had met requirements
+     * @param password This parameter is the password entered by the user
+     * @return It returns a Boolean after it has checked for requirements
+     */
     public static boolean checkPasswordStrength(String password) {
         if (password.length() < 6) return false;
 
@@ -189,6 +194,7 @@ public class ChangePassword extends javax.swing.JFrame {
     }//GEN-LAST:event_confirmnewpasswordActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+        
         String password = HomeScreen.currentUser.getPassword();
         String current = currentpassword.getText();
         String newPassText = newpassword.getText();
