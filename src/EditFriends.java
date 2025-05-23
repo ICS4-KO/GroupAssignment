@@ -7,8 +7,11 @@ import javax.swing.DefaultListModel;
  */
 
 /**
- *
- * @author 343330528
+ * Edit Friends screen in Settings Simulator app that allows users to add friends to and remove friends from their friends list
+ * 
+ * @author   Kimi Ong
+ * @version  1.0
+ * @since    2025-04-29
  */
 public class EditFriends extends javax.swing.JFrame {
     //Declare variables
@@ -54,12 +57,21 @@ public class EditFriends extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        friendsLabel.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         friendsLabel.setText("Friends");
 
+        addFriendPrompt.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        addFriendPrompt.setForeground(new java.awt.Color(0, 0, 153));
         addFriendPrompt.setText("Type in a name and click the button to add them as a friend.");
 
+        removeFriendPrompt.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        removeFriendPrompt.setForeground(new java.awt.Color(0, 0, 153));
         removeFriendPrompt.setText("Select a friend in the list and click the button to remove them.");
 
+        editFriendInput.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+
+        friendsDisplay.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        friendsDisplay.setForeground(new java.awt.Color(0, 0, 153));
         friendsDisplay.setToolTipText("");
         friendsDisplay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -68,6 +80,7 @@ public class EditFriends extends javax.swing.JFrame {
         });
         friendsScroll.setViewportView(friendsDisplay);
 
+        addFriendButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         addFriendButton.setText("Add");
         addFriendButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +88,7 @@ public class EditFriends extends javax.swing.JFrame {
             }
         });
 
+        removeFriendButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         removeFriendButton.setText("Remove");
         removeFriendButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +96,7 @@ public class EditFriends extends javax.swing.JFrame {
             }
         });
 
+        returnButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         returnButton.setText("Return to Main Screen");
         returnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,6 +104,7 @@ public class EditFriends extends javax.swing.JFrame {
             }
         });
 
+        friendName.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         friendName.setText("Name:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -99,15 +115,12 @@ public class EditFriends extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(addFriendPrompt)
                             .addComponent(removeFriendPrompt)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(friendsScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(100, 100, 100)
-                                        .addComponent(returnButton))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -118,11 +131,14 @@ public class EditFriends extends javax.swing.JFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(addFriendButton)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(removeFriendButton))))))))
+                                                .addComponent(removeFriendButton))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(returnButton))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(198, 198, 198)
                         .addComponent(friendsLabel)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,7 +162,7 @@ public class EditFriends extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(returnButton))
                     .addComponent(friendsScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         pack();

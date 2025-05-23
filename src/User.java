@@ -5,8 +5,12 @@ import java.util.ArrayList;
  */
 
 /**
- *
- * @author 343330528
+ * Defines the variables and methods of a User object in Settings Simulator app, where each User object is an account created by
+ * the user and has its own account information and settings
+ * 
+ * @author   Kimi Ong
+ * @version  1.0
+ * @since    2025-04-29
  */
 public class User {
     //Instance Variables

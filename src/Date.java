@@ -4,8 +4,11 @@
  */
 
 /**
- *
- * @author 343330528
+ * Defines the variables and methods of a Date object in Settings Simulator app that is used to store the user's birthday
+ * 
+ * @author   Kimi Ong
+ * @version  1.0
+ * @since    2025-04-29
  */
 public class Date {
     //Instance variables
