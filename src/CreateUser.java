@@ -259,8 +259,7 @@ public class CreateUser extends javax.swing.JFrame {
         jLabel12.setText("jLabel12");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(2147483647, 600));
-        setPreferredSize(new java.awt.Dimension(525, 600));
+        setPreferredSize(new java.awt.Dimension(553, 650));
 
         createUserLabel.setFont(new java.awt.Font("Hiragino Sans", 1, 12)); // NOI18N
         createUserLabel.setText("Create User");
@@ -328,18 +327,25 @@ public class CreateUser extends javax.swing.JFrame {
         });
 
         mandatoryError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        mandatoryError.setText("mandatoryError");
 
         emailError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        emailError.setText("emailError");
 
         birthdayError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        birthdayError.setText("birthdayError");
 
         phoneNumberError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        phoneNumberError.setText("phoneNumberError");
 
         passwordError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        passwordError.setText("passwordError1");
 
         passwordError2.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        passwordError2.setText("passwordError2");
 
         usernameError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        usernameError.setText("usernameError");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -348,81 +354,71 @@ public class CreateUser extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(submitButton)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel7)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel10)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(monthInput, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                    .addComponent(jLabel8)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(phoneNumberInput))
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addGap(174, 174, 174)
-                                                    .addComponent(jLabel9)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(dayInput, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(jLabel11)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(yearInput, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGap(8, 8, 8)))))
-                            .addComponent(jLabel3)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(emailError, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(40, 40, 40)
-                                        .addComponent(jLabel4)
-                                        .addGap(102, 102, 102)
-                                        .addComponent(usernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel1))
-                                .addGap(15, 15, 15)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(usernameError)
-                            .addComponent(passwordError2)
-                            .addComponent(passwordError)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(mandatoryError))))
+                        .addGap(198, 198, 198)
+                        .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(createUserLabel)
+                            .addComponent(passwordInput, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                            .addComponent(usernameInput))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGap(40, 40, 40)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel5)
+                                            .addComponent(usernameError)
+                                            .addComponent(jLabel4)
+                                            .addComponent(passwordError)
+                                            .addComponent(passwordError2)))
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGap(40, 40, 40)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(mandatoryError)
+                                            .addComponent(emailError)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel6)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(236, 236, 236)
-                                .addComponent(createUserLabel))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(198, 198, 198)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(106, 106, 106)
+                                .addGap(174, 174, 174)
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dayInput, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(yearInput, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(submitButton)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(birthdayError)
-                                    .addComponent(phoneNumberError))))
-                        .addGap(0, 174, Short.MAX_VALUE)))
-                .addContainerGap())
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(monthInput, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(phoneNumberError)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(phoneNumberInput, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(29, 29, 29)))
+                .addGap(0, 85, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -431,56 +427,56 @@ public class CreateUser extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(createUserLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(usernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(usernameError)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5)
+                    .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(passwordError)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(passwordError2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(emailError, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mandatoryError)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(usernameError)
-                        .addGap(18, 18, 18)
-                        .addComponent(passwordError)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(passwordError2)
-                        .addGap(74, 74, 74)
-                        .addComponent(mandatoryError)
-                        .addGap(205, 205, 205))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(usernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(emailError, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
                             .addComponent(jLabel9)
                             .addComponent(dayInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10)
-                            .addComponent(monthInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11)
                             .addComponent(yearInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(phoneNumberInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
-                        .addComponent(submitButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(monthInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)))
                 .addComponent(birthdayError)
-                .addGap(285, 285, 285)
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(phoneNumberInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(phoneNumberError)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addComponent(submitButton)
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         pack();
@@ -505,7 +501,7 @@ public class CreateUser extends javax.swing.JFrame {
         String phoneNumber = phoneNumberInput.getText().trim(); //Get phone number entered by user
         
         //Create new User object if all information entered by the user are valid inputs and will not cause any errors
-        if (checkMandatory(username, password, email) && checkUsername(username) && checkPassword(password) && checkEmail(email) && checkDOB(monthString, dayString, yearString) && checkPhoneNumber(phoneNumber)) {
+        if (checkMandatory(username, password, email) && checkUsername(username) && checkPassword(password) && checkEmail(email)) {
             
             
             //Initialize new user object that will be instantiated
@@ -518,27 +514,53 @@ public class CreateUser extends javax.swing.JFrame {
                 existingUsernames.add(username); //Add new username to array list of existing usernames
             //If both birthday and phone number are filled in, call constructor with both birthday and phone number parameters
             } else if (!monthString.isEmpty() && !dayString.isEmpty() && !yearString.isEmpty() && !phoneNumber.isEmpty()) {
-                int month = Integer.parseInt(monthString); //Convert user's birth month into an integer for the Date constructor
-                int day = Integer.parseInt(dayString); //Convert user's birth day into an integer for the Date constructor
-                int year = Integer.parseInt(yearString); //Convert user's birth year into an integer for the Date constructor
-                Date birthday = new Date(month, day, year); //Create new instance of Date class for the user's birthday
-                user = new User(username, password, email, birthday, phoneNumber); //Create new instance of User class with birthday and phone number
-                existingUsernames.add(username); //Add new username to array list of existing usernames
-                user.setInitialSettings(); //Set initial user settings with default values
+                //If birthday and phone numbers are valid, instantiate a new User object
+                if (checkDOB(monthString, dayString, yearString) && checkPhoneNumber(phoneNumber)) {
+                    int month = Integer.parseInt(monthString); //Convert user's birth month into an integer for the Date constructor
+                    int day = Integer.parseInt(dayString); //Convert user's birth day into an integer for the Date constructor
+                    int year = Integer.parseInt(yearString); //Convert user's birth year into an integer for the Date constructor
+                    Date birthday = new Date(month, day, year); //Create new instance of Date class for the user's birthday
+                    user = new User(username, password, email, birthday, phoneNumber); //Create new instance of User class with birthday and phone number
+                    existingUsernames.add(username); //Add new username to array list of existing usernames
+                    user.setInitialSettings(); //Set initial user settings with default values
+                //If birthday or phone number valid, display error
+                } else {
+                    //Check if entered birthday is not valid (not integers, date does not exist, not within age limit)
+                    if (!checkDOB(monthString, dayString, yearString))
+                        birthdayError.setText("Invalid birthday. Note: Age limit is 13 - 100"); //Display error message
+                    //Check if the entered phone number is not in the proper format
+                    if (!checkPhoneNumber(phoneNumber))
+                        phoneNumberError.setText("Invalid phone number format."); //Display error message
+                    return; //Exit method so that the program will not continue to the next screen
+                } //End if statement for input validation
             //If a phone number has been entered but no birthday, call constructor without birthday parameter
             } else if (monthString.isEmpty() && dayString.isEmpty() && yearString.isEmpty()) {
-                user = new User(username, password, phoneNumber); //Create new instance of user class with phone number
-                user.setInitialSettings(); //Set initial user settings with default values
-                existingUsernames.add(username); //Add new username to array list of existing usernames
+                //If the phone number is valid, instantiate a enw user object
+                if (checkPhoneNumber(phoneNumber)) {
+                    user = new User(username, password, phoneNumber); //Create new instance of user class with phone number
+                    user.setInitialSettings(); //Set initial user settings with default values
+                    existingUsernames.add(username); //Add new username to array list of existing usernames
+                //If phone number is not valid, display error
+                } else {
+                    phoneNumberError.setText("Invalid phone number format."); //Display error message
+                    return; //Exit method so that the program will not continue to the next screen
+                } //End if statement for input validation
             //If a birthday has been entered but no phone number, call constructor without phone number parameter
             } else if (phoneNumber.isEmpty()) {
-                int month = Integer.parseInt(monthString); //Convert user's birth month into an integer for the Date constructor
-                int day = Integer.parseInt(dayString); //Convert user's birth day into an integer for the Date constructor
-                int year = Integer.parseInt(yearString); //Convert user's birth year into an integer for the Date constructor
-                Date birthday = new Date(month, day, year); //Create new instance of Date class for the user's birthday
-                user = new User(username, password, email, birthday); //Create new instance of User class with birthday
-                user.setInitialSettings(); //Set initial user settings with default values
-                existingUsernames.add(username); //Add new username to array list of existing usernames
+                //If the birthday is valid, instantiate a new user object
+                if (checkDOB(monthString, dayString, yearString)) {
+                    int month = Integer.parseInt(monthString); //Convert user's birth month into an integer for the Date constructor
+                    int day = Integer.parseInt(dayString); //Convert user's birth day into an integer for the Date constructor
+                    int year = Integer.parseInt(yearString); //Convert user's birth year into an integer for the Date constructor
+                    Date birthday = new Date(month, day, year); //Create new instance of Date class for the user's birthday
+                    user = new User(username, password, email, birthday); //Create new instance of User class with birthday
+                    user.setInitialSettings(); //Set initial user settings with default values
+                    existingUsernames.add(username); //Add new username to array list of existing usernames
+                //If birthday is not valid, display error
+                } else {
+                    birthdayError.setText("Invalid birthday. Note: Age limit is 13 - 100"); //Display error message
+                    return; //Exit method so that the program will not continue to the next screen
+                } //End if statement for input validation
             } //End if statement checking which User constructor to call based on inputs
             
             //Add new user to array list of user accounts
@@ -575,16 +597,11 @@ public class CreateUser extends javax.swing.JFrame {
                 //Display error message for password requirements
                 passwordError.setText("Must include letters, numbers, and special characters");
                 passwordError2.setText("(!@#$%) and be at least 6 characters.");
-            }
+            } //End if statement checking for valid password
             //Check if the entered email is not in the proper format
             if (!checkEmail(email))
                 emailError.setText("Invalid email format."); //Display error message
-            //Check if entered birthday is not valid (not integers, date does not exist, not within age limit)
-            if (!checkDOB(monthString, dayString, yearString))
-                birthdayError.setText("Invalid birthday. Note: Age limit is 13 - 100"); //Display error message
-            //Check if the entered phone number is not in the proper format
-            if(!checkPhoneNumber(phoneNumber))
-                phoneNumberError.setText("Invalid phone number format."); //Display error message
+               
         } //End if statement checking if all information entered by the user is valid
     }//GEN-LAST:event_submitButtonActionPerformed
 

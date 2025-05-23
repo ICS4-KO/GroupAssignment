@@ -41,7 +41,7 @@
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="133" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="152" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="logoutButton" min="-2" max="-2" attributes="0"/>
@@ -70,7 +70,7 @@
               <Component id="birthdayLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="phoneNumberLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="17" max="32767" attributes="0"/>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
               <Component id="friendsButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="passwordButton" min="-2" max="-2" attributes="0"/>
@@ -86,11 +86,17 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="usernameLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Gurmukhi MT" size="18" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="User&apos;s Account"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="friendsButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Friends"/>
       </Properties>
       <Events>
@@ -99,6 +105,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="passwordButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Change Password"/>
       </Properties>
       <Events>
@@ -107,6 +116,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="settingsButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Settings"/>
       </Properties>
       <Events>
@@ -115,6 +127,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="logoutButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Logout"/>
       </Properties>
       <Events>
@@ -123,16 +138,25 @@
     </Component>
     <Component class="javax.swing.JLabel" name="emailLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Email: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="birthdayLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Birthday:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="phoneNumberLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Phone Number: "/>
       </Properties>
     </Component>

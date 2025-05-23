@@ -60,8 +60,10 @@ public class HomeScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        usernameLabel.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         usernameLabel.setText("User's Account");
 
+        friendsButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         friendsButton.setText("Friends");
         friendsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,6 +71,7 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
+        passwordButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         passwordButton.setText("Change Password");
         passwordButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +79,7 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
+        settingsButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         settingsButton.setText("Settings");
         settingsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +87,7 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
+        logoutButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         logoutButton.setText("Logout");
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,10 +95,13 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
+        emailLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         emailLabel.setText("Email: ");
 
+        birthdayLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         birthdayLabel.setText("Birthday:");
 
+        phoneNumberLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         phoneNumberLabel.setText("Phone Number: ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -113,7 +121,7 @@ public class HomeScreen extends javax.swing.JFrame {
                             .addComponent(phoneNumberLabel))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 133, Short.MAX_VALUE)
+                .addGap(0, 152, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(logoutButton)
@@ -136,7 +144,7 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addComponent(birthdayLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(phoneNumberLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(friendsButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(passwordButton)
