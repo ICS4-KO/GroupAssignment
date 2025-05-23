@@ -7,8 +7,11 @@ import java.util.ArrayList;
  */
 
 /**
- *
- * @author 343330528
+ * Game Settings History Screen of Settings Simulator app that allows users to see their past game settings
+ * 
+ * @author   Kimi Ong
+ * @version  1.0
+ * @since    2025-04-29
  */
 public class GameSettingsHistory extends javax.swing.JFrame {
     //Define methods
@@ -71,22 +74,31 @@ public class GameSettingsHistory extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        difficultyLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         difficultyLabel.setText("Difficulty Level:");
 
+        subtitlesLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         subtitlesLabel.setText("Subtitles On:");
 
+        resolutionLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         resolutionLabel.setText("Screen Resolution:");
 
+        notificationsLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         notificationsLabel.setText("Notifications On:");
 
+        controlLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         controlLabel.setText("Control Scheme:");
 
+        locationLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         locationLabel.setText("Location On:");
 
+        graphicsLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         graphicsLabel.setText("Graphics Quality:");
 
+        microphoneLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         microphoneLabel.setText("Microphone On:");
 
+        usernameLabel.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         usernameLabel.setText("User's Game Settings History");
 
         gameHistoryComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +107,7 @@ public class GameSettingsHistory extends javax.swing.JFrame {
             }
         });
 
+        returnButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         returnButton.setText("Return");
         returnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,55 +122,50 @@ public class GameSettingsHistory extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(usernameLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
+                        .addGap(70, 70, 70)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(microphoneLabel)
-                            .addComponent(locationLabel)
-                            .addComponent(notificationsLabel)
-                            .addComponent(difficultyLabel)
-                            .addComponent(subtitlesLabel)
-                            .addComponent(resolutionLabel)
-                            .addComponent(controlLabel)
-                            .addComponent(graphicsLabel))))
-                .addContainerGap(143, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(gameHistoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(returnButton)
-                .addGap(38, 38, 38))
+                            .addComponent(returnButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(gameHistoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(microphoneLabel)
+                                .addComponent(locationLabel)
+                                .addComponent(notificationsLabel)
+                                .addComponent(difficultyLabel)
+                                .addComponent(subtitlesLabel)
+                                .addComponent(resolutionLabel)
+                                .addComponent(controlLabel)
+                                .addComponent(graphicsLabel))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(usernameLabel)))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(51, 51, 51)
                 .addComponent(usernameLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(gameHistoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(35, 35, 35)
                 .addComponent(notificationsLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(locationLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(microphoneLabel)
-                .addGap(28, 28, 28)
-                .addComponent(difficultyLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(subtitlesLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(resolutionLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(controlLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(graphicsLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(locationLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(microphoneLabel)
+                .addGap(32, 32, 32)
+                .addComponent(difficultyLabel)
+                .addGap(12, 12, 12)
+                .addComponent(subtitlesLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(resolutionLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(controlLabel)
+                .addGap(12, 12, 12)
+                .addComponent(graphicsLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(returnButton)
-                .addGap(7, 7, 7))
+                .addGap(61, 61, 61))
         );
 
         pack();

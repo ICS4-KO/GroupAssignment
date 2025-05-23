@@ -4,8 +4,12 @@
  */
 
 /**
- *
- * @author 343330528
+ * Home Screen of Settings Simulator that displays button options for the user to edit friends, change password, view settings,
+ * or logout
+ * 
+ * @author   Kimi Ong
+ * @version  1.0
+ * @since    2025-04-29
  */
 public class HomeScreen extends javax.swing.JFrame {
     //Global variables
@@ -96,12 +100,15 @@ public class HomeScreen extends javax.swing.JFrame {
         });
 
         emailLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        emailLabel.setForeground(new java.awt.Color(0, 0, 153));
         emailLabel.setText("Email: ");
 
         birthdayLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        birthdayLabel.setForeground(new java.awt.Color(0, 0, 153));
         birthdayLabel.setText("Birthday:");
 
         phoneNumberLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        phoneNumberLabel.setForeground(new java.awt.Color(0, 0, 153));
         phoneNumberLabel.setText("Phone Number: ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -119,19 +126,19 @@ public class HomeScreen extends javax.swing.JFrame {
                             .addComponent(birthdayLabel)
                             .addComponent(emailLabel)
                             .addComponent(phoneNumberLabel))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 152, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(logoutButton)
-                        .addGap(37, 37, 37))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(friendsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(passwordButton))
-                        .addGap(131, 131, 131))))
+                        .addGap(154, 154, 154))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(logoutButton)
+                        .addGap(65, 65, 65))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,15 +151,15 @@ public class HomeScreen extends javax.swing.JFrame {
                 .addComponent(birthdayLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(phoneNumberLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGap(30, 30, 30)
                 .addComponent(friendsButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(passwordButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(settingsButton)
-                .addGap(18, 18, 18)
+                .addGap(32, 32, 32)
                 .addComponent(logoutButton)
-                .addGap(24, 24, 24))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();

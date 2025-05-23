@@ -8,8 +8,12 @@ import java.util.Scanner;
  */
 
 /**
- *
- * @author 343330528
+ * Login screen of Settings Simulator where the user can either log in with a previously created account's username and password 
+ * or go to the screen for creating a new account
+ * 
+ * @author   Kimi Ong
+ * @version  1.0
+ * @since    2025-04-29
  */
 public class Login extends javax.swing.JFrame {
 

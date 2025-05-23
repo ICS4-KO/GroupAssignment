@@ -23,66 +23,60 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
-                      <Component id="usernameLabel" min="-2" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="microphoneLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="locationLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="notificationsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="difficultyLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="subtitlesLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="resolutionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="controlLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="graphicsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="returnButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Component id="gameHistoryComboBox" min="-2" pref="290" max="-2" attributes="0"/>
+                              <Component id="microphoneLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="locationLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="notificationsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="difficultyLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="subtitlesLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="resolutionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="controlLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="graphicsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                      <Component id="usernameLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="143" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="gameHistoryComboBox" min="-2" pref="258" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="returnButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <EmptySpace pref="78" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               <Component id="usernameLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="36" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="gameHistoryComboBox" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Component id="notificationsLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="locationLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="microphoneLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Component id="difficultyLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="subtitlesLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="resolutionLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="controlLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="graphicsLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="locationLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="microphoneLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Component id="difficultyLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Component id="subtitlesLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="resolutionLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="controlLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Component id="graphicsLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="10" max="32767" attributes="0"/>
               <Component id="returnButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -90,46 +84,73 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="difficultyLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Difficulty Level:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="subtitlesLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Subtitles On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="resolutionLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Screen Resolution:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="notificationsLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Notifications On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="controlLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Control Scheme:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="locationLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Location On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="graphicsLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Graphics Quality:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="microphoneLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Microphone On:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="usernameLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Gurmukhi MT" size="18" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="User&apos;s Game Settings History"/>
       </Properties>
     </Component>
@@ -148,6 +169,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="returnButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Hiragino Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Return"/>
       </Properties>
       <Events>

@@ -4,8 +4,13 @@
  */
 
 /**
- *
- * @author 343330528
+ * Settings screen of Settings Simulator app that allows users to either view/edit or look at the history of each of their three
+ * setting types (game settings, search engine settings, social media settings), Users can also go to the screen displaying the 
+ * explanations of their current settings
+ * 
+ * @author   Kimi Ong
+ * @version  1.0
+ * @since    2025-04-29
  */
 public class SettingsScreen extends javax.swing.JFrame {
 
@@ -41,14 +46,22 @@ public class SettingsScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jLabel1.setText("User's Settings");
 
+        jLabel2.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 153));
         jLabel2.setText("Game Settings:");
 
+        jLabel3.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 153));
         jLabel3.setText("Search Engine Settings:");
 
+        jLabel4.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 153));
         jLabel4.setText("Social Media Settings:");
 
+        gameButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         gameButton.setText("View/Edit");
         gameButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,6 +69,7 @@ public class SettingsScreen extends javax.swing.JFrame {
             }
         });
 
+        gameHistoryButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         gameHistoryButton.setText("History");
         gameHistoryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,6 +77,7 @@ public class SettingsScreen extends javax.swing.JFrame {
             }
         });
 
+        searchEngineButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         searchEngineButton.setText("View/Edit");
         searchEngineButton.setToolTipText("");
         searchEngineButton.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +86,7 @@ public class SettingsScreen extends javax.swing.JFrame {
             }
         });
 
+        searchEngineHistoryButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         searchEngineHistoryButton.setText("History");
         searchEngineHistoryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +94,7 @@ public class SettingsScreen extends javax.swing.JFrame {
             }
         });
 
+        socialMediaButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         socialMediaButton.setText("View/Edit");
         socialMediaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +102,7 @@ public class SettingsScreen extends javax.swing.JFrame {
             }
         });
 
+        socialMediaHistoryButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         socialMediaHistoryButton.setText("History");
         socialMediaHistoryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +110,8 @@ public class SettingsScreen extends javax.swing.JFrame {
             }
         });
 
+        explanationButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        explanationButton.setForeground(new java.awt.Color(0, 0, 153));
         explanationButton.setText("View Current Settings Explanation");
         explanationButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +119,7 @@ public class SettingsScreen extends javax.swing.JFrame {
             }
         });
 
+        returnButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         returnButton.setText("Return to Main Screen");
         returnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,9 +134,6 @@ public class SettingsScreen extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -124,34 +142,36 @@ public class SettingsScreen extends javax.swing.JFrame {
                                 .addComponent(gameButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(gameHistoryButton))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(socialMediaButton)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(socialMediaHistoryButton))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(searchEngineButton)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(searchEngineHistoryButton))))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(returnButton)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel4))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(socialMediaButton)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(socialMediaHistoryButton))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(searchEngineButton)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(searchEngineHistoryButton)))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(157, 157, 157)
+                        .addComponent(jLabel1))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(returnButton)
-                            .addComponent(explanationButton, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(2, 2, 2)))
-                .addContainerGap(55, Short.MAX_VALUE))
+                        .addComponent(explanationButton, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(33, 33, 33)
                 .addComponent(jLabel1)
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(gameButton)
@@ -166,11 +186,11 @@ public class SettingsScreen extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(socialMediaButton)
                     .addComponent(socialMediaHistoryButton))
-                .addGap(27, 27, 27)
+                .addGap(29, 29, 29)
                 .addComponent(explanationButton)
-                .addGap(31, 31, 31)
+                .addGap(45, 45, 45)
                 .addComponent(returnButton)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addGap(36, 36, 36))
         );
 
         pack();

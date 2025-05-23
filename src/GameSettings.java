@@ -4,8 +4,12 @@
  */
 
 /**
- *
- * @author 343330528
+ * Defines the variables and methods of a GameSettings object in Settings Simulator app that represents a set of game settings 
+ * options set by the user
+ * 
+ * @author   Kimi Ong
+ * @version  1.0
+ * @since    2025-04-29
  */
 public class GameSettings extends BasicSettings {
     //Instance variables
