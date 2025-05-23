@@ -4,9 +4,11 @@
  */
 
 /**
- * 
+ * Defines the variables and methods of a SearchEngineSettings object in Settings Simulator app that represents a set of search engine settings
+ *options set by the user
  * @author jojox
  * @version 1.0
+ * @since  2025-05-23
  */
 public class SearchEngineSettings extends BasicSettings {
     //Instance variables

@@ -4,8 +4,11 @@
  */
 
 /**
- *
+ *Defines the variables and methods of a BesicSetting object in Settings Simulator app that is the similar settings for all apps. 
+ * This is a parent class of all three app settings(Games, Social Media and Search Engine).
  * @author Tina
+ * @version 1.0
+ * @since 2025-05-23
  */
 public class BasicSettings {
     //instance variables

@@ -4,8 +4,11 @@
  */
 
 /**
- *
+ *Defines the variables and methods of a SocialMediaSettings object in Settings Simulator app that represents a set of social media settings
+ *options set by the user
  * @author Tina
+ * @version 1.0
+ * @since 2025-05-23
  */
 public class SocialMediaSettings extends BasicSettings{
     //Instance Variable
