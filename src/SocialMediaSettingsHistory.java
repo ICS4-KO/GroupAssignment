@@ -1,3 +1,6 @@
+
+import javax.swing.JComboBox;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,12 +11,27 @@
  * @author 343330528
  */
 public class SocialMediaSettingsHistory extends javax.swing.JFrame {
+    //Define methods
+    
+    /**
+     * This method returns the combo box of all previous social media history settings set by the user so that items can be added to
+     * it in a different JFrame (UserSocialMediaSettings.java)
+     * 
+     * @return  Returns combo box of SocialMediaSettings objects storing history of user's social media settings
+     */
+    public JComboBox<SocialMediaSettings> getSocialMediaHistoryComboBox() {
+            return socialMediaHistoryComboBox;
+    }
 
+    
     /**
      * Creates new form SocialMediaSettingsHistory
      */
     public SocialMediaSettingsHistory() {
         initComponents();
+        
+        //Set top label to display logged-in account's username
+        usernameLabel.setText(HomeScreen.currentUser.getUsername() + "'s Social Media Settings History");
     }
 
     /**
@@ -25,114 +43,148 @@ public class SocialMediaSettingsHistory extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        soicalMediaOutput = new javax.swing.JComboBox<>();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        usernameLabel = new javax.swing.JLabel();
+        notificationsLabel = new javax.swing.JLabel();
+        socialMediaHistoryComboBox = new javax.swing.JComboBox<>();
+        locationLabel = new javax.swing.JLabel();
+        microphoneLabel = new javax.swing.JLabel();
+        birthdayPrivacyLabel = new javax.swing.JLabel();
+        emailPrivacyLabel = new javax.swing.JLabel();
+        phoneNumberPrivacyLabel = new javax.swing.JLabel();
+        mentionsPrivacyLabel = new javax.swing.JLabel();
+        messagesPrivacyLabel = new javax.swing.JLabel();
+        storiesPrivacyLabel = new javax.swing.JLabel();
+        returnButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Social Media Settings");
+        usernameLabel.setText("User's Social Media Settings History");
 
-        jLabel2.setText("Notification:");
+        notificationsLabel.setText("Notification:");
 
-        soicalMediaOutput.addActionListener(new java.awt.event.ActionListener() {
+        socialMediaHistoryComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                soicalMediaOutputActionPerformed(evt);
+                socialMediaHistoryComboBoxActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Location:");
+        locationLabel.setText("Location:");
 
-        jLabel4.setText("Microphone:");
+        microphoneLabel.setText("Microphone:");
 
-        jLabel5.setText("Birthday:");
+        birthdayPrivacyLabel.setText("Birthday:");
 
-        jLabel6.setText("Email:");
+        emailPrivacyLabel.setText("Email:");
 
-        jLabel7.setText("Phone Number:");
+        phoneNumberPrivacyLabel.setText("Phone Number:");
 
-        jLabel8.setText("Mentions:");
+        mentionsPrivacyLabel.setText("Mentions:");
 
-        jLabel9.setText("Messages:");
+        messagesPrivacyLabel.setText("Messages:");
 
-        jLabel10.setText("Stories:");
+        storiesPrivacyLabel.setText("Stories:");
+
+        returnButton.setText("Return");
+        returnButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(135, 135, 135))
             .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(soicalMediaOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(76, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(messagesPrivacyLabel)
+                            .addComponent(mentionsPrivacyLabel)
+                            .addComponent(phoneNumberPrivacyLabel)
+                            .addComponent(emailPrivacyLabel)
+                            .addComponent(birthdayPrivacyLabel)
+                            .addComponent(microphoneLabel)
+                            .addComponent(locationLabel)
+                            .addComponent(notificationsLabel)
+                            .addComponent(socialMediaHistoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(storiesPrivacyLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                                .addComponent(returnButton))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(usernameLabel)))
+                .addGap(61, 61, 61))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(jLabel1)
+                .addComponent(usernameLabel)
                 .addGap(18, 18, 18)
-                .addComponent(soicalMediaOutput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(40, 40, 40)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel10)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addComponent(socialMediaHistoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(notificationsLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(locationLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(microphoneLabel)
+                        .addGap(40, 40, 40)
+                        .addComponent(birthdayPrivacyLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(emailPrivacyLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(phoneNumberPrivacyLabel)
+                        .addGap(12, 12, 12)
+                        .addComponent(mentionsPrivacyLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(messagesPrivacyLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(storiesPrivacyLabel)
+                        .addContainerGap(28, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(returnButton)
+                        .addContainerGap())))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void soicalMediaOutputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soicalMediaOutputActionPerformed
-        // TODO add your handling code here:
-        SocialMediaSettings SocialMediaSettings = (SocialMediaSettings) soicalMediaOutput.getSelectedItem();
-       
-        Notification.setText("Notifications: " + SocialMediaSettings.getAllowNotification());
-        location.setText("Location: " + SocialMediaSettings.getLocationSharing());
-        microphone.setText("Microphone: " + SocialMediaSettings.getMicrophoneAccess());
-        birthday.setText("Birthday: " + SocialMediaSettings.getBirthdayPrivacy());
-        email.setText("Birthday: " + SocialMediaSettings.getEmailPrivacy());
-        phoneNumber.setText("Phone Number: " + SocialMediaSettings.getPhoneNumberPrivacy());
-        mentions.setText("Mentions: " + SocialMediaSettings.getMentionsPrivacy());
-        messages.setText("Messages: " + SocialMediaSettings.getMessagesPrivacy());  
-        stories.setText("Stories: " + SocialMediaSettings.getStoriesPrivacy());
-    }//GEN-LAST:event_soicalMediaOutputActionPerformed
+    private void socialMediaHistoryComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_socialMediaHistoryComboBoxActionPerformed
+        //Retrieve the current selected item (SocialMediaSettings object) from the combo box when the user clicks on an item
+        SocialMediaSettings selectedSocialMediaSettingsVersion = (SocialMediaSettings) socialMediaHistoryComboBox.getSelectedItem();
+        
+        //Display the selected SocialMediaSettings object's notifications attribute in the corresponding text field
+        notificationsLabel.setText("Notifications: " + selectedSocialMediaSettingsVersion.getAllowNotifications());
+        //Display the selected SocialMediaSettings object's location sharing attribute in the corresponding text field
+        locationLabel.setText("Location: " + selectedSocialMediaSettingsVersion.getLocationSharing());
+        //Display the selected SocialMediaSettings object's microphone access attribute in the corresponding text field
+        microphoneLabel.setText("Microphone: " + selectedSocialMediaSettingsVersion.getMicrophoneAccess());
+        
+        //Display the selected SocialMediaSettings object's birthday privacy attribute in the corresponding text field
+        birthdayPrivacyLabel.setText("Birthday Privacy: " + selectedSocialMediaSettingsVersion.getBirthdayPrivacy());
+        //Display the selected SocialMediaSettings object's email privacy attribute in the corresponding text field
+        emailPrivacyLabel.setText("Email Privacy: " + selectedSocialMediaSettingsVersion.getEmailPrivacy());
+        //Display the selected SocialMediaSettings object's phone number privacy attribute in the corresponding text field
+        phoneNumberPrivacyLabel.setText("Phone Number Privacy: " + selectedSocialMediaSettingsVersion.getPhoneNumberPrivacy());
+        //Display the selected SocialMediaSettings object's mentions privacy attribute in the corresponding text field
+        mentionsPrivacyLabel.setText("Mentions Privacy: " + selectedSocialMediaSettingsVersion.getMentionsPrivacy());
+        //Display the selected SocialMediaSettings object's messages privacy attribute in the corresponding text field
+        messagesPrivacyLabel.setText("Messages Privacy: " + selectedSocialMediaSettingsVersion.getMessagesPrivacy());
+        //Display the selected SocialMediaSettings object's stories privacy attribute in the corresponding text field
+        storiesPrivacyLabel.setText("Stories Privacy: " + selectedSocialMediaSettingsVersion.getStoriesPrivacy());
+    }//GEN-LAST:event_socialMediaHistoryComboBoxActionPerformed
+
+    private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
+        //Return to home screen after user finishes looking at previous game settings
+        new HomeScreen().setVisible(true); //Show home screen frame
+        this.setVisible(false); //Hide current frame (game settings history)
+    }//GEN-LAST:event_returnButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,16 +222,17 @@ public class SocialMediaSettingsHistory extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JComboBox<String> soicalMediaOutput;
+    private javax.swing.JLabel birthdayPrivacyLabel;
+    private javax.swing.JLabel emailPrivacyLabel;
+    private javax.swing.JLabel locationLabel;
+    private javax.swing.JLabel mentionsPrivacyLabel;
+    private javax.swing.JLabel messagesPrivacyLabel;
+    private javax.swing.JLabel microphoneLabel;
+    private javax.swing.JLabel notificationsLabel;
+    private javax.swing.JLabel phoneNumberPrivacyLabel;
+    private javax.swing.JButton returnButton;
+    private javax.swing.JComboBox<SocialMediaSettings> socialMediaHistoryComboBox;
+    private javax.swing.JLabel storiesPrivacyLabel;
+    private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
 }

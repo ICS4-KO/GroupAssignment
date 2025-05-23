@@ -124,8 +124,8 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        String enteredUsername = usernameInput.getText(); //Get username entered by the user in the username text field
-        String enteredPassword = passwordInput.getText(); //Get password entered by the user in the password text field
+        String enteredUsername = usernameInput.getText().trim(); //Get username entered by the user in the username text field
+        String enteredPassword = passwordInput.getText().trim(); //Get password entered by the user in the password text field
         int lineCount = 0; //Initalize counter for keeping track of which line the Scanner is currently reading
         
         //Go through username/passwords in flat-file of accounts to find a match to the entered login information
@@ -137,6 +137,7 @@ public class Login extends javax.swing.JFrame {
                 String[] data = reader.nextLine().split(","); //Split each line into an array, using comma as the delimiter
                 String username = data[0]; //First element in each line is the username of a created account
                 String password = data[1]; //Second element in each line is the corresponding password
+                System.out.println("info: " + username + password);////
                 
                 //Check if the username/password from the current line in the file is equal to the user/pass entered by the user
                 if (enteredUsername.equals(username) && enteredPassword.equals(password)) {
@@ -145,10 +146,12 @@ public class Login extends javax.swing.JFrame {
                     //Go to home screen after user successfully logs in
                     new HomeScreen().setVisible(true); //Show home screen frame
                     this.setVisible(false); //Hide current frame (login)
-                } //End if statement checking for an account match in the flat file of user accounts 
+                } //End if statement checking for an account match in the flat file of user accounts
+                System.out.println("b");////
                 
                 lineCount++; //Increment counter for current line in flat file of accounts
             } //End while loop going through accounts flat file
+            System.out.println("c");////
             
             reader.close(); //Close Scanner
         //Catch IO exceptions when writing to flat file

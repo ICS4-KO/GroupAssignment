@@ -278,10 +278,10 @@ public class UserGameSettings extends javax.swing.JFrame {
         else if (graphicsComboBox.getSelectedItem().equals("Medium")) 
             //If the selected option is "Medium", store in variable
             graphicsQuality = "Medium"; 
-        //If the selected option is not "Low" or "Medium", only other option is "Hard"
+        //If the selected option is not "Low" or "Medium", only other option is "High"
         else
-            //If the selected option is "Hard", store in variable
-            graphicsQuality = "Hard";
+            //If the selected option is "High", store in variable
+            graphicsQuality = "High";
         
         
         //Create new instance of GameSettings class based on settings selected by the user, upcast to BasicSettings

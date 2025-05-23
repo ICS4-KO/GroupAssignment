@@ -14,6 +14,7 @@ public class HomeScreen extends javax.swing.JFrame {
     public static User currentUser; //Current user account that is being displayed and interacted with
     
     
+    
     //Define methods
     
     /**
@@ -201,7 +202,7 @@ public class HomeScreen extends javax.swing.JFrame {
 
     private void settingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsButtonActionPerformed
         //Go to home settings screen if user clicks on "Settings" button
-        new Settings().setVisible(true); //Show settings screen frame
+        new SettingsScreen().setVisible(true); //Show settings screen frame
         this.setVisible(false); //Hide current frame (home screen)
     }//GEN-LAST:event_settingsButtonActionPerformed
 

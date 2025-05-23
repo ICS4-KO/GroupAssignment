@@ -14,6 +14,7 @@ public class SettingsScreen extends javax.swing.JFrame {
      */
     public SettingsScreen() {
         initComponents();
+        
     }
 
     /**

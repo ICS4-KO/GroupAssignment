@@ -15,8 +15,9 @@ import java.util.regex.Pattern;
 public class CreateUser extends javax.swing.JFrame {
     //Global variables
     public static ArrayList<User> accounts = new ArrayList<User>(); //Array list for all the user accounts that are created
-    //public static String[] accounts2;
+    public static boolean firstTime = true; //First time user creates account indicator
     
+            
     //Define methods
     
     /**
@@ -155,6 +156,26 @@ public class CreateUser extends javax.swing.JFrame {
      */
     public CreateUser() {
         initComponents();
+        
+        //Clear file of user accounts when the user first runs the program and creates an account for the first time
+        if (firstTime) {
+            //Clear information to flat-file of accounts
+            try {
+                //Create FileWriter object to overwrite file, named "accounts.txt"
+                FileWriter writer = new FileWriter("accounts.txt");
+                //Clear file by overwriting with empty string
+                writer.write("");
+                //Close FileWriter
+                writer.close();
+            //Catch IO exceptions when writing to flat file
+            } catch (IOException e) {
+                System.err.println(e); //Error message for IO exceptions
+            } //End try-catch statement for clearing file
+            
+            //Set first time indicator to false so the program knows it does not have to clear the file for a new run
+            firstTime = false;
+        } //End if statement checking if this is the first time the user runs the program and creates an account
+        
     }
 
     /**
@@ -248,10 +269,6 @@ public class CreateUser extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(submitButton)
-                .addGap(79, 79, 79))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -263,26 +280,17 @@ public class CreateUser extends javax.swing.JFrame {
                                 .addGap(28, 28, 28)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(birthdayError)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel8)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(phoneNumberInput))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel7)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel10)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(monthInput, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jLabel9)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(dayInput, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jLabel11)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(yearInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(phoneNumberError)))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(monthInput, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(phoneNumberError)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(phoneNumberInput))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(81, 81, 81)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,17 +299,16 @@ public class CreateUser extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(mandatoryError))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(passwordInput)
+                            .addComponent(usernameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                            .addComponent(emailInput))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(6, 6, 6)
                                 .addComponent(emailError, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(passwordInput)
-                                    .addComponent(usernameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addComponent(passwordError))))
+                            .addComponent(passwordError)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(169, 169, 169)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,7 +316,20 @@ public class CreateUser extends javax.swing.JFrame {
                                 .addGap(40, 40, 40)
                                 .addComponent(createUserLabel))
                             .addComponent(jLabel2))))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(44, 44, 44))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dayInput, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(yearInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(submitButton))
+                .addGap(79, 79, 79))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -389,6 +409,7 @@ public class CreateUser extends javax.swing.JFrame {
             //If both birthday and phone number are left empty, call constructor without birthday and phone number parameters
             if (monthString.isEmpty() && dayString.isEmpty() && yearString.isEmpty() && phoneNumber.isEmpty()) {
                 user = new User(username, password, email); //Create new instance of User class without birthday or phone number
+                user.setInitialSettings(); //Set initial user settings with default values
             //If both birthday and phone number are filled in, call constructor with both birthday and phone number parameters
             } else if (!monthString.isEmpty() && !dayString.isEmpty() && !yearString.isEmpty() && !phoneNumber.isEmpty()) {
                 int month = Integer.parseInt(monthString); //Convert user's birth month into an integer for the Date constructor
@@ -396,9 +417,11 @@ public class CreateUser extends javax.swing.JFrame {
                 int year = Integer.parseInt(yearString); //Convert user's birth year into an integer for the Date constructor
                 Date birthday = new Date(month, day, year); //Create new instance of Date class for the user's birthday
                 user = new User(username, password, email, birthday, phoneNumber); //Create new instance of User class with birthday and phone number
+                user.setInitialSettings(); //Set initial user settings with default values
             //If a phone number has been entered but no birthday, call constructor without birthday parameter
             } else if (monthString.isEmpty() && dayString.isEmpty() && yearString.isEmpty()) {
-                user = new User(username, password, phoneNumber); //Create new isntance of user class with phone number
+                user = new User(username, password, phoneNumber); //Create new instance of user class with phone number
+                user.setInitialSettings(); //Set initial user settings with default values
             //If a birthday has been entered but no phone number, call constructor without phone number parameter
             } else if (phoneNumber.isEmpty()) {
                 int month = Integer.parseInt(monthString); //Convert user's birth month into an integer for the Date constructor
@@ -406,6 +429,7 @@ public class CreateUser extends javax.swing.JFrame {
                 int year = Integer.parseInt(yearString); //Convert user's birth year into an integer for the Date constructor
                 Date birthday = new Date(month, day, year); //Create new instance of Date class for the user's birthday
                 user = new User(username, password, email, birthday); //Create new instance of User class with birthday
+                user.setInitialSettings(); //Set initial user settings with default values
             } //End if statement checking which User constructor to call based on inputs
             
             //Add new user to array list of user accounts
@@ -432,7 +456,7 @@ public class CreateUser extends javax.swing.JFrame {
         //If there is any invalid input, check exactly which input(s) are invalid and display the appropriate error messages
         } else {
             //Check if not all of the mandatory information was entered
-            if (!checkMandatory(username, stringPassword, email))
+            if (!checkMandatory(username, password, email))
                 mandatoryError.setText("Not all mandatory fields have been filled."); //Display error message
             //Check if the entered email is not in the proper format
             if (!checkEmail(email))

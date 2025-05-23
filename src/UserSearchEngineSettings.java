@@ -8,12 +8,24 @@
  * @author 343330528
  */
 public class UserSearchEngineSettings extends javax.swing.JFrame {
+    //Declare Variables
+    private static boolean allowNotifications; //Allow notifications from application
+    private static boolean locationSharing; //Allow access to user's location
+    private static boolean microphoneAccess; //Allow access to microphone
+    private static boolean trackHistory; //Turn history on or off
+    private static boolean adPersonalization; //Turn ad personalization on or off
+    private static boolean safeBrowsing; //Turn safe browsing on or off
+    private static boolean searchSuggestions; //Turn search suggestions  on or off
+    private static int resultsPerPage; //Number of results per page when using the search engine
 
     /**
      * Creates new form UserSearchEngineSettings
      */
     public UserSearchEngineSettings() {
         initComponents();
+        
+        //Set top label to display logged-in account's username
+        usernameLabel.setText(HomeScreen.currentUser.getUsername() + "'s Search Engine Settings");
     }
 
     /**
@@ -25,21 +37,329 @@ public class UserSearchEngineSettings extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        historyComboBox = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        locationComboBox = new javax.swing.JComboBox<>();
+        submitButton = new javax.swing.JButton();
+        microphoneComboBox = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        adPersonalizationComboBox = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        searchSuggestionsComboBox = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        safeBrowsingComboBox = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        resultsPerPageComboBox = new javax.swing.JComboBox<>();
+        notificationsComboBox = new javax.swing.JComboBox<>();
+        usernameLabel = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        historyComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "On", "Off" }));
+        historyComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                historyComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Results Per Page:");
+
+        locationComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Share", "Hide" }));
+        locationComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                locationComboBoxActionPerformed(evt);
+            }
+        });
+
+        submitButton.setText("Submit");
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitButtonActionPerformed(evt);
+            }
+        });
+
+        microphoneComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Allow", "Block" }));
+        microphoneComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                microphoneComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Ad Personalization:");
+
+        jLabel7.setText("Safe Browsing:");
+
+        jLabel8.setText("Search Suggestions:");
+
+        jLabel1.setText("Track History:");
+
+        adPersonalizationComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "On", "Off" }));
+        adPersonalizationComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adPersonalizationComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Notifications:");
+
+        searchSuggestionsComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "On", "Off" }));
+        searchSuggestionsComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchSuggestionsComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Location:");
+
+        safeBrowsingComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "On", "Off" }));
+        safeBrowsingComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                safeBrowsingComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Microphone:");
+
+        resultsPerPageComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10", "25", "50" }));
+        resultsPerPageComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resultsPerPageComboBoxActionPerformed(evt);
+            }
+        });
+
+        notificationsComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Allow", "Block" }));
+        notificationsComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                notificationsComboBoxActionPerformed(evt);
+            }
+        });
+
+        usernameLabel.setText("User's Search Engine Settings");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 519, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(searchSuggestionsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(resultsPerPageComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(204, 204, 204)
+                        .addComponent(submitButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(usernameLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(safeBrowsingComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(adPersonalizationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(microphoneComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(locationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                                        .addComponent(notificationsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel1)
+                                    .addGap(39, 39, 39)
+                                    .addComponent(historyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(usernameLabel)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(notificationsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(locationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(microphoneComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(historyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(adPersonalizationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(safeBrowsingComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(searchSuggestionsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(resultsPerPageComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(submitButton)
+                .addGap(30, 30, 30))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void historyComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_historyComboBoxActionPerformed
+
+    private void locationComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_locationComboBoxActionPerformed
+
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+    //Check the current selected item (String) in the notifications combo box when the user submits the settings
+    if (notificationsComboBox.getSelectedItem().equals("Allow"))
+        //If the selected option is "Allow", set variable to true
+        allowNotifications = true;
+    //If selected option is not "Allow", only other option is "Block"
+    else
+        //If the selected option is "Block", set variable to false
+        allowNotifications = false; 
+
+    //Check the current selected item (String) in the location combo box when the user submits the settings
+    if (locationComboBox.getSelectedItem().equals("Share"))
+        //If the selected option is "Share", set variable to true
+        locationSharing = true;
+    //If selected option is not "Share", only other option is "Hide"
+    else
+        //If the selected option is "Hide", set variable to false
+        locationSharing = false; 
+
+    //Check the current selected item (String) in the microphone combo box when the user submits the settings
+    if (microphoneComboBox.getSelectedItem().equals("Allow"))
+        //If the selected option is "Allow", set variable to true
+        microphoneAccess = true;
+    //If selected option is not "Allow", only other option is "Block"
+    else
+        //If the selected option is "Block", set variable to false
+        microphoneAccess = false; 
+
+
+    //Check the current selected item (boolean) in the history combo box when the user submits the settings
+    if (historyComboBox.getSelectedItem().equals("On")) 
+        //If the selected option is "On", store in variable
+        trackHistory = true;
+    //If the selected option is not "On”, only other option is "Off"
+    else
+        //If the selected option is "Off", store in variable
+        trackHistory = false;
+
+    //Check the current selected item (boolean) in the ad personalization combo box when the user submits the settings
+    if (adPersonalizationComboBox.getSelectedItem().equals("On")) 
+        //If the selected option is "On", store in variable
+        adPersonalization = true;
+    //If the selected option is not "On”, only other option is "Off"
+    else
+        //If the selected option is "Off", store in variable
+        adPersonalization = false;
+
+    //Check the current selected item (boolean) in the safe browsing combo box when the user submits the settings
+    if (safeBrowsingComboBox.getSelectedItem().equals("On")) 
+        //If the selected option is "On", store in variable
+        safeBrowsing = true;
+    //If the selected option is not "On”, only other option is "Off"
+    else
+        //If the selected option is "Off", store in variable
+        safeBrowsing = false;
+
+    //Check the current selected item (boolean) in the search suggestions combo box when the user submits the settings
+    if (searchSuggestionsComboBox.getSelectedItem().equals("On")) 
+        //If the selected option is "On", store in variable
+        searchSuggestions = true;
+    //If the selected option is not "On”, only other option is "Off"
+    else
+        //If the selected option is "Off", store in variable
+        searchSuggestions = false;
+
+//Check the current selected item (boolean) in the results per page combo box when the user submits the settings
+    if (resultsPerPageComboBox.getSelectedItem().equals("10")) 
+        //If the selected option is "10", store in variable
+        resultsPerPage = 10;
+    //If selected option is "25” store in variable
+    else if (resultsPerPageComboBox.getSelectedItem().equals("25")) 
+        //If the selected option is "25", store in variable
+        resultsPerPage = 25; 
+    //If the selected option is not "10" or "25", only other option is "50"
+    else
+        //If the selected option is "50", store in variable
+        resultsPerPage = 50;
+
+
+    //Create new instance of SearchEngineSettings class based on settings selected by the user, upcast to BasicSettings
+    BasicSettings searchEngineSettings = new SearchEngineSettings(allowNotifications, locationSharing, microphoneAccess, trackHistory, adPersonalization, safeBrowsing, searchSuggestions, resultsPerPage);
+    //Add new search engine settings to user object's array list of all previously set settings
+    HomeScreen.currentUser.addNewSettings(searchEngineSettings);
+
+    //Set user's current search engine settings to the newly set search engine settings after downcasting
+    HomeScreen.currentUser.setSearchEngineSettings((SearchEngineSettings) searchEngineSettings);
+
+
+    //Return to home screen after user finishes editing search engine settings
+    new HomeScreen().setVisible(true); //Show home screen frame
+    this.setVisible(false); //Hide current frame (edit search engine settings)
+    }//GEN-LAST:event_submitButtonActionPerformed
+
+    private void microphoneComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_microphoneComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_microphoneComboBoxActionPerformed
+
+    private void adPersonalizationComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adPersonalizationComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adPersonalizationComboBoxActionPerformed
+
+    private void searchSuggestionsComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchSuggestionsComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchSuggestionsComboBoxActionPerformed
+
+    private void safeBrowsingComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_safeBrowsingComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_safeBrowsingComboBoxActionPerformed
+
+    private void resultsPerPageComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultsPerPageComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_resultsPerPageComboBoxActionPerformed
+
+    private void notificationsComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationsComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_notificationsComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +397,23 @@ public class UserSearchEngineSettings extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> adPersonalizationComboBox;
+    private javax.swing.JComboBox<String> historyComboBox;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JComboBox<String> locationComboBox;
+    private javax.swing.JComboBox<String> microphoneComboBox;
+    private javax.swing.JComboBox<String> notificationsComboBox;
+    private javax.swing.JComboBox<String> resultsPerPageComboBox;
+    private javax.swing.JComboBox<String> safeBrowsingComboBox;
+    private javax.swing.JComboBox<String> searchSuggestionsComboBox;
+    private javax.swing.JButton submitButton;
+    private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
 }

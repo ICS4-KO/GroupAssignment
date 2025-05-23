@@ -15,12 +15,13 @@ public class User {
     private String email; //User's email
     private Date birthday; //User's birthday
     private String phoneNumber; //User's phone number
-    private ArrayList<String> friendsList; //User's list of friends
-    private ArrayList<String> previousPasswords; //User's list of previous passwords
-    private ArrayList<BasicSettings> settings; //Arraylist of all the user's previous/current privacy settings
+    private ArrayList<String> friendsList = new ArrayList<>(); //User's list of friends
+    private ArrayList<String> previousPasswords  = new ArrayList<>(); //User's list of previous passwords
+    private ArrayList<BasicSettings> settings = new ArrayList<>(); //Arraylist of all the user's previous/current privacy settings
     private GameSettings currentGameSettings; //User's current game settings
     private SearchEngineSettings currentSearchEngineSettings; //User's current search engine settings
     private SocialMediaSettings currentSocialMediaSettings; //User's current social media privacy settings
+    private int accountIndex; //Account index to keep track of user's line number in flat file of accounts
     
     //Static Variables
     private static int numUsers = 0; //Total number of user accounts that have been instantiated
@@ -47,6 +48,8 @@ public class User {
         this.birthday = birthday; //Set birthday to value entered by the user
         this.email = email; //Set email to value entered by the user
         this.phoneNumber = phoneNumber; //Set phone number to value entered by the user
+        
+        this.accountIndex = numUsers; //Account/flat file line number of new user is the same as the number of existing users
         numUsers++; //Increase number of users that have been instantiated by one
     }
     
@@ -65,6 +68,7 @@ public class User {
         this.email = email; //Set email to value entered by the user
         this.phoneNumber = phoneNumber; //Set phone number to value entered by the user
         this.birthday = new Date(DEFAULT_MONTH, DEFAUlT_DAY, DEFAULT_YEAR); //Set birthday to default value
+        this.accountIndex = numUsers; //Account/flat file line number of new user is the same as the number of existing users
         numUsers++; //Increase number of users that have been instantiated by one
     }
     
@@ -83,6 +87,7 @@ public class User {
         this.email = email; //Set email to value entered by the user
         this.birthday = birthday; //Set birthday to value entered by the user
         this.phoneNumber = DEFAULT_PHONE_NUMBER; //Set phone number to default value
+        this.accountIndex = numUsers; //Account/flat file line number of new user is the same as the number of existing users
         numUsers++; //Increase number of users that have been instantiated by one
     }
     
@@ -100,9 +105,30 @@ public class User {
         this.email = email; //Set email to value entered by the user
         this.birthday = new Date(DEFAULT_MONTH, DEFAUlT_DAY, DEFAULT_YEAR); //Set birthday to default value
         this.phoneNumber = DEFAULT_PHONE_NUMBER; //Set phone number to default value
+        this.accountIndex = numUsers; //Account/flat file line number of new user is the same as the number of existing users
         numUsers++; //Increase number of users that have been instantiated by one
     }
         
+    /**
+     * This setter method sets the initial game, social media, and search engine settings of a newly instantiated User object
+     * so that the settings array list attribute can be sent to the history frames from the HomeScreen without a null pointer 
+     * exception
+     */
+    public void setInitialSettings() {
+        currentGameSettings = new GameSettings(); //Set GameSettings object attribute with default values
+        currentSearchEngineSettings = new SearchEngineSettings(); //Set SearchEngineSettings object attribute with default values
+        currentSocialMediaSettings = new SocialMediaSettings(); //Set SocialMediaSettings object attribute with default values
+        
+        BasicSettings gameSettings = new GameSettings(); //Initialize and upcast new GameSettings object to BasicSettings
+        BasicSettings searchEngineSettings = new SearchEngineSettings(); //Initialize and upcast new SearchEngineSettings object to BasicSettings
+        BasicSettings socialMediaSettings = new SocialMediaSettings(); //Initialize and upcast new SocialMediaSettings object to BasicSettings
+        
+        settings.add(gameSettings); //Add initial default game settings to user's attribute of past settings
+        settings.add(searchEngineSettings); //Add initial default game settings to user's attribute of past settings
+        settings.add(socialMediaSettings); //Add initial default game settings to user's attribute of past settings
+        
+    }
+    
     /**
      * This method adds a new password to the array list of the user's previous passwords
      * 
@@ -155,7 +181,7 @@ public class User {
      * @param currentSearchEngineSettings  SearchEngineSettings object that will be assigned to the user's current search engine settings
      */
     public void setSearchEngineSettings(SearchEngineSettings currentSearchEngineSettings) {
-        this.SearchEngineSettings = SearchEngineSettings;
+        this.currentSearchEngineSettings = currentSearchEngineSettings;
     }
     
     /**
@@ -164,7 +190,7 @@ public class User {
      * @param currentSocialMediaSettings  SocialMediaSettings object that will be assigned to the user's current social media settings
      */
     public void setSocialMediaSettings(SocialMediaSettings currentSocialMediaSettings) {
-        this.SocialMediaSettings = SocialMediaSettings;
+        this.currentSocialMediaSettings = currentSocialMediaSettings;
     }
     
     
@@ -246,7 +272,7 @@ public class User {
      * 
      * @return  Returns current game settings attribute of a User object 
      */
-    public GameSettings getcurrentGameSettings() {
+    public GameSettings getCurrentGameSettings() {
         return currentGameSettings;
     }
     
@@ -266,6 +292,16 @@ public class User {
      */
     public SocialMediaSettings getCurrentSocialMediaSettings() {
         return currentSocialMediaSettings;
+    }
+    
+    /**
+     * This getter methods returns the line number in the flat file of account usernames/passwords that the current
+     * user's login information is stored at
+     * 
+     * @return  Returns account index attribute of a User object
+     */
+    public int getAccountIndex() {
+        return accountIndex;
     }
     
     /**

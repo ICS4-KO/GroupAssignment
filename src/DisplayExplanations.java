@@ -14,6 +14,10 @@ public class DisplayExplanations extends javax.swing.JFrame {
      */
     public DisplayExplanations() {
         initComponents();
+        
+        //Set text for the first time the screen opens, display game settings explanation because it is the default selected item
+        //Call method to get paragraph text explanation of current user game settings and display in text area
+        Explanation.setText(HomeScreen.currentUser.getCurrentGameSettings().setExplanation());
     }
 
     /**
@@ -25,21 +29,91 @@ public class DisplayExplanations extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        explanationsComboBox = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Explanation = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        returnButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        explanationsComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Game Settings", "Search Engine Settings", "Social Media Settings" }));
+        explanationsComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                explanationsComboBoxActionPerformed(evt);
+            }
+        });
+
+        Explanation.setColumns(20);
+        Explanation.setLineWrap(true);
+        Explanation.setRows(5);
+        Explanation.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(Explanation);
+
+        jLabel1.setText("Settings Explanation");
+
+        returnButton.setText("Return");
+        returnButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(136, 136, 136))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(92, 92, 92)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(returnButton)
+                    .addComponent(explanationsComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(explanationsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(returnButton)
+                .addGap(23, 23, 23))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void explanationsComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_explanationsComboBoxActionPerformed
+        //Check if the item selected in the combo box is Game Settings
+        if(explanationsComboBox.getSelectedItem().equals("Game Settings")){
+            //Call method to get paragraph text explanation of current user game settings and display in text area
+            Explanation.setText(HomeScreen.currentUser.getCurrentGameSettings().setExplanation());
+        //Check if the item selected in the combo box is Search Engine Settings
+        }else if(explanationsComboBox.getSelectedItem().equals("Search Engine Settings")){
+            //Call method to get paragraph text explanation of current user search engine settings and display in text area
+            Explanation.setText(HomeScreen.currentUser.getCurrentSearchEngineSettings().setExplanation());
+        //Check if the item selected in the combo box is Social Media Settings
+        }else if(explanationsComboBox.getSelectedItem().equals("Social Media Settings")){
+            //Call method to get paragraph text explanation of current user social media settings and display in text area
+            Explanation.setText(HomeScreen.currentUser.getCurrentSocialMediaSettings().setExplanation());
+        } //End if statement checking which type of settings explanation to display
+        
+    }//GEN-LAST:event_explanationsComboBoxActionPerformed
+
+    private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
+        //Return to settings screen after user finishes looking at settings explanations
+        new SettingsScreen().setVisible(true); //Show settings screen frame
+        this.setVisible(false); //Hide current frame (settings explanations)
+    }//GEN-LAST:event_returnButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +151,10 @@ public class DisplayExplanations extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea Explanation;
+    private javax.swing.JComboBox<String> explanationsComboBox;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton returnButton;
     // End of variables declaration//GEN-END:variables
 }

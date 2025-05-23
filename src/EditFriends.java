@@ -14,12 +14,21 @@ public class EditFriends extends javax.swing.JFrame {
     //Declare variables
     private static ArrayList<String> updatedFriendsList = HomeScreen.currentUser.getFriendsList(); //List of user's friends (Strings)
     
+    //Because friendsDisplay is declared as a JList<String>, internal model must be a DefaultListModel<String>
+    //This supports methods like addElement() and allows items to be dynamically added to it 
+    DefaultListModel<String> friendListModel = new DefaultListModel<>();
     
     /**
      * Creates new form Friends
      */
     public EditFriends() {
         initComponents();
+        
+        //Link JList to the model in order to add/remove display items
+        friendsDisplay.setModel(friendListModel); 
+        //Iterate through every friend (String) in the user's current array list of friends
+        for (String friend : updatedFriendsList)
+            friendListModel.addElement(friend); //Set up the display by adding each of the user's existing friends
     }
 
     /**
@@ -146,13 +155,11 @@ public class EditFriends extends javax.swing.JFrame {
     private void addFriendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFriendButtonActionPerformed
         //Get friend username that was entered by the user in the add friend text field
         String friend = editFriendInput.getText();
-        //Add new friend to arraylist of friends
-        updatedFriendsList.add(friend);
-        
-        //Cast generic ListModel returned by getModel() to DefaultListModel in order to use methods edit the list (add/remove)
-        DefaultListModel model = (DefaultListModel) friendsDisplay.getModel();
-        //Add friend entered by the user to the friends list
-        model.addElement(friend);
+        //If the user has entered a name, add it to the JList when they press the Add button
+        if (!friend.isEmpty()) {
+            updatedFriendsList.add(friend); //Add new friend to updated arraylist of friends
+            friendListModel.addElement(friend); //Apdates the displayed JList
+        } //End if statement checking if the input field is empty 
         
         //Clear input text field for friend that will be added/removed
         editFriendInput.setText("");
