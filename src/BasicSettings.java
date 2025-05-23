@@ -9,34 +9,59 @@
  */
 public class BasicSettings {
     //instance variables
-    //hi
     private String explanation;
     private boolean allowNotifications;
     private boolean locationSharing;
     private boolean microphoneAccess;
    
+    /**
+     * This is a constructor that will retrieve users choice for there notification, location sharing and microphone access to set it the instance variable
+     * @param allowNotification This is a parameter that detects true or false depending on weather the user allows or blocks notifications
+     * @param locationSharing This is a parameter that detects true or false depending on weather the user allows or blocks location Sharing
+     * @param microphoneAccess This is a parameter that detects true or false depending on weather the user allow or blocks access to their microphone
+     */
     public BasicSettings(boolean allowNotification, boolean locationSharing, boolean microphoneAccess){
         this.allowNotifications=allowNotification;
         this.locationSharing=locationSharing;
         this.microphoneAccess=microphoneAccess;
     }
-   
+    
+    /**
+     * This getter method for getting explanation to explaining what each setting means
+     * @return This returns the explanation that will be used in the program "DisplayExplanatios" if selected by user
+     */
     public String getExplanation(){
         return explanation;
     }
-   
+    
+    /**
+     * This is a getter method for getting a boolean of user choice of weather they allow or prohibit notification
+     * @return It returns the boolean depending on what user choice was
+     */
     public boolean getAllowNotifications(){
         return allowNotifications;
     }
-   
+    
+    /**
+     * This is the getter method for getting a boolean of users choice of weather they allow or prohibit location sharing
+     * @return It returns the boolean depending on what user choice was
+     */
     public boolean getLocationSharing(){
         return locationSharing;
     }
-   
+    
+    /**
+     * This is the getter method for getting a boolean of users choice of weather they allow or prohibit microphone Access
+     * @return It returns the boolean depending on what user choice was
+     */
     public boolean getMicrophoneAccess(){
         return microphoneAccess;
     }
     
+    /**
+     * This is setter method for explanations that will be called in the class "DisplayExplanation". It will output the appropriate messages depending on user's choice. 
+     * @return It returns all the messages depending on user's choice
+     */
     public String setExplanation() {
         String allowNotificationsExplanation; //Initialize string to store explanation for notifications setting
         String locationSharingExplanation; //Initialize string to store explanation for location sharing setting
@@ -71,9 +96,5 @@ public class BasicSettings {
         
         //Return full string of concatenated explanations of each of the user's current settings
         return allowNotificationsExplanation + "\n\n" + locationSharingExplanation + "\n\n" + microphoneAccessExplanation + "\n\n";
-    }
-    
-    public String toString() {
-        return "View Settings History";
     }
 }
