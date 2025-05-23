@@ -6,8 +6,10 @@ import java.util.ArrayList;
  */
 
 /**
- *
- * @author 343330528
+ *This is a class that displays the previous Search Engine Setting
+ * @author Jojo
+ * @version 1.0
+ * @since 2025-05-23
  */
 public class SearchEngineSettingsHistory extends javax.swing.JFrame {
     //Define methods

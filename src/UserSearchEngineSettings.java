@@ -4,8 +4,10 @@
  */
 
 /**
- *
- * @author 343330528
+ *A Search Engine Settings screen that displays the current setting menu
+ * @author Jojo
+ * @version 1.0
+ * @since 2025-05-23
  */
 public class UserSearchEngineSettings extends javax.swing.JFrame {
     //Declare Variables

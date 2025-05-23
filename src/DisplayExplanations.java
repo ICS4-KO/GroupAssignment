@@ -4,8 +4,10 @@
  */
 
 /**
- *
- * @author 343330538
+ *This class displays all explanation of all setting for Games, Social media, and Search Engine
+ * @author Tina
+ * @version 1.0
+ * @since 2025-05-23
  */
 public class DisplayExplanations extends javax.swing.JFrame {
 

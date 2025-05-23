@@ -6,8 +6,10 @@ import java.util.ArrayList;
  */
 
 /**
- *
- * @author 343330528
+ * This is a class that displays the previous Social Media Setting
+ * @author Tina
+ * @version 1.0
+ * @since 2025-05-23
  */
 public class SocialMediaSettingsHistory extends javax.swing.JFrame {
     //Define methods
