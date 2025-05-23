@@ -14,10 +14,6 @@ public class BasicSettings {
     private boolean allowNotifications;
     private boolean locationSharing;
     private boolean microphoneAccess;
-    //Default variables
-    //private boolean DEFAULT_BIRTHDAY=true;
-    //private boolean DEFAULT_EMAIL=true;
-    //private boolean DEFAULT_PHONENUMBER=true;
    
     public BasicSettings(boolean allowNotification, boolean locationSharing, boolean microphoneAccess){
         this.allowNotifications=allowNotification;
