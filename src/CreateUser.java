@@ -9,8 +9,11 @@ import java.util.regex.Pattern;
  */
 
 /**
- *
- * @author 343330528
+ * Create User screen of Settings Simulator app that allows users to create a new account
+ * 
+ * @author   Kimi Ong
+ * @version  1.0
+ * @since    2025-05-23
  */
 public class CreateUser extends javax.swing.JFrame {
     //Global variables
@@ -327,25 +330,25 @@ public class CreateUser extends javax.swing.JFrame {
         });
 
         mandatoryError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
-        mandatoryError.setText("mandatoryError");
+        mandatoryError.setForeground(new java.awt.Color(153, 0, 0));
 
         emailError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
-        emailError.setText("emailError");
+        emailError.setForeground(new java.awt.Color(153, 0, 0));
 
         birthdayError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
-        birthdayError.setText("birthdayError");
+        birthdayError.setForeground(new java.awt.Color(153, 0, 0));
 
         phoneNumberError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
-        phoneNumberError.setText("phoneNumberError");
+        phoneNumberError.setForeground(new java.awt.Color(153, 0, 0));
 
         passwordError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
-        passwordError.setText("passwordError1");
+        passwordError.setForeground(new java.awt.Color(153, 0, 0));
 
         passwordError2.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
-        passwordError2.setText("passwordError2");
+        passwordError2.setForeground(new java.awt.Color(153, 0, 0));
 
         usernameError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
-        usernameError.setText("usernameError");
+        usernameError.setForeground(new java.awt.Color(153, 0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -476,7 +479,7 @@ public class CreateUser extends javax.swing.JFrame {
                 .addComponent(phoneNumberError)
                 .addGap(12, 12, 12)
                 .addComponent(submitButton)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
 
         pack();
