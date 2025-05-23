@@ -9,6 +9,7 @@
  */
 public class BasicSettings {
     //instance variables
+    //hi
     private String explanation;
     private boolean allowNotifications;
     private boolean locationSharing;
