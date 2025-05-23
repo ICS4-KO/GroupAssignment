@@ -5,17 +5,17 @@
 
 /**
  *
- * @author 342484417
+ * @author Tina
  */
 public class BasicSettings {
     //instance variables
-    private String explanation;
-    private boolean allowNotifications;
-    private boolean locationSharing;
-    private boolean microphoneAccess;
+    private String explanation;//A string for explanation
+    private boolean allowNotifications;//Setting for allowing nottification
+    private boolean locationSharing;//setting for sharing location
+    private boolean microphoneAccess;//setting for allowing access to microphone
    
     /**
-     * This is a constructor that will retrieve users choice for there notification, location sharing and microphone access to set it the instance variable
+     * This is a constructor that will retrieve users choice for there notification, location sharing and microphone access to set it as the instance variable
      * @param allowNotification This is a parameter that detects true or false depending on weather the user allows or blocks notifications
      * @param locationSharing This is a parameter that detects true or false depending on weather the user allows or blocks location Sharing
      * @param microphoneAccess This is a parameter that detects true or false depending on weather the user allow or blocks access to their microphone
@@ -35,24 +35,24 @@ public class BasicSettings {
     }
     
     /**
-     * This is a getter method for getting a boolean of user choice of weather they allow or prohibit notification
-     * @return It returns the boolean depending on what user choice was
+     * This is a getter method for getting a Boolean of user choice of weather they allow or prohibit notification
+     * @return It returns the Boolean depending on what user choice was
      */
     public boolean getAllowNotifications(){
         return allowNotifications;
     }
     
     /**
-     * This is the getter method for getting a boolean of users choice of weather they allow or prohibit location sharing
-     * @return It returns the boolean depending on what user choice was
+     * This is the getter method for getting a Boolean of users choice of weather they allow or prohibit location sharing
+     * @return It returns the Boolean depending on what user choice was
      */
     public boolean getLocationSharing(){
         return locationSharing;
     }
     
     /**
-     * This is the getter method for getting a boolean of users choice of weather they allow or prohibit microphone Access
-     * @return It returns the boolean depending on what user choice was
+     * This is the getter method for getting a Boolean of users choice of weather they allow or prohibit microphone Access
+     * @return It returns the Boolean depending on what user choice was
      */
     public boolean getMicrophoneAccess(){
         return microphoneAccess;

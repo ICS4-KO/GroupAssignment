@@ -9,19 +9,33 @@
  * @version 1.0
  */
 public class SearchEngineSettings extends BasicSettings {
-    private boolean trackHistory;
-    private boolean adPersonalization;
-    private boolean safeBrowsing;
-    private boolean searchSuggestions;
-    private int resultsPerPage;
-    private int searchEngineSettingsCounter;
-    private static int counter = 0;
-    private static final int DEFAULT_RESULTS_PER_PAGE = 10;
-            
+    //Instance variables
+    private boolean trackHistory;//Setting to allow history tracking
+    private boolean adPersonalization;//setting to allow ad personalization
+    private boolean safeBrowsing;//setting for turing on safe browsing
+    private boolean searchSuggestions;//setting to allow search suggestions
+    private int resultsPerPage;//setting to set the number of results per page
+    private int searchEngineSettingsCounter;//nth version of search engin settings the user has set for their account, displayed in history combo box
+    //Static variables
+    private static int counter = 0;//a counter the keep track of the version
+    private static final int DEFAULT_RESULTS_PER_PAGE = 10;//a default variable for the number of results for each page
+    
+    /**
+     * This is a constructor that retrieves user's choice to set each instance variable for there settings like history tracking, ad personalization and much more.
+     * Additionally, there is a counter for the version number of the user's current search engine settings
+     * @param allowNotifications A parameter that detects true or false depending on weather the user allows or blocks notifications
+     * @param locationSharing A parameter that detects true or false depending on weather the user allows or blocks location Sharing
+     * @param microphoneAccess A parameter that detects true or false depending on weather the user allows or blocks microphone access
+     * @param trackHistory A parameter that detects true or false depending on weather the user allows or blocks the program from tracking history
+     * @param adPersonalization A parameter that detects true or false depending on weather the user allows or prohibits ad personalization
+     * @param safeBrowsing A parameter that detects true or false depending on weather the user wants to turn on or off safe browsing
+     * @param searchSuggestions A parameter that detects true or false depending on weather the user allows or blocks search suggestions from displaying
+     * @param resultsPerPage  A parameter that is the amount the user selected to be the number of results per page
+     */
     public SearchEngineSettings(boolean allowNotifications, boolean locationSharing, boolean microphoneAccess,
                                 boolean trackHistory, boolean adPersonalization, boolean safeBrowsing,
                                 boolean searchSuggestions, int resultsPerPage) {
-        super(allowNotifications, locationSharing, microphoneAccess);
+        super(allowNotifications, locationSharing, microphoneAccess);//calls parent constructor to set them
         this.trackHistory = trackHistory;
         this.adPersonalization = adPersonalization;
         this.safeBrowsing = safeBrowsing;
@@ -44,30 +58,46 @@ public class SearchEngineSettings extends BasicSettings {
         this.searchSuggestions = true;
         this.resultsPerPage = DEFAULT_RESULTS_PER_PAGE;
 
-        this.searchEngineSettingsCounter = counter;
-        counter++;
+        this.searchEngineSettingsCounter = counter;//sets the current version of the setting
+        counter++;//updated and incremented by one 
     }
-
+    
+    /**
+     * This is a getter method that returns a Boolean corresponding to user's choice on weather or not they want there history to be tracked
+     * @return It returns the Boolean depending on what user choice was
+     */
     public boolean getTrackHistory() {
         return trackHistory;
     }
-
+    /**
+     * This is a getter method that returns a Boolean corresponding to user's choice on weather or not they want ad personalization
+     * @return It returns the Boolean depending on what user choice was
+     */
     public boolean getAdPersonalization() {
         return adPersonalization;
     }
-
+    /**
+     * This is a getter method that returns a Boolean corresponding to user's choice on weather or not they want to turn on safe browsing
+     * @return It returns the Boolean depending on what user choice was
+     */
     public boolean getSafeBrowsing() {
         return safeBrowsing;
     }
-
+    /**
+     * This is a getter method that returns a Boolean corresponding to user's choice on weather or not they want the program to make search suggestions
+     * @return It returns the Boolean depending on what user choice was
+     */
     public boolean getSearchSuggestions() {
         return searchSuggestions;
     }
-
+    /**
+     * This is a getter method that returns a amount they want per page depending on user's choice
+     * @return It returns the amount depending on what user choice was
+     */
     public int getResultsPerPage() {
         return resultsPerPage;
     }
-
+    
     @Override
     public String setExplanation() {
         String trackHistoryExplanation; //Initialize string to store explanation for track history setting
@@ -129,7 +159,10 @@ public class SearchEngineSettings extends BasicSettings {
         //Return full string of concatenated explanations of each of the user's current game settings
         return super.setExplanation() + "\n\n" + trackHistoryExplanation + "\n\n" + adPersonalizationExplanation + "\n\n" + safeBrowsingExplanation + "\n\n" + searchSuggestionsExplanation + "\n\n" + resultsPerPageExplanation;
     }
-
+    /**
+     * This is a toString method that displays what version the program is
+     * @return It returns the version it's on currently
+     */
     @Override
     public String toString() {
         return "Game Settings Version " + searchEngineSettingsCounter;

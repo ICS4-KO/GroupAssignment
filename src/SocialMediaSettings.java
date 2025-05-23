@@ -5,20 +5,34 @@
 
 /**
  *
- * @author 343330528
+ * @author Tina
  */
 public class SocialMediaSettings extends BasicSettings{
-    private boolean mentionsPrivacy;
-    private boolean messagesPrivacy;
-    private boolean storiesPrivacy;
-    private boolean birthdayPrivacy;
-    private boolean emailPrivacy;
-    private boolean phoneNumberPrivacy;
-    private int socialMediaSettingsCounter;
-    private static int counter=0;
+    //Instance Variable
+    private boolean mentionsPrivacy;//setting to allow being mentioned
+    private boolean messagesPrivacy;//setting to allow messages
+    private boolean storiesPrivacy;//setting to make stories public 
+    private boolean birthdayPrivacy;//setting to make make birthdays public
+    private boolean emailPrivacy;//setting to make email public
+    private boolean phoneNumberPrivacy;//setting to make phone number public
+    private int socialMediaSettingsCounter;////nth version of Socail Media settings the user has set for their account, displayed in history combo box
+    //Static variable
+    private static int counter=0;//a counter to current version
     
+    /**
+     * This is a constructor that retrieves user's choice to set each instance variable for there settings like microphone, ad birthday and much more.
+     * @param allowNotification This is a parameter that detects true or false depending on weather the user allows or blocks notifications
+     * @param locationSharing This is a parameter that detects true or false depending on weather the user allows or blocks location Sharing
+     * @param microphoneAccess This is a parameter that detects true or false depending on weather the user allows or blocks microphone Access
+     * @param birthdayPrivacy This is a parameter that detects true or false depending on weather the user make their birthday public or private
+     * @param emailPrivacy This is a parameter that detects true or false depending on weather the user make their email public or private
+     * @param phoneNumberPrivacy This is a parameter that detects true or false depending on weather the user make their phone number public or private
+     * @param mentionsPrivacy This is a parameter that detects true or false depending on weather the user allows or blocks others from mentions them
+     * @param messagesPrivacy This is a parameter that detects true or false depending on weather the user make their messages public or private
+     * @param storiesPrivacy This is a parameter that detects true or false depending on weather the user make their stories public or private
+     */
     public SocialMediaSettings(boolean allowNotification, boolean locationSharing, boolean microphoneAccess, boolean birthdayPrivacy, boolean emailPrivacy, boolean phoneNumberPrivacy, boolean mentionsPrivacy, boolean messagesPrivacy, boolean storiesPrivacy){
-        super(allowNotification, locationSharing, microphoneAccess);
+        super(allowNotification, locationSharing, microphoneAccess); //calls parent constructor to set them 
         this.mentionsPrivacy=mentionsPrivacy;
         this.messagesPrivacy=messagesPrivacy;
         this.storiesPrivacy=storiesPrivacy;
@@ -26,7 +40,7 @@ public class SocialMediaSettings extends BasicSettings{
         this.emailPrivacy=emailPrivacy;
         this.phoneNumberPrivacy=phoneNumberPrivacy;
         
-        this.socialMediaSettingsCounter = counter++;
+        this.socialMediaSettingsCounter = counter++;//increases counter by one to set the version counter as it
     }
     
     /**
@@ -46,26 +60,50 @@ public class SocialMediaSettings extends BasicSettings{
         this.socialMediaSettingsCounter = counter++;
     }
     
+    /**
+     * This is a getter method for that returns a Boolean corresponding to user's choice on weather they want their birthday public or private
+     * @return It returns the Boolean depending on what user choice was
+     */
     public boolean getBirthdayPrivacy(){
         return birthdayPrivacy;
     }
     
+    /**
+     * This is a getter method for that returns a Boolean corresponding to user's choice on weather they want their emails public or private
+     * @return It returns the Boolean depending on what user choice was
+     */
     public boolean getEmailPrivacy(){
         return emailPrivacy;
     }
     
+    /**
+     * This is a getter method for that returns a Boolean corresponding to user's choice on weather they want their phone number public or private
+     * @return It returns the Boolean depending on what user choice was
+     */
     public boolean getPhoneNumberPrivacy(){
         return phoneNumberPrivacy;
     }
     
+    /**
+     * This is a getter method for that returns a Boolean corresponding to user's choice on weather they allow or prohibit others to mention them 
+     * @return It returns the Boolean depending on what user choice was
+     */
     public boolean getMentionsPrivacy(){
         return mentionsPrivacy;
     }
     
+    /**
+     * This is a getter method for that returns a Boolean corresponding to user's choice on weather they want their messages public or private
+     * @return It returns the Boolean depending on what user choice was
+     */
     public boolean getMessagesPrivacy(){
         return messagesPrivacy;
     }
     
+    /**
+     * This is a getter method for that returns a Boolean corresponding to user's choice on weather they want their stories public or private
+     * @return It returns the Boolean depending on what user choice was
+     */
     public boolean getStoriesPrivacy(){
         return storiesPrivacy;
     }
@@ -137,7 +175,11 @@ public class SocialMediaSettings extends BasicSettings{
         //Return full string of concatenated explanations of each of the user's current game settings
         return super.setExplanation() + "\n\n" + birthdayPrivacyExplanation + "\n\n" + emailPrivacyExplanation + "\n\n" + phoneNumberExplanation + "\n\n" + mentionsPrivacyExplanation + "\n\n" + messagesPrivacyExplanation + "\n\n" + storiesPrivacyExplanation;
     }
-    
+    /**
+     * This is a toString method that displays what version the program is
+     * @return It returns the version it's on currently
+     */
+    @Override
     public String toString(){
         return "Game Settings Version " + socialMediaSettingsCounter;
     }
