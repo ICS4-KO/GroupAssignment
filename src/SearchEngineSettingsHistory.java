@@ -71,29 +71,39 @@ public class SearchEngineSettingsHistory extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        searchEngineHistoryComboBox.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         searchEngineHistoryComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchEngineHistoryComboBoxActionPerformed(evt);
             }
         });
 
+        usernameLabel.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         usernameLabel.setText("User's Search Engine Settings History");
 
+        notificationsLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         notificationsLabel.setText("Notifications On:");
 
+        locationLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         locationLabel.setText("Location On:");
 
+        microphoneLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         microphoneLabel.setText("Microphone On:");
         microphoneLabel.setToolTipText("");
 
+        trackHistoryLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         trackHistoryLabel.setText("Track History On:");
 
+        adPersonalizationLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         adPersonalizationLabel.setText("Ad Personalization On:");
 
+        safeBrowsingLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         safeBrowsingLabel.setText("Safe Browsing On:");
 
+        resultsPerPageLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         resultsPerPageLabel.setText("Results per Page:");
 
+        returnButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         returnButton.setText("Return");
         returnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,19 +115,12 @@ public class SearchEngineSettingsHistory extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(usernameLabel)
-                .addGap(119, 119, 119))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(returnButton)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(105, 105, 105)
-                            .addComponent(searchEngineHistoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(92, 92, 92)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(returnButton)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(locationLabel)
                                 .addComponent(notificationsLabel)
@@ -125,33 +128,37 @@ public class SearchEngineSettingsHistory extends javax.swing.JFrame {
                                 .addComponent(trackHistoryLabel)
                                 .addComponent(adPersonalizationLabel)
                                 .addComponent(safeBrowsingLabel)
-                                .addComponent(resultsPerPageLabel)))))
-                .addContainerGap(92, Short.MAX_VALUE))
+                                .addComponent(resultsPerPageLabel)
+                                .addComponent(searchEngineHistoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(usernameLabel)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(45, 45, 45)
                 .addComponent(usernameLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(26, 26, 26)
                 .addComponent(searchEngineHistoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addGap(29, 29, 29)
                 .addComponent(notificationsLabel)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(locationLabel)
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
                 .addComponent(microphoneLabel)
-                .addGap(52, 52, 52)
+                .addGap(34, 34, 34)
                 .addComponent(trackHistoryLabel)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(adPersonalizationLabel)
                 .addGap(18, 18, 18)
                 .addComponent(safeBrowsingLabel)
                 .addGap(18, 18, 18)
                 .addComponent(resultsPerPageLabel)
-                .addGap(18, 18, 18)
+                .addGap(29, 29, 29)
                 .addComponent(returnButton)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();

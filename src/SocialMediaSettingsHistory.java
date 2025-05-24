@@ -72,32 +72,44 @@ public class SocialMediaSettingsHistory extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        usernameLabel.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         usernameLabel.setText("User's Social Media Settings History");
 
+        notificationsLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         notificationsLabel.setText("Notifications On:");
 
+        socialMediaHistoryComboBox.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         socialMediaHistoryComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 socialMediaHistoryComboBoxActionPerformed(evt);
             }
         });
 
+        locationLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         locationLabel.setText("Location On:");
 
+        microphoneLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         microphoneLabel.setText("Microphone On:");
 
+        birthdayPrivacyLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         birthdayPrivacyLabel.setText("Public Birthday:");
 
+        emailPrivacyLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         emailPrivacyLabel.setText("Public Email:");
 
+        phoneNumberPrivacyLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         phoneNumberPrivacyLabel.setText("Public Phone Number:");
 
+        mentionsPrivacyLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         mentionsPrivacyLabel.setText("Public Mentions:");
 
+        messagesPrivacyLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         messagesPrivacyLabel.setText("Public Messages:");
 
+        storiesPrivacyLabel.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         storiesPrivacyLabel.setText("Public Stories:");
 
+        returnButton.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         returnButton.setText("Return");
         returnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,60 +122,60 @@ public class SocialMediaSettingsHistory extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
+                    .addComponent(locationLabel)
+                    .addComponent(notificationsLabel)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(microphoneLabel)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(messagesPrivacyLabel)
+                            .addComponent(emailPrivacyLabel)
+                            .addComponent(birthdayPrivacyLabel)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(mentionsPrivacyLabel)
                             .addComponent(phoneNumberPrivacyLabel)
-                            .addComponent(emailPrivacyLabel)
-                            .addComponent(birthdayPrivacyLabel)
-                            .addComponent(microphoneLabel)
-                            .addComponent(locationLabel)
-                            .addComponent(notificationsLabel)
-                            .addComponent(socialMediaHistoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(storiesPrivacyLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
-                                .addComponent(returnButton))))
+                            .addComponent(messagesPrivacyLabel)
+                            .addComponent(storiesPrivacyLabel)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(usernameLabel)))
-                .addGap(61, 61, 61))
+                        .addGap(196, 196, 196)
+                        .addComponent(returnButton))
+                    .addComponent(socialMediaHistoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(91, 91, 91))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(usernameLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(50, 50, 50)
                 .addComponent(usernameLabel)
                 .addGap(18, 18, 18)
                 .addComponent(socialMediaHistoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(notificationsLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(locationLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(microphoneLabel)
-                        .addGap(40, 40, 40)
-                        .addComponent(birthdayPrivacyLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(emailPrivacyLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(phoneNumberPrivacyLabel)
-                        .addGap(12, 12, 12)
-                        .addComponent(mentionsPrivacyLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(messagesPrivacyLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(storiesPrivacyLabel)
-                        .addContainerGap(28, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(returnButton)
-                        .addContainerGap())))
+                .addGap(18, 18, 18)
+                .addComponent(notificationsLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(locationLabel)
+                .addGap(12, 12, 12)
+                .addComponent(microphoneLabel)
+                .addGap(29, 29, 29)
+                .addComponent(birthdayPrivacyLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(emailPrivacyLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(phoneNumberPrivacyLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(mentionsPrivacyLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(messagesPrivacyLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(storiesPrivacyLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(returnButton)
+                .addGap(23, 23, 23))
         );
 
         pack();

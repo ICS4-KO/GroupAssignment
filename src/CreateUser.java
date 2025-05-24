@@ -510,6 +510,7 @@ public class CreateUser extends javax.swing.JFrame {
                 user = new User(username, password, email); //Create new instance of User class without birthday or phone number
                 user.setInitialSettings(); //Set initial user settings with default values
                 existingUsernames.add(username); //Add new username to array list of existing usernames
+                user.addNewPassword(password); //Add new password to array list of previous passwords
             //If both birthday and phone number are filled in, call constructor with both birthday and phone number parameters
             } else if (!monthString.isEmpty() && !dayString.isEmpty() && !yearString.isEmpty() && !phoneNumber.isEmpty()) {
                 //If birthday and phone numbers are valid, instantiate a new User object
@@ -519,8 +520,9 @@ public class CreateUser extends javax.swing.JFrame {
                     int year = Integer.parseInt(yearString); //Convert user's birth year into an integer for the Date constructor
                     Date birthday = new Date(month, day, year); //Create new instance of Date class for the user's birthday
                     user = new User(username, password, email, birthday, phoneNumber); //Create new instance of User class with birthday and phone number
-                    existingUsernames.add(username); //Add new username to array list of existing usernames
                     user.setInitialSettings(); //Set initial user settings with default values
+                    existingUsernames.add(username); //Add new username to array list of existing usernames
+                    user.addNewPassword(password); //Add new password to array list of previous passwords
                 //If birthday or phone number valid, display error
                 } else {
                     //Check if entered birthday is not valid (not integers, date does not exist, not within age limit)
@@ -538,6 +540,7 @@ public class CreateUser extends javax.swing.JFrame {
                     user = new User(username, password, phoneNumber); //Create new instance of user class with phone number
                     user.setInitialSettings(); //Set initial user settings with default values
                     existingUsernames.add(username); //Add new username to array list of existing usernames
+                    user.addNewPassword(password); //Add new password to array list of previous passwords
                 //If phone number is not valid, display error
                 } else {
                     phoneNumberError.setText("Invalid phone number format."); //Display error message
@@ -554,6 +557,7 @@ public class CreateUser extends javax.swing.JFrame {
                     user = new User(username, password, email, birthday); //Create new instance of User class with birthday
                     user.setInitialSettings(); //Set initial user settings with default values
                     existingUsernames.add(username); //Add new username to array list of existing usernames
+                    user.addNewPassword(password); //Add new password to array list of previous passwords
                 //If birthday is not valid, display error
                 } else {
                     birthdayError.setText("Invalid birthday. Note: Age limit is 13 - 100"); //Display error message
@@ -599,6 +603,10 @@ public class CreateUser extends javax.swing.JFrame {
             //Check if the entered email is not in the proper format
             if (!checkEmail(email))
                 emailError.setText("Invalid email format."); //Display error message
+            if (!(monthString.isEmpty() && dayString.isEmpty() && yearString.isEmpty()) && !checkDOB(monthString, dayString, yearString))
+                birthdayError.setText("Invalid birthday. Note: Age limit is 13 - 100"); //Display error message
+            if (!phoneNumber.isEmpty() && !checkPhoneNumber(phoneNumber))
+                phoneNumberError.setText("Invalid phone number format."); //Display error message
                
         } //End if statement checking if all information entered by the user is valid
     }//GEN-LAST:event_submitButtonActionPerformed
