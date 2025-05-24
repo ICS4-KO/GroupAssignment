@@ -50,19 +50,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="searchSuggestionsComboBox" min="-2" max="-2" attributes="0"/>
                           <Component id="resultsPerPageComboBox" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Component id="safeBrowsingComboBox" min="-2" max="-2" attributes="0"/>
-                                  <Component id="adPersonalizationComboBox" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="microphoneComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="locationComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="notificationsComboBox" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="historyComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="microphoneComboBox" alignment="0" max="32767" attributes="0"/>
+                              <Component id="locationComboBox" alignment="0" max="32767" attributes="0"/>
+                              <Component id="notificationsComboBox" alignment="0" max="32767" attributes="0"/>
+                              <Component id="historyComboBox" alignment="0" max="32767" attributes="0"/>
+                              <Component id="safeBrowsingComboBox" alignment="0" max="32767" attributes="0"/>
+                              <Component id="adPersonalizationComboBox" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>

@@ -285,7 +285,7 @@ public class CreateUser extends javax.swing.JFrame {
         jLabel5.setText("Password:");
 
         jLabel6.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
-        jLabel6.setText("Email (person@mail.com):");
+        jLabel6.setText("Email (x@y.com):");
 
         jLabel7.setFont(new java.awt.Font("Hiragino Sans", 0, 13)); // NOI18N
         jLabel7.setText("Birthday -");
@@ -364,7 +364,8 @@ public class CreateUser extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(createUserLabel)
                             .addComponent(passwordInput, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                            .addComponent(usernameInput))))
+                            .addComponent(usernameInput)
+                            .addComponent(emailInput))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -383,10 +384,7 @@ public class CreateUser extends javax.swing.JFrame {
                                     .addComponent(passwordError2, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(mandatoryError, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(emailError, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(85, 85, 85)
@@ -441,8 +439,8 @@ public class CreateUser extends javax.swing.JFrame {
                 .addComponent(passwordError)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passwordError2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -474,7 +472,7 @@ public class CreateUser extends javax.swing.JFrame {
                 .addComponent(phoneNumberError)
                 .addGap(12, 12, 12)
                 .addComponent(submitButton)
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         pack();

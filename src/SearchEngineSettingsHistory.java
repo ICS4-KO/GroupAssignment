@@ -131,9 +131,9 @@ public class SearchEngineSettingsHistory extends javax.swing.JFrame {
                                 .addComponent(resultsPerPageLabel)
                                 .addComponent(searchEngineHistoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
+                        .addGap(58, 58, 58)
                         .addComponent(usernameLabel)))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -45,6 +45,7 @@
                           <Component id="createUserLabel" min="-2" max="-2" attributes="0"/>
                           <Component id="passwordInput" alignment="0" pref="198" max="32767" attributes="0"/>
                           <Component id="usernameInput" alignment="0" max="32767" attributes="0"/>
+                          <Component id="emailInput" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -67,11 +68,7 @@
                                   <Component id="passwordError2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="mandatoryError" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="emailError" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="emailInput" min="-2" pref="176" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -142,10 +139,10 @@
               <Component id="passwordError" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="passwordError2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                  <Component id="emailInput" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="emailInput" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="emailError" min="-2" pref="19" max="-2" attributes="0"/>
@@ -181,7 +178,7 @@
               <Component id="phoneNumberError" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Component id="submitButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="191" max="32767" attributes="0"/>
+              <EmptySpace pref="188" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -246,7 +243,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Hiragino Sans" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Email (person@mail.com):"/>
+        <Property name="text" type="java.lang.String" value="Email (x@y.com):"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">

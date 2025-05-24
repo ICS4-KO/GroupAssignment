@@ -132,7 +132,7 @@ public class HomeScreen extends javax.swing.JFrame {
                             .addGap(99, 99, 99)
                             .addComponent(usernameLabel)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
+                        .addGap(116, 116, 116)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(birthdayLabel)
                             .addComponent(emailLabel)

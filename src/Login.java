@@ -57,6 +57,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("Password:");
 
         loginError.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        loginError.setForeground(new java.awt.Color(153, 0, 0));
 
         usernameInput.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
 
