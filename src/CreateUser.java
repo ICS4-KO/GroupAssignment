@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
  */
 public class CreateUser extends javax.swing.JFrame {
     //Global variables
-    public static ArrayList<String> existingUsernames = new ArrayList<>();
+    public static ArrayList<String> existingUsernames = new ArrayList<>(); //Array list of existing usernames
     public static ArrayList<User> accounts = new ArrayList<>(); //Array list for all the user accounts that are created
     public static boolean firstTime = true; //First time user creates account indicator
     
@@ -142,7 +142,7 @@ public class CreateUser extends javax.swing.JFrame {
                 //Check error: day is less than 1
                 if (day < 1)
                     validInput = false; //Set variable indicating valid input to false
-                //Check error: more than 31 days in January, March, may, July, August, October, pr December
+                //Check error: more than 31 days in January, March, may, July, August, October, or December
                 if (day > 31 && (month ==  1 || month ==  3 || month ==  5 || month ==  7 || month ==  8 || month ==  10 || month ==  12)) {
                     validInput = false; //Set variable indicating valid input to false
                 //Check error: more than 30 days in April, June, September, or November
