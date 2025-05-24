@@ -200,6 +200,7 @@ public class CreateUser extends javax.swing.JFrame {
     public CreateUser() {
         initComponents();
         
+        
         //Clear file of user accounts when the user first runs the program and creates an account for the first time
         if (firstTime) {
             //Clear information to flat-file of accounts
@@ -508,7 +509,7 @@ public class CreateUser extends javax.swing.JFrame {
                 user = new User(username, password, email); //Create new instance of User class without birthday or phone number
                 user.setInitialSettings(); //Set initial user settings with default values
                 existingUsernames.add(username); //Add new username to array list of existing usernames
-                user.addNewPassword(password); //Add new password to array list of previous passwords
+                user.addNewPassword(password); //Add new password to array list of user's previous passwords
             //If both birthday and phone number are filled in, call constructor with both birthday and phone number parameters
             } else if (!monthString.isEmpty() && !dayString.isEmpty() && !yearString.isEmpty() && !phoneNumber.isEmpty()) {
                 //If birthday and phone numbers are valid, instantiate a new User object
@@ -520,7 +521,7 @@ public class CreateUser extends javax.swing.JFrame {
                     user = new User(username, password, email, birthday, phoneNumber); //Create new instance of User class with birthday and phone number
                     user.setInitialSettings(); //Set initial user settings with default values
                     existingUsernames.add(username); //Add new username to array list of existing usernames
-                    user.addNewPassword(password); //Add new password to array list of previous passwords
+                    user.addNewPassword(password); //Add new password to array list of user's previous passwords
                 //If birthday or phone number valid, display error
                 } else {
                     //Check if entered birthday is not valid (not integers, date does not exist, not within age limit)
@@ -538,7 +539,7 @@ public class CreateUser extends javax.swing.JFrame {
                     user = new User(username, password, phoneNumber); //Create new instance of user class with phone number
                     user.setInitialSettings(); //Set initial user settings with default values
                     existingUsernames.add(username); //Add new username to array list of existing usernames
-                    user.addNewPassword(password); //Add new password to array list of previous passwords
+                    user.addNewPassword(password); //Add new password to array list of user's previous passwords
                 //If phone number is not valid, display error
                 } else {
                     phoneNumberError.setText("Invalid phone number format."); //Display error message
@@ -555,7 +556,7 @@ public class CreateUser extends javax.swing.JFrame {
                     user = new User(username, password, email, birthday); //Create new instance of User class with birthday
                     user.setInitialSettings(); //Set initial user settings with default values
                     existingUsernames.add(username); //Add new username to array list of existing usernames
-                    user.addNewPassword(password); //Add new password to array list of previous passwords
+                    user.addNewPassword(password); //Add new password to array list of user's previous passwords
                 //If birthday is not valid, display error
                 } else {
                     birthdayError.setText("Invalid birthday. Note: Age limit is 13 - 100"); //Display error message
@@ -572,7 +573,7 @@ public class CreateUser extends javax.swing.JFrame {
                 //Create FileWriter object to append to the file of accounts, named "accounts.txt"
                 FileWriter writer = new FileWriter("accounts.txt", true);
                 //Write username and password of the new account onto the file
-                writer.write(username + "," + password);
+                writer.write(username + "," + password + "\n");
                 //Close FileWriter
                 writer.close();
             //Catch IO exceptions when writing to flat file
