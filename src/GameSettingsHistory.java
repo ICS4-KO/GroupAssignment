@@ -26,7 +26,6 @@ public class GameSettingsHistory extends javax.swing.JFrame {
         //Clear all items in game settings history combo box before adding updated set of settings objects as items
         gameHistoryComboBox.removeAllItems(); //Clear game settings history
 
-                
         //Iterate through each BasicSettings object in the array list of BasicSettings
         for (BasicSettings settings : settingsArray) {
             //Check if the BasicSettings object's instance type is GameSettings so that it can downcast
@@ -34,6 +33,7 @@ public class GameSettingsHistory extends javax.swing.JFrame {
                 //Downcast BasicSettings object to GameSettings object, add to game settings history combo box
                 gameHistoryComboBox.addItem((GameSettings) settings);
         } //End for loop iterating through array list of settings objects
+
     }
     
     

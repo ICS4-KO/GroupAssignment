@@ -193,6 +193,10 @@ public class GameSettings extends BasicSettings {
         return super.setExplanation() + "\n\n" + difficultyLevelExplanation + "\n\n" + subtitlesEnabledExplanation + "\n\n" + screenResolutionExplanation + "\n\n" + controlSchemeExplanation + "\n\n" + graphicsQualityExplanation;
     }
     
+    public void setGameSettingsCounter(int gameSettingsCounter) {
+        this.gameSettingsCounter = gameSettingsCounter;
+    }
+    
     @Override
     /**
     * This method returns the user's game settings version number, neatly formatted as a string to be displayed in the game
@@ -203,5 +207,4 @@ public class GameSettings extends BasicSettings {
     public String toString() {
         return "Game Settings Version " + gameSettingsCounter;
     }
-   
 }
