@@ -68,10 +68,11 @@ public class ChangePassword extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         confirmnewpassword = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        errormessage = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         submitButton = new javax.swing.JButton();
+        errorMessage = new javax.swing.JLabel();
+        errorMessage2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -112,13 +113,9 @@ public class ChangePassword extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 153));
         jLabel5.setText("Your password must be at least 6 characters and should include a");
 
-        errormessage.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
-        errormessage.setForeground(new java.awt.Color(153, 0, 0));
-        errormessage.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
         jLabel7.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel7.setText("combination of numbers, letters, and special  characters (!@#$%)");
+        jLabel7.setText("combination of numbers, letters, and special characters (!@#$%)");
 
         jLabel8.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
         jLabel8.setText("Password:");
@@ -131,6 +128,12 @@ public class ChangePassword extends javax.swing.JFrame {
             }
         });
 
+        errorMessage.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        errorMessage.setForeground(new java.awt.Color(153, 0, 0));
+
+        errorMessage2.setFont(new java.awt.Font("Hiragino Sans", 0, 12)); // NOI18N
+        errorMessage2.setForeground(new java.awt.Color(153, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -140,22 +143,22 @@ public class ChangePassword extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel5)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(submitButton)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(errormessage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel8)
-                                        .addComponent(jLabel3))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(currentpassword)
-                                        .addComponent(newpassword)
-                                        .addComponent(confirmnewpassword))))))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel3))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(currentpassword)
+                                    .addComponent(newpassword)
+                                    .addComponent(confirmnewpassword)))
+                            .addComponent(errorMessage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(errorMessage2))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(128, 128, 128)))
@@ -186,10 +189,12 @@ public class ChangePassword extends javax.swing.JFrame {
                         .addComponent(jLabel8))
                     .addComponent(confirmnewpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addComponent(errormessage, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(errorMessage)
+                .addGap(4, 4, 4)
+                .addComponent(errorMessage2)
                 .addGap(18, 18, 18)
                 .addComponent(submitButton)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         pack();
@@ -208,7 +213,7 @@ public class ChangePassword extends javax.swing.JFrame {
     }//GEN-LAST:event_confirmnewpasswordActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        
+        errorMessage2.setText(""); //clear second line of error message
         String password = HomeScreen.currentUser.getPassword(); //gets user's current password
         String current = currentpassword.getText(); //gets password entered by user
         String newPassText = newpassword.getText(); //gets new password entered by user
@@ -216,19 +221,20 @@ public class ChangePassword extends javax.swing.JFrame {
         
         //checks if password entered by the user is not the same as the user's current password
         if (!current.equals(password)) {
-            errormessage.setText("Current password is incorrect"); //displays error message
+            errorMessage.setText("Current password is incorrect"); //displays error message
             return; //exits method
         } //ends if
 
         //checks if new password is not equal to the confirmed new password
         if (!newPassText.equals(confirmPassText)) {
-            errormessage.setText("New passwords do not match."); //displays error message
+            errorMessage.setText("New passwords do not match."); //displays error message
             return; //exits method
         } //ends if
 
         //checks if password strength does not pass password strength test
         if (!checkPasswordStrength(newPassText)) {
-            errormessage.setText("Password must include letters, numbers, and special characters (!@#$%) and be at least 6 characters.");
+            errorMessage.setText("Password must include letters, numbers, and special characters");
+            errorMessage2.setText("(!@#$%) and be at least 6 characters.");
             return; //exits method
         } //ends if
 
@@ -238,7 +244,7 @@ public class ChangePassword extends javax.swing.JFrame {
         for (String oldPass : previousPasswords) { 
             //checks if any of the old passwords is the same as the new password
             if (oldPass.equals(newPassText)) {
-                errormessage.setText("Password should be different from previous passwords."); //displays error message
+                errorMessage.setText("Password should be different from previous passwords."); //displays error message
                 return; //exits method
             } //ends if
         } //ends for
@@ -311,7 +317,8 @@ public class ChangePassword extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField confirmnewpassword;
     private javax.swing.JTextField currentpassword;
-    private javax.swing.JLabel errormessage;
+    private javax.swing.JLabel errorMessage;
+    private javax.swing.JLabel errorMessage2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
