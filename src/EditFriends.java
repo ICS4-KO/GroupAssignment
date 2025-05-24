@@ -173,7 +173,7 @@ public class EditFriends extends javax.swing.JFrame {
         //If the user has entered a name, add it to the JList when they press the Add button
         if (!friend.isEmpty()) {
             updatedFriendsList.add(friend); //Add new friend to updated arraylist of friends
-            friendListModel.addElement(friend); //Apdates the displayed JList
+            friendListModel.addElement(friend); //Updates the displayed JList
         } //End if statement checking if the input field is empty 
         
         //Clear input text field for friend that will be added/removed

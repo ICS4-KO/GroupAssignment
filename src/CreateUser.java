@@ -536,7 +536,7 @@ public class CreateUser extends javax.swing.JFrame {
             } else if (monthString.isEmpty() && dayString.isEmpty() && yearString.isEmpty()) {
                 //If the phone number is valid, instantiate a enw user object
                 if (checkPhoneNumber(phoneNumber)) {
-                    user = new User(username, password, phoneNumber); //Create new instance of user class with phone number
+                    user = new User(username, password, email, phoneNumber); //Create new instance of user class with phone number
                     user.setInitialSettings(); //Set initial user settings with default values
                     existingUsernames.add(username); //Add new username to array list of existing usernames
                     user.addNewPassword(password); //Add new password to array list of user's previous passwords
